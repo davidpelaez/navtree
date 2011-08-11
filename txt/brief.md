@@ -42,19 +42,19 @@ Is it possible to identify user niches according to their content consumption?
 
 *Tasks (in order)*
 ------------------------------------
--Check references
--Define the structure of the dataset.
--Create dataset gathering tools                
--Define a minimum size of the required dataset.
--Gather data from at least 5 users if possible.
--Make decisions about the technologies to be used.
--Identify relevant factors for the information to be relevant for the user (aka Define key points)
--Initially sketch and validate the first visualizations
-(...)
++ Check references
++ Define the structure of the dataset.
++ Create dataset gathering tools                
++ Define a minimum size of the required dataset.
++ Gather data from at least 5 users if possible.
++ Make decisions about the technologies to be used.
++ Identify relevant factors for the information to be relevant for the user (aka Define key points)
++ Initially sketch and validate the first visualizations
++ (...)
 
 *References to check*
 ------------------------------------------
 
--StumbleUpon
--Existing browser histories
--Similar Browser extensions for the data gathering
++ StumbleUpon
++ Existing browser histories
++ Similar Browser extensions for the data gathering
