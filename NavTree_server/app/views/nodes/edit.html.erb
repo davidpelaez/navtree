@@ -1,0 +1,16 @@
+<h1>Editing node</h1>
+
+<% form_for(@node) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :filtered %><br />
+    <%= f.check_box :filtered %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @node %> |
+<%= link_to 'Back', nodes_path %>
