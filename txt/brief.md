@@ -42,7 +42,8 @@ Is it possible to identify user niches according to their content consumption?
 
 *Tasks (in order)*
 ------------------------------------
-+ Check references
++ Check references  
++ Define the categories to compare the existing references
 + Define the structure of the dataset.
 + Create dataset gathering tools                
 + Define a minimum size of the required dataset.
