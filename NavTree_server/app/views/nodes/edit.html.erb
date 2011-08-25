@@ -1,7 +1,12 @@
 <h1>Editing node</h1>
 
 <% form_for(@node) do |f| %>
-  <%= f.error_messages %>
+  <%= f.error_messages %>  
+
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </p>
 
   <p>
     <%= f.label :filtered %><br />

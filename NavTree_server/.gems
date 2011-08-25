@@ -1,0 +1,6 @@
+rails --version 2.3.11
+ancestry
+haml
+rest-client --version 1.6.1
+hashie --version 1.0.0
+fbdoorman --version 0.7.8

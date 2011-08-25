@@ -2,12 +2,22 @@
 
 <table>
   <tr>
-    <th>User</th>
+    <th>ID</th>
+    <th>Secret</th>
+    <th>Node ID</th>
+    <th>URL</th>
+    <th>Timeref</th>
+    <th>Ancestry</th>
   </tr>
 
 <% @edges.each do |edge| %>
   <tr>
-    <td><%=h edge.user_id %></td>
+    <td><%=h edge.id %></td>
+    <td><%=h edge.secret_id %></td>
+    <td><%=h edge.node_id %></td>
+    <td><%=h edge.node.url %></td>
+    <td><%=h edge.timeref %></td>
+    <td><%=h edge.ancestry %></td>
     <td><%= link_to 'Show', edge %></td>
     <td><%= link_to 'Edit', edit_edge_path(edge) %></td>
     <td><%= link_to 'Destroy', edge, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -1,0 +1,11 @@
+%h1         Dashboard     
+
+%p
+	Secret:
+	= @secret.private_key
+%p
+	Edges:
+	=@secret.edges.count    
+%p
+	Nodes:
+	=@secret.nodes.count

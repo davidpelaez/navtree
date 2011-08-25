@@ -1,0 +1,10 @@
+%p Hello.
+
+%p Our eccentric servers inform us that you recently opened your mistter.me account. This is a yet another please-confirm-your-mail message and for that we strongly apologize. But hey! We promise we will send you almost no e-mail.
+
+%p 
+	Just click this link to confirm your e-mail:  
+	= new_user_confirmation_url(:user_id => @user, :token   => @user.confirmation_token, :encode  => false)
+
+                 
+%p Don't be a stranger and Thanks for growing your NavTree :)

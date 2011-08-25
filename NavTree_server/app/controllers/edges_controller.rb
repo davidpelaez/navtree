@@ -1,4 +1,6 @@
-class EdgesController < ApplicationController
+class EdgesController < ApplicationController 
+  
+  before_filter :authenticate
   # GET /edges
   # GET /edges.xml
   def index
@@ -41,6 +43,7 @@ class EdgesController < ApplicationController
   # POST /edges.xml
   def create
     @edge = Edge.new(params[:edge])
+    @edge.secret_id = current_user.secret.id
 
     respond_to do |format|
       if @edge.save

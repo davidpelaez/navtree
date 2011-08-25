@@ -1,11 +1,16 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :nodes
+  Clearance::Routes.draw(map)
+
 
   map.resources :edges
 
   map.resources :nodes
 
-  map.resources :nodes
+  #For static contents
+  map.resources :contents,    :controller => 'contents',      :only       => [:show]
+  map.connect "dashboard", :controller => "dashboard", :action => "index"
+  map.root :controller => 'contents',   :id => 'home'   , :action     =>:show
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
 
