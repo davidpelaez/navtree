@@ -9,5 +9,8 @@ function NavTreeTab(theSafariTab){
 	
 	this.syncWithServer = function(){return true;};
 	this.synced = false;
-	this.timeStamp = theSafariTab.timeStamp; //Should I keep this?   
+	this.onTimer = false; //Use this to track if the Nav is giving time for a Nav Event to happen
+	this.timeStamp = theSafariTab.timeStamp; //This is used by the queue to ensure that a record is posted 5 secs after the record
+	
+
 }

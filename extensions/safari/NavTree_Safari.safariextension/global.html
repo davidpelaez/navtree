@@ -11,6 +11,7 @@ var tabsTable = new TabsTable();
 
 //Event tracking
 safari.application.addEventListener("open", tabsTable.openHandler, true); 
+safari.application.addEventListener("close", tabsTable.closeHandler, true); 
 safari.application.addEventListener("beforeNavigate", tabsTable.navigationHandler, true);  //Record the intention to go somewhere
 
 
