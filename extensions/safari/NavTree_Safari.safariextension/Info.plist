@@ -18,29 +18,13 @@
 	<string>1</string>
 	<key>Chrome</key>
 	<dict>
-		<key>Bars</key>
-		<array>
-			<dict>
-				<key>Filename</key>
-				<string>infobar.html</string>
-				<key>Identifier</key>
-				<string>info</string>
-				<key>Label</key>
-				<string>NavTree</string>
-			</dict>
-		</array>
 		<key>Global Page</key>
 		<string>global.html</string>
 	</dict>
 	<key>Content</key>
 	<dict>
 		<key>Scripts</key>
-		<dict>
-			<key>Start</key>
-			<array>
-				<string>jquery162.js</string>
-			</array>
-		</dict>
+		<dict/>
 	</dict>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>

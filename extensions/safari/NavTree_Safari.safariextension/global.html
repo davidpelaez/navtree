@@ -1,7 +1,20 @@
 <!DOCTYPE HTML> 
 
 <script src="jquery162.js" type="text/javascript"></script>
-<script>       
+<script src="tabsTable.js" type="text/javascript"></script>
+<script>  
+
+//BEHAVIOUR CONSTANTS
+NEW_WINDOW = 2;
+NEW_TAB_BLANK = 3; 
+NEW_TAB_POINTED = 5;
+NEW_TAB_ACTIVE = 7;
+NEW_TAB_BG = 11; 
+
+var tabsTable = new TabsTable();
+var windowsRecord = "WINDOWS!!";
+
+     
  //Track when a window or tab is opened
 safari.application.addEventListener("open", openHandler, true); 
 safari.application.addEventListener("beforeNavigate", navigationHandler, true);  //Record the intention to go somewhere
@@ -15,6 +28,7 @@ function openHandler(event)
 {
     // Open events are sent for both windows and tabs. When a tab is opened, keep track of it in
     // the list of unread tabs until it has been read (activated) or closed.
+	console.log(windowsRecord);
 	jqueryTest();
 	console.log(event);
     if (event.target instanceof SafariBrowserTab){
