@@ -9,6 +9,7 @@ NEW_TAB_BG = 11;
 function TabsTable(){  
 	var myParent = this;
 	this.table = new Array(); //Maps an index to a NavTreeTab Obj.
+	Array.prototype.removeTab = function(index){ return myParent.table.splice(index,1);};
 	
 	this.size = function(){
 		return myParent.table.length; };
@@ -94,8 +95,12 @@ function TabsTable(){
 			};
 
 	//This is not tracked in the server but keeps the table clean once a tab has been closed
-	this.removeTab = function(theClosedTab){
-		console.log("Removing a TAB");
+	this.removeTab = function(theClosedTab){ 
+		while(theClosedTab.synced == false){ 
+			theClosedTab.sync();
+			//Check that the tab is synced befor removing it
+		}
+		myParent.table.removeTab(myParent.findIndexFor(theClosedTab));
 
 		};  
 		
