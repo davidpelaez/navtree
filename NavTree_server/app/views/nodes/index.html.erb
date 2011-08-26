@@ -5,13 +5,17 @@
 	<th>id</th> 
 	<th>URL</th>
     <th>Filtered</th>
+    <th>Edges</th>
+    <th>Secrets</th>
   </tr>
 
 <% @nodes.each do |node| %>
   <tr>                            
 	<td><%=h node.id %></td>
 	<td><%=h node.url %></td>
-    <td><%=h node.filtered %></td>
+    <td><%=h node.filtered %></td> 
+	<td><%=h node.edges.count %></td>
+    <td><%=h node.secrets.count %></td>
     <td><%= link_to 'Show', node %></td>
     <td><%= link_to 'Edit', edit_node_path(node) %></td>
     <td><%= link_to 'Destroy', node, :confirm => 'Are you sure?', :method => :delete %></td>

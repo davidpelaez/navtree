@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110825164220) do
+ActiveRecord::Schema.define(:version => 20110825165617) do
 
   create_table "edges", :force => true do |t|
     t.datetime "created_at"
@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(:version => 20110825164220) do
     t.integer  "node_id"
     t.string   "ancestry"
     t.integer  "secret_id"
-    t.integer  "timeref"
   end
 
   create_table "nodes", :force => true do |t|
