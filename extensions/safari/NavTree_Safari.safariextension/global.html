@@ -15,8 +15,17 @@ safari.application.addEventListener("close", tabsTable.closeHandler, true);
 safari.application.addEventListener("beforeNavigate", tabsTable.navigationHandler, true);  //Record the intention to go somewhere
 
 window.onload = function(){
-	console.log("The global page was loaded");
-	//Add all tabs? safari.application.browserWindows
+	console.log("The global page was loaded");        
+	//Add all tabs. No duplicated are added because add manages that case. This is for simpler testing. 
+	//Navigation happens on reaload but not the events of open, that's why this method is added
+	windows = safari.application.browserWindows;
+	for(var i=0; i< windows.length;i++){
+		for(var j=0;j<windows[i].tabs.length;j++){
+			tabsTable.addTab(windows[i].tabs[j]);
+			
+		}
+		
+	}
 }
 
 
