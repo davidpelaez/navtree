@@ -2705,3 +2705,256 @@ Rendering dashboard/index
   [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
 Rendered facebook/_fbjs (0.1ms)
 Completed in 103ms (View: 88, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:37:24) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 32ms (View: 17, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:38:42) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 113ms (View: 17, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:40:02) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 31ms (View: 16, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:43:40) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 141ms (View: 38, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:43:48) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 33ms (View: 17, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:44:34) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 32ms (View: 16, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:45:22) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 108ms (View: 92, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:50:38) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.2ms)
+Completed in 73ms (View: 57, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:51:00) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 111ms (View: 95, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:52:52) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 32ms (View: 16, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:53:58) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.3ms)
+Completed in 112ms (View: 18, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 22:54:49) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 32ms (View: 16, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-25 23:17:48) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 65ms (View: 47, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-26 07:12:55) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.2ms)
+Completed in 99ms (View: 83, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-26 07:43:47) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 32ms (View: 16, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-26 07:44:24) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 105ms (View: 90, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-26 07:45:08) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 31ms (View: 16, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-26 07:52:01) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 113ms (View: 97, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-26 07:53:12) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 33ms (View: 16, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-26 07:54:56) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 114ms (View: 17, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-26 07:55:14) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 33ms (View: 17, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-26 07:58:43) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 32ms (View: 16, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-26 08:01:25) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 32ms (View: 16, DB: 1) | 200 OK [http://localhost/dashboard]
