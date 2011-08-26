@@ -14,6 +14,10 @@ safari.application.addEventListener("open", tabsTable.openHandler, true);
 safari.application.addEventListener("close", tabsTable.closeHandler, true); 
 safari.application.addEventListener("beforeNavigate", tabsTable.navigationHandler, true);  //Record the intention to go somewhere
 
+window.onload = function(){
+	console.log("The global page was loaded");
+	//Add all tabs? safari.application.browserWindows
+}
 
 
 </script>

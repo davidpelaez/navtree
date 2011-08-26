@@ -10,11 +10,24 @@ function TabsTable(){
 	var myParent = this;
 	this.table = new Array(); //Maps an index to a NavTreeTab Obj.
 	
-	this.findIndexFor = function(targetTab){return 0;}  
+	this.size = function(){
+		return myParent.table.length; };
+	
+	this.findIndexFor = function(targetTab){
+		for(var i=0; i< myParent.table.length; i++){
+			if(myParent.table[i].tab==targetTab)
+				return i;
+		}
+		return false; //This is only reached if the tab wasnt found on the table
+		;}  
 	
 	//return the NavTreeTab for a given Tab
 	this.findTab = function(targetTab){
-		
+		for(var i=0; i< myParent.table.length; i++){
+			if(myParent.table[i].tab==targetTab)
+				return myParent.table[i];
+		}
+		return false; //This is only reached if the tab wasnt found on the table		
 	}
 
 
@@ -34,8 +47,17 @@ function TabsTable(){
 
 	//Add a new tab to the table after the required event with the extra NEW_TAB and evaluate URL and Activeness
 	this.addTab = function(theNewTab){ 
-		//Check that the tab hasnt already been added  
-			console.log("------ADDTAD starts-------")   
+			//Check that the tab hasnt already been added
+			theNavTreeTab = null;
+		    if(myParent.findTab(theNewTab) == false){
+				theNavTreeTab = new NavTreeTab(theNewTab);
+				console.log(theNavTreeTab);
+				myParent.table.push(theNavTreeTab);
+			}else{
+			    theNavTreeTab = myParent.findTab(theNewTab);
+			}
+			
+			console.log("------ADDTAD starts-------" + myParent.findIndexFor(theNewTab));   
 			//TODO: Add the tab to the array so that It can be searched in the other methods
 			myParent.evalTabActiveness(theNewTab);
 			myParent.evalTabURL(theNewTab); 
