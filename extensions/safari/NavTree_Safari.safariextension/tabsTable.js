@@ -29,6 +29,15 @@ function TabsTable(){
 		}
 		return false; //This is only reached if the tab wasnt found on the table		
 	}
+	
+	this.findUnsyncedNavTreeTabs = function(){    
+		result = Array();
+		for(var i=0; i< myParent.table.length; i++){
+			if(myParent.table[i].synced==false)
+				result.push( myParent.table[i] );
+		}
+		return result; //This is only reached if the tab wasnt found on the table		
+	};
 
 
 	//Check if the tab is blank or Pointed 
@@ -63,7 +72,8 @@ function TabsTable(){
 			myParent.evalTabURL(theNewTab); 
 			myParent.evalWindow(theNewTab); 
 			console.log("------ADDTAD ends-------")
-			setTimeout(function(){console.log("time's up!");},2000);
+			theNavTreeTab.beginTimer();
+			console.log("ON TIMER: " + theNavTreeTab.onTimer);
 		}; 
 		
 	this.navigationHandler = function(event){
