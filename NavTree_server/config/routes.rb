@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :edges
 
   map.resources :nodes
-
+  map.resources :tests
   #For static contents
   map.resources :contents,    :controller => 'contents',      :only       => [:show]
   map.connect "dashboard", :controller => "dashboard", :action => "index"

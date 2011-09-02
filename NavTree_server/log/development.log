@@ -3189,3 +3189,533 @@ Rendering dashboard/index
   [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
 Rendered facebook/_fbjs (0.1ms)
 Completed in 32ms (View: 16, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-08-26 15:36:06) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (21.2ms)
+Completed in 231ms (View: 182, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing EdgesController#index (for 127.0.0.1 at 2011-08-26 15:36:58) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;35;1mEdge Load (0.3ms)[0m   [0mSELECT * FROM "edges" [0m
+Rendering template within layouts/edges
+Rendering edges/index
+  [4;36;1mNode Load (0.2ms)[0m   [0;1mSELECT * FROM "nodes" WHERE ("nodes"."id" = 2) [0m
+  [4;35;1mNode Load (0.2ms)[0m   [0mSELECT * FROM "nodes" WHERE ("nodes"."id" = 5) [0m
+Completed in 130ms (View: 114, DB: 1) | 200 OK [http://localhost/edges]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2011-08-26 15:37:19) [GET]
+  Parameters: {"method"=>:delete, "action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '3fdefe88c564772c66b08aa9240c0d11f490b093') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-08-26 20:37:19', "remember_token" = 'c3f309b9bc4b21f4c0eab959a633094ab29d22d6' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/sign_in
+Completed in 92ms (DB: 1) | 302 Found [http://localhost/sign_out]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2011-08-26 15:37:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered facebook/_fbjs (0.1ms)
+Completed in 49ms (View: 43, DB: 0) | 200 OK [http://localhost/sign_in]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2011-08-26 15:39:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered facebook/_fbjs (0.1ms)
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/sign_in]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:41:59) [POST]
+
+ActionView::MissingTemplate (Missing template tests/create.erb in view path app/views:/Library/Ruby/Gems/1.8/gems/fbdoorman-0.7.8/app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:43:17) [POST]
+
+ActionView::MissingTemplate (Missing template tests/create.erb in view path app/views:/Library/Ruby/Gems/1.8/gems/fbdoorman-0.7.8/app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:43:36) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+
+ActionView::MissingTemplate (Missing template tests/nothing.erb in view path app/views:/Library/Ruby/Gems/1.8/gems/fbdoorman-0.7.8/app/views):
+  app/controllers/tests_controller.rb:6:in `create'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:44:23) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 6568ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:49:03) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 94828ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:50:38) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 3638ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:50:50) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:51:27) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:51:58) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:52:37) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 318128ms (View: 73, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:57:55) [POST]
+Completed in 7856ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:58:03) [POST]
+Completed in 3773ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:58:07) [POST]
+Completed in 1449ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:58:09) [POST]
+Completed in 1348ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:58:10) [POST]
+Completed in 1643ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:58:12) [POST]
+Completed in 1173ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:58:13) [POST]
+Completed in 633ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:58:14) [POST]
+Completed in 622ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:58:14) [POST]
+Completed in 682ms (View: 3, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:58:15) [POST]
+Completed in 793ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:58:16) [POST]
+Completed in 881ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 18:59:48) [POST]
+  Parameters: {"syncing"=>"true"}
+Completed in 100418ms (View: 39, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:01:28) [POST]
+  Parameters: {"syncing"=>"true"}
+Completed in 89434ms (View: 42, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:02:58) [POST]
+  Parameters: {"syncing"=>"true"}
+Completed in 1798ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:00) [POST]
+  Parameters: {"syncing"=>"true"}
+Completed in 1210ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:01) [POST]
+  Parameters: {"syncing"=>"true"}
+Completed in 531ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:01) [POST]
+  Parameters: {"syncing"=>"true"}
+Completed in 526ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:02) [POST]
+  Parameters: {"syncing"=>"true"}
+Completed in 570ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:03) [POST]
+  Parameters: {"syncing"=>"true"}
+Completed in 407ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:03) [POST]
+  Parameters: {"syncing"=>"true"}
+Completed in 403ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:04) [POST]
+  Parameters: {"syncing"=>"true"}
+Completed in 412ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:11) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 27742ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:39) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:39) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:39) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:39) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:39) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:40) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:40) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:40) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:03:40) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:06:27) [POST]
+  Parameters: {"test"=>"1"}
+Completed in 12153ms (View: 357, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:08:24) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:08:35) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:08:37) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 86ms (View: 83, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:09:59) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 6252ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:10:09) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 105572ms (View: 40, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:11:54) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:11:54) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:11:55) [POST]
+  Parameters: {"{\"method\":\"getStates\", \"program\":\"EXPLORE\"}"=>nil}
+Completed in 7344ms (View: 3, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:12:57) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 4838ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:14:30) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 50ms (View: 47, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:14:44) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:14:46) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:14:49) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:16:11) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:22:25) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 16ms (View: 13, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:22:47) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:34:03) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:40:20) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 382546ms (View: 39, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:46:43) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:46:43) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:46:43) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:46:43) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:46:43) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:46:43) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:46:43) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:46:43) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 1543ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:46:45) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 1385ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:46:49) [POST]
+  Parameters: {"abc"=>"123", "cde"=>"456"}
+Completed in 770543ms (View: 45, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:40) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:40) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:40) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:40) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:40) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:40) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:40) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:41) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:41) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:41) [POST]
+  Parameters: {"test"=>"1"}
+Completed in 7378ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:48) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:48) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:48) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 19:59:48) [POST]
+  Parameters: {"test"=>"1"}
+Completed in 3322ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 20:01:20) [POST]
+  Parameters: {"test"=>"1"}
+Completed in 511366ms (View: 39, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 20:09:52) [POST]
+  Parameters: {"syncing"=>"1"}
+Completed in 78ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 20:10:19) [POST]
+  Parameters: {"test"=>"1"}
+Completed in 35741ms (View: 2, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-01 20:25:23) [POST]
+  Parameters: {"syncing"=>"1"}
+
+ArgumentError (Unknown key(s): private_key):
+  app/controllers/tests_controller.rb:7:in `create'
+
+Rendered rescues/_trace (213.1ms)
+Rendered rescues/_request_and_response (11.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-09-01 20:25:55) [GET]
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/dashboard/]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2011-09-01 20:25:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered facebook/_fbjs (18.1ms)
+Completed in 246ms (View: 244, DB: 0) | 200 OK [http://localhost/sign_in]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-01 20:25:55) [GET]
+
+ActionController::RoutingError (No route matches "/favicon.ico" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2011-09-01 20:26:01) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"password"=>"[FILTERED]", "email"=>"pelaez89@gmail.com"}, "action"=>"create", "authenticity_token"=>"N8G9E7mOuJYhSIsP7XjlEXhpjmSC+DkZg6gbidwHNHw=", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (18.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'pelaez89@gmail.com') LIMIT 1[0m
+Redirected to http://localhost:3000/dashboard/
+Completed in 148ms (DB: 18) | 302 Found [http://localhost/session]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2011-09-01 20:26:01) [GET]
+  [4;35;1mUser Load (2.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'c3f309b9bc4b21f4c0eab959a633094ab29d22d6') LIMIT 1[0m
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mSQL (5.9ms)[0m   [0mSELECT count(*) AS count_all FROM "edges" WHERE ("edges".secret_id = 1) [0m
+  [4;36;1mSQL (10.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+Rendered facebook/_fbjs (0.1ms)
+Completed in 369ms (View: 286, DB: 19) | 200 OK [http://localhost/dashboard/]

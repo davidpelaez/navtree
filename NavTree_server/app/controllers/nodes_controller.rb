@@ -42,6 +42,7 @@ class NodesController < ApplicationController
   # POST /nodes
   # POST /nodes.xml
   def create
+    
     @node = Node.new(params[:node])
 
     respond_to do |format|

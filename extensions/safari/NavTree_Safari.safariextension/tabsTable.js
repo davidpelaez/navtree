@@ -88,7 +88,7 @@ function TabsTable(){
 	//Register changes in the URL. (EVERY OLD Tab CHANGING MUST BE ACTIVE, therefore no activeness is evaluated)
 	this.navigateInTab = function(theTab){
 		//Si el tab no esta on timer eso quiere decir que toca sincronizar y luego cambiar
-
+                //TODO add ACTIVE behaviour
 				myParent.evalTabURL(theTab); //This is evaluated because it's possible to hit back or have a shortcut to an blank url.
 
 				//TODO SYNC
@@ -96,9 +96,9 @@ function TabsTable(){
 
 	//This is not tracked in the server but keeps the table clean once a tab has been closed
 	this.removeTab = function(theClosedTab){ 
+		//Check that the tab is synced befor removing it
 		while(theClosedTab.synced == false){ 
 			theClosedTab.sync();
-			//Check that the tab is synced befor removing it
 		}
 		myParent.table.removeTab(myParent.findIndexFor(theClosedTab));
 
