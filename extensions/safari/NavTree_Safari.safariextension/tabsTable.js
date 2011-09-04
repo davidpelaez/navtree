@@ -51,20 +51,16 @@ function TabsTable(){
 
 	//Add a new tab to the table after the required event with the extra NEW_TAB and evaluate URL and Activeness
 	this.addTab = function(theNewTab){ 
-			//Check that the tab hasnt already been added
-			theNavTreeTab = null;
-		    if(myParent.findTab(theNewTab) == false){
-				theNavTreeTab = new NavTreeTab(theNewTab);
-				myParent.table.push(theNavTreeTab);
-			}else{
-			    theNavTreeTab = myParent.findTab(theNewTab);
-			}
+			console.log("Adding new tab");
+			theNavTreeTab = new NavTreeTab(theNewTab);
+			myParent.table.push(theNavTreeTab);
+
+
 			
 			//TODO: Add the tab to the array so that It can be searched in the other methods
 			myParent.evalTabActiveness(theNewTab);
 			myParent.evalNewTabURL(theNewTab); 
 			myParent.evalWindow(theNewTab); 
-			theNavTreeTab.beginTimer();
 		}; 
 		
 	
@@ -72,19 +68,10 @@ function TabsTable(){
      
     ///NOTA: should i allow here the new tab extra or not??
 	//Register changes in the URL. (EVERY OLD Tab CHANGING MUST BE ACTIVE, therefore no activeness is evaluated)
-	this.navigateInTab = function(event){ 
-		console.log(event.url);
+	this.navigateInTab = function(event){
 		theTab = event.target;
-		theNavtreeTab = myParent.findTab(theTab);
-		//Record the URL, either it's a tab just opened or because it's an old one.
-        theNavtreeTab.url = event.url;
-		console.log(theNavtreeTab);
-		//If there's no TIMER then reset the tab extra
-		if(theNavtreeTab.onTimer==false){ //The tab is ready to be worked on
-			console.log("navigating and timer was false");
-			theNavtreeTab.extra = 1;
-			theNavtreeTab.sync();
-		}                                             
+		theNavtreeTab = myParent.findTab(theTab); 
+        theNavtreeTab.updateURL(event.url);                                             
 		};     
 
 	//This is not tracked in the server but keeps the table clean once a tab has been closed
