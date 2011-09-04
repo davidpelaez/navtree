@@ -1,6 +1,7 @@
 <!DOCTYPE HTML> 
 <script src="jquery162.js" type="text/javascript"></script>
 <script src="TabsTable.js" type="text/javascript"></script>
+<script src="handlers.js" type="text/javascript"></script>
 <script src="NavTreeTab.js" type="text/javascript"></script>
 <script> 
 
@@ -12,9 +13,9 @@ var date = new Date();
 var tabsTable = new TabsTable();
 
 //Event tracking
-safari.application.addEventListener("open", tabsTable.openHandler, true); 
-safari.application.addEventListener("close", tabsTable.closeHandler, true); 
-safari.application.addEventListener("beforeNavigate", tabsTable.navigationHandler, true);  //Record the intention to go somewhere
+safari.application.addEventListener("open", openHandler, true); 
+safari.application.addEventListener("close", closeHandler, true); 
+safari.application.addEventListener("beforeNavigate", navigationHandler, true);  //Record the intention to go somewhere
 
 window.onload = function(){
 	//Add all tabs. No duplicated are added because add manages that case. This is for simpler testing. 
@@ -25,7 +26,6 @@ window.onload = function(){
 			tabsTable.addTab(windows[i].tabs[j]);
 		}
 	}
-	console.log("Unsynced NavTreeTabs = " + tabsTable.findUnsyncedNavTreeTabs().length);
 };   
 
 
@@ -39,17 +39,13 @@ function randomString(len, charSet) {
     return randomString;
 };
 
-var ajaxHeaders = new Object();
-ajaxHeaders.rulos = "ALOHA";
 
 //Set default AJAX settings
 jQuery.ajaxSetup({
 	type: 'POST',
   	url: NAVTREE_SERVER + "/tests",  
-	headers: ajaxHeaders,
 	datatype: "json",   	
 	beforeSend: function(jqXHR){
-		jqXHR.setRequestHeader("Rest-Authorization-Code", 33333333);
 		jqXHR.setRequestHeader("secret",safari.extension.secureSettings.secretKey);
 		},
 	data: "test=1",

@@ -12,31 +12,42 @@ function NavTreeTab(theSafariTab){
 	
 	this.syncWithServer = function(){return true;};
 	this.synced = false;  
-	this.onsyc = false; //THIS IS TO avoid async ajax calls and still keeping track
+	this.onsync = false; //THIS IS TO avoid async ajax calls and still keeping track
 	this.onTimer = false; //Use this to track if the Nav is giving time for a Nav Event to happen
 	this.stamp = randomString(10); //This is used by the queue to ensure that a record is posted 5 secs after the record
+	
+	this.toMap = function(){
+		myMap = new Object();
+		myMap.tab_url = myNavTreeTabParent.url;
+		myMap.tab_edgeId = myNavTreeTabParent.edgeId; 
+		myMap.tab_extra = myNavTreeTabParent.extra;
+		return myMap;
+	};
 	
 	this.beginTimer = function(){
 		myNavTreeTabParent.onTimer = true;
 		setTimeout(function(){myNavTreeTabParent.sync();},2000);
 	};
 	this.sync = function(){ 
-		onTimer = false;
+		myNavTreeTabParent.onTimer = false;
 		console.log("The tab is being synched");  
-		
+		var theNode = new Object();
+		theNode.tab = myNavTreeTabParent; //Create the header request.headers["HTTP_TAB"] for rails
 		jQuery.ajax({  
 			data: "syncing=1",
+			headers: myNavTreeTabParent.toMap(),
 			complete: function(jqXHR, textStatus){
-				console.log("Ajax Ended");
+				console.log(jQuery.parseJSON( jqXHR.responseText).node );
 				},
 			error: function(jqXHR, textStatus, errorThrown){
-				console.log("The ajax failed");
+				console.log("The ajax failed"); 
 				},
 			success: function(){
-				console.log("Ajax Success!");
+				console.log(myNavTreeTabParent.stamp);
+				myNavTreeTabParent.synced = true;
 				}
 		}); 
-		myNavTreeTabParent.synced = true;
+		
 		
 	};
 

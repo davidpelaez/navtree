@@ -1,4 +1,4 @@
-//BEHAVIOUR CONSTANTS
+//BEHAVIOUR (aka extra) CONSTANTS
 NEW_WINDOW = 2;
 NEW_TAB_BLANK = 3; 
 NEW_TAB_POINTED = 5;
@@ -9,7 +9,10 @@ NEW_TAB_BG = 11;
 function TabsTable(){  
 	var myParent = this;
 	this.table = new Array(); //Maps an index to a NavTreeTab Obj.
-	Array.prototype.removeTab = function(index){ return myParent.table.splice(index,1);};
+
+	/*******************
+	* "CLASS" BASICS
+	*******************/    
 	
 	this.size = function(){
 		return myParent.table.length; };
@@ -19,7 +22,7 @@ function TabsTable(){
 			if(myParent.table[i].tab==targetTab)
 				return i;
 		}
-		return false; //This is only reached if the tab wasnt found on the table
+		return false; //Tab wasn't found
 		;}  
 	
 	//return the NavTreeTab for a given Tab
@@ -28,7 +31,7 @@ function TabsTable(){
 			if(myParent.table[i].tab==targetTab)
 				return myParent.table[i];
 		}
-		return false; //This is only reached if the tab wasnt found on the table		
+		return false; //Tab wasn't found
 	}
 	
 	this.findUnsyncedNavTreeTabs = function(){    
@@ -37,23 +40,14 @@ function TabsTable(){
 			if(myParent.table[i].synced==false)
 				result.push( myParent.table[i] );
 		}
-		return result; //This is only reached if the tab wasnt found on the table		
+		return result; //Tab wasn't found
 	};
 
-
-	//Check if the tab is blank or Pointed 
-	//In this case theURL is passed directly because it can come from a beforeNavigateEvent and is therefore not in tab.url yet
-	this.evalTabURL = function(theTab){
-		//TODO Attach the result to the NavTreeTab extra info
-		if(theTab.url != "")
-			//POINTED
-			console.log("Navigatin to pointed node");
-		else
-			//BLANK
-			console.log("Navigatin to blank");
-		};
-
-
+	/*******************
+	*    EVENTS METHODS
+	*******************/  
+	
+	Array.prototype.removeTab = function(index){ return myParent.table.splice(index,1);};
 
 	//Add a new tab to the table after the required event with the extra NEW_TAB and evaluate URL and Activeness
 	this.addTab = function(theNewTab){ 
@@ -61,38 +55,37 @@ function TabsTable(){
 			theNavTreeTab = null;
 		    if(myParent.findTab(theNewTab) == false){
 				theNavTreeTab = new NavTreeTab(theNewTab);
-				console.log(theNavTreeTab);
 				myParent.table.push(theNavTreeTab);
 			}else{
 			    theNavTreeTab = myParent.findTab(theNewTab);
 			}
 			
-			console.log("------ADDTAD starts-------" + myParent.findIndexFor(theNewTab));   
 			//TODO: Add the tab to the array so that It can be searched in the other methods
 			myParent.evalTabActiveness(theNewTab);
-			myParent.evalTabURL(theNewTab); 
+			myParent.evalNewTabURL(theNewTab); 
 			myParent.evalWindow(theNewTab); 
-			console.log("------ADDTAD ends-------")
 			theNavTreeTab.beginTimer();
-			console.log("ON TIMER: " + theNavTreeTab.onTimer);
 		}; 
 		
-	this.navigationHandler = function(event){
-		//console.log(event.target.url); //Log the url that the user is navigating to
-		console.log(event.url);
-		myParent.navigateInTab(event.target);
-	};
+	
 	
      
-                
+    ///NOTA: should i allow here the new tab extra or not??
 	//Register changes in the URL. (EVERY OLD Tab CHANGING MUST BE ACTIVE, therefore no activeness is evaluated)
-	this.navigateInTab = function(theTab){
-		//Si el tab no esta on timer eso quiere decir que toca sincronizar y luego cambiar
-                //TODO add ACTIVE behaviour
-				myParent.evalTabURL(theTab); //This is evaluated because it's possible to hit back or have a shortcut to an blank url.
-
-				//TODO SYNC
-			};
+	this.navigateInTab = function(event){ 
+		console.log(event.url);
+		theTab = event.target;
+		theNavtreeTab = myParent.findTab(theTab);
+		//Record the URL, either it's a tab just opened or because it's an old one.
+        theNavtreeTab.url = event.url;
+		console.log(theNavtreeTab);
+		//If there's no TIMER then reset the tab extra
+		if(theNavtreeTab.onTimer==false){ //The tab is ready to be worked on
+			console.log("navigating and timer was false");
+			theNavtreeTab.extra = 1;
+			theNavtreeTab.sync();
+		}                                             
+		};     
 
 	//This is not tracked in the server but keeps the table clean once a tab has been closed
 	this.removeTab = function(theClosedTab){ 
@@ -104,40 +97,45 @@ function TabsTable(){
 
 		};  
 		
+		
+		
+		
+	/*******************
+	*    EVAL METHODS
+	*******************/  
+	
 	//Check if the tab is active or in bg
 	this.evalTabActiveness = function(theTab){ 
 		theNavTreeTab = myParent.findTab(theTab);
 		if(theTab.browserWindow.activeTab == theTab){
-			console.log("New tab - Active");
+			theNavTreeTab.extra *= NEW_TAB_ACTIVE;
 		}else{
-			console.log("New tab - Background");
+			theNavTreeTab.extra *= NEW_TAB_BG;
 		}
 		//TODO attach the calculated activeness to theNavTreeTab
+
 	  }; 
 	
 	this.evalWindow = function(theNewTab){   
 		if(theNewTab.browserWindow.tabs.length == 1)
-			console.log("This is a new window");
-		else
-			console.log("The window of this tab already existed");
-	};
+			myParent.findTab(theNewTab).extra *= NEW_TAB_BG; // Find the tab and then attach new window
+	};   
+	
+	//Check if the tab is blank or Pointed 
+	//In this case theURL is passed directly because it can come from a beforeNavigateEvent and is therefore not in tab.url yet
+	this.evalNewTabURL = function(theTab){
+		//TODO Attach the result to the NavTreeTab extra info
+		if(theTab.url != "")
+			{//POINTED
+			theNavTreeTab.extra *= NEW_TAB_POINTED;
+		}else{
+			//BLANK
+			theNavTreeTab.extra *= NEW_TAB_BLANK; 
+			}
+		};
 
 	
-	this.openHandler = function(event){               
-		console.log("Open Event triggered")
-	    if (event.target instanceof SafariBrowserTab){  
-			//Register the target Tab inside the table
-			myParent.addTab(event.target);
-		}
-	};
-	
-	this.closeHandler = function(event){               
-	    if (event.target instanceof SafariBrowserTab){  
-			myParent.removeTab(event.target);
-		}
-	};                              
-
-
+                       
 }; 
 
 
