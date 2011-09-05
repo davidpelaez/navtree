@@ -1,5 +1,5 @@
 navigationHandler = function(event){
-	//console.log(event.url);
+	//console.log(event.url);      
 	tabsTable.navigateInTab(event);
 };
 

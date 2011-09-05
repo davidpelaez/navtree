@@ -4222,3 +4222,8 @@ Processing TestsController#create (for 127.0.0.1 at 2011-09-01 21:54:38) [POST]
 Processing TestsController#create (for 127.0.0.1 at 2011-09-04 07:05:02) [POST]
   Parameters: {"syncing"=>"1"}
   [4;36;1mSecret Load (31.0ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-05 12:49:11) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (20.4ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m

@@ -1,9 +1,11 @@
 //BEHAVIOUR (aka extra) CONSTANTS
+SIMPLE_NODE = 1; //THIS MEANS NOTHING SINCE 1 ISN'T A PRIME, but gives consistency to the list 
 NEW_WINDOW = 2;
-NEW_TAB_BLANK = 3; 
-NEW_TAB_POINTED = 5;
-NEW_TAB_ACTIVE = 7;
-NEW_TAB_BG = 11;
+NEW_TAB = 3;
+BLANK = 5; 
+POINTED = 7;
+ACTIVE = 11;
+BG = 13;
 
 //It's not possible to inherit from an Array in JS, therefore an internal array was created to map the TABS as a tabl
 function TabsTable(){  
@@ -41,6 +43,31 @@ function TabsTable(){
 				result.push( myParent.table[i] );
 		}
 		return result; //Tab wasn't found
+	};   
+	
+	
+	
+	/*******************
+	*    Boolean Methods for NavTreeTab.extra
+	*******************/  
+	
+	//Check if the tab is active or in bg
+	this.isTabActive = function(theTab){ 
+		theNavTreeTab = myParent.findTab(theTab);
+		if(theTab.browserWindow.activeTab == theTab){
+			return true;
+		}else{
+			return false;
+		}
+
+	  }; 
+	
+	this.isTabNewWindow = function(theNewTab){   
+		if(theNewTab.browserWindow.tabs.length == 1){
+			return true;
+		}else{
+			return false;
+		}
 	};
 
 	/*******************
@@ -53,17 +80,30 @@ function TabsTable(){
 	this.addTab = function(theNewTab){ 
 			console.log("Adding new tab");
 			theNavTreeTab = new NavTreeTab(theNewTab);
-			myParent.table.push(theNavTreeTab);
+			myParent.table.push(theNavTreeTab); 
+			//Attach activeness
+			if(myParent.isTabActive(theNewTab)){
+				theNavTreeTab.extra *= ACTIVE;
+			}else{
+				theNavTreeTab.extra *= BG;
+				//Anything opened in the background is a SOFT CHILD of the active TAB 
+				//It's not ideal, but in some very special cases the active Tab doesn't exist in the table, in that case there simply is no link created
+				theSoftAncestor = myParent.findTab(safari.application.activeBrowserWindow.activeTab);
+				if(theSoftAncestor != false){
+					theNavTreeTab.navTreeTabAncestor = 	theSoftAncestor;
+					console.log(theSoftAncestor);
+					console.log("***");
+				}
 
+			} 
+			//Attach weather new tab or just new window			
+			if(myParent.isTabNewWindow(theNewTab)){
+				theNavTreeTab.extra *= NEW_WINDOW;
+			}else{
+				theNavTreeTab.extra *= NEW_TAB;
+			}
 
-			
-			//TODO: Add the tab to the array so that It can be searched in the other methods
-			myParent.evalTabActiveness(theNewTab);
-			myParent.evalNewTabURL(theNewTab); 
-			myParent.evalWindow(theNewTab); 
-		}; 
-		
-	
+		};       	
 	
      
     ///NOTA: should i allow here the new tab extra or not??
@@ -83,44 +123,6 @@ function TabsTable(){
 		myParent.table.removeTab(myParent.findIndexFor(theClosedTab));
 
 		};  
-		
-		
-		
-		
-	/*******************
-	*    EVAL METHODS
-	*******************/  
-	
-	//Check if the tab is active or in bg
-	this.evalTabActiveness = function(theTab){ 
-		theNavTreeTab = myParent.findTab(theTab);
-		if(theTab.browserWindow.activeTab == theTab){
-			theNavTreeTab.extra *= NEW_TAB_ACTIVE;
-		}else{
-			theNavTreeTab.extra *= NEW_TAB_BG;
-		}
-		//TODO attach the calculated activeness to theNavTreeTab
-
-	  }; 
-	
-	this.evalWindow = function(theNewTab){   
-		if(theNewTab.browserWindow.tabs.length == 1)
-			myParent.findTab(theNewTab).extra *= NEW_TAB_BG; // Find the tab and then attach new window
-	};   
-	
-	//Check if the tab is blank or Pointed 
-	//In this case theURL is passed directly because it can come from a beforeNavigateEvent and is therefore not in tab.url yet
-	this.evalNewTabURL = function(theTab){
-		//TODO Attach the result to the NavTreeTab extra info
-		if(theTab.url != "")
-			{//POINTED
-			theNavTreeTab.extra *= NEW_TAB_POINTED;
-		}else{
-			//BLANK
-			theNavTreeTab.extra *= NEW_TAB_BLANK; 
-			}
-		};
-
 	
                        
 }; 
