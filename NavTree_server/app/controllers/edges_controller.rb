@@ -2,22 +2,7 @@ class EdgesController < ApplicationController
   
   before_filter :authenticate, :except => [:create]
   before_filter :key_authenticate, :only => [:create]
-  # GET /edges
-  # GET /edges.xml
-  def index 
-   @edges = Edge.all(:conditions => {:secret_id => current_user.secret.id} ).paginate :per_page => 20, :page => params[:page]
-   @recent_edges = Edge.all(:limit => 5, :order => "created_at DESC")
 
-      
-
-  
-    
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @edges }
-    end
-  end
 
   # GET /edges/1
   # GET /edges/1.xml    

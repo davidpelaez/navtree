@@ -6,6 +6,8 @@ class DashboardController < ApplicationController
   # GET /stats.xml
   def index
     @secret = current_user.secret
+    @edges = Edge.all(:conditions => {:secret_id => current_user.secret.id} ).paginate :per_page => 20, :page => params[:page]
+    @recent_edges = Edge.all(:limit => 5, :order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb

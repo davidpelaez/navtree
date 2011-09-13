@@ -20,10 +20,15 @@
 			})();   
 		
 	%body
-		.wrapper
+		#wrapper
+			#session_button= link_to "login", "/sign_in"
 			#flash
 				-flash.each do |key, msg|
 					= content_tag :span, msg, :id => key, :class => "flash"
 					%br=#Otherwise no line break!
+					
+			#header
+				=image_tag "logo.png" 
+				#big_desc A Safari extension to track your web browsing click by click and understand it visually. 
 			
 			= yield

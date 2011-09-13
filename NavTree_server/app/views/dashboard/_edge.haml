@@ -1,0 +1,7 @@
+
+.edge{:depth => edge.depth, :id => edge.id, :parent => edge.parent} 
+	.id= edge.id
+	.title=if edge.title.blank? then edge.node.url else edge.title  end
+	.parent= edge.parent.id unless edge.parent.nil?
+	.date=edge.created_at
+	= link_to 'Destroy', edge, :confirm => 'Are you sure?', :method => :delete 

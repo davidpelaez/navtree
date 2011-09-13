@@ -1,20 +1,63 @@
 /*THIS IS COPIED FROM MANAGAE_BASE*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
 #wrapper {
 	width: 960px;
-	margin: 0 auto;
+	margin: 0 auto;  
+	padding-top: 90px;
+	position: relative;
 }  
+#header{
 
+
+	padding-left: 40px;  
+	padding-top: 100px;
+	min-height: 290px;  
+	margin-left: 160px;
+
+	/*background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 180, from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0)));*/
+	background-image: -webkit-radial-gradient(180px 180px, circle contain, rgba(0,0,0,0.4), rgba(0,0,0,0));
+	
+	
+}
 html{
 	background: transparent top left url('/images/bg.png') repeat;
 	color: white;
 	font-family: Helvetica, Arial, Sans-serif;
-}  
+}   
+
+#session_button a, #session_button a:visited{
+	color: white;                            
+	text-decoration: none;
+	display: block;
+	margin-top: 4px;
+}
+#session_button{
+	width: 70px;
+	text-align: center;
+	font-size: smaller;
+	height: 25px;
+	position:absolute;
+	background: RGB(193,39,45);
+	right: 0;
+	top: 0;
+}
 
 .edge{
 	border-bottom: solid thin black;
 	padding: 10px 0;
 	
-}   
+} 
+#big_desc{
+	color:RGB(251,176,59);
+	font-size: 170%; 
+	font-weight: 600;
+	width: 650px;
+	margin-top: 20px;
+}  
 
 .edge .url{
 	float: left;

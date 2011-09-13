@@ -9,3 +9,31 @@
 %p
 	Nodes:
 	=@secret.nodes.count
+	
+	
+%h1 Recent edges
+
+#recent
+	-@recent_edges.each do |edge|
+		= render :partial => "edge", :locals => {:edge => edge}
+
+
+%h1 Listing arranged edges
+
+
+#edges
+
+
+	= render :partial => "edge", :collection => @edges
+	= will_paginate @edges	
+
+:javascript
+	$(function(){
+		$("#edges .edge").each(function(index){
+			$(this).css("margin-left", $(this).attr("depth")*20);
+
+		});   
+
+
+
+	}); 
