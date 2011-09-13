@@ -1,7 +1,10 @@
 %h1 Listing edges
 
 #edges
-	=render :partial => "edge", :collection => @edges
+
+
+	= render :partial => "edge", :collection => @edges
+	= will_paginate @edges	
 
 :javascript
 	$(function(){

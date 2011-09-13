@@ -1,2 +1,3 @@
-module EdgesHelper
+module EdgesHelper   
+
 end

@@ -60,6 +60,7 @@ function NavTreeTab(theSafariTab){
 	this.toMap = function(){
 		myMap = new Object();
 		myMap.tab_url = myNavTreeTabParent.url;
+		myMap.tab_title = myNavTreeTabParent.tab.title;
 		myMap.tab_parentEdgeId = myNavTreeTabParent.parentEdgeId; 
 		myMap.tab_extra = myNavTreeTabParent.extra;
 		return myMap;

@@ -4,8 +4,14 @@ class EdgesController < ApplicationController
   before_filter :key_authenticate, :only => [:create]
   # GET /edges
   # GET /edges.xml
-  def index
-    @edges = Edge.all  
+  def index 
+   @edges = Edge.all(:conditions => {:secret_id => current_user.secret.id} ).paginate :per_page => 20, :page => params[:page]
+
+      
+
+  
+    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @edges }
@@ -44,8 +50,11 @@ class EdgesController < ApplicationController
       @parent_edge =  Edge.find(request.headers["HTTP_TAB_PARENTEDGEID"].to_i)
       block_access unless @parent_edge.secret == @secret #Security measure   
       @edge.parent =   @parent_edge
-    end               
-    #request.headers["HTTP_TAB_EXTRA"]
+    end             
+
+    @edge.title = request.headers["HTTP_TAB_TITLE"]
+       
+    @edge.extra = request.headers["HTTP_TAB_EXTRA"]
     
     if @edge.save then 
        render :json => {:edge => {:id => @edge.id, :timestamp => @edge.created_at }}.to_json

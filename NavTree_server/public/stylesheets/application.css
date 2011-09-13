@@ -6,6 +6,8 @@
 
 html{
 	background: transparent top left url('/images/bg.png') repeat;
+	color: white;
+	font-family: Helvetica, Arial, Sans-serif;
 }  
 
 .edge{
