@@ -3,7 +3,11 @@ navigationHandler = function(event){
 	tabsTable.navigateInTab(event);
 };
 
-openHandler = function(event){               
+openHandler = function(event){
+	var evento = event;
+	console.log("EVENTO APERTURA");
+	console.log(event);            
+	console.log("¬¬¬¬¬¬¬¬¬¬¬¬¬");
 	//console.log("Open Event triggered")
     if (event.target instanceof SafariBrowserTab){  
 		//Register the target Tab inside the table

@@ -4227,3 +4227,2165 @@ Processing TestsController#create (for 127.0.0.1 at 2011-09-04 07:05:02) [POST]
 Processing TestsController#create (for 127.0.0.1 at 2011-09-05 12:49:11) [POST]
   Parameters: {"syncing"=>"1"}
   [4;36;1mSecret Load (20.4ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-08 15:09:13) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (292.1ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 16:53:19) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (18.9ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (19.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 4813657ms (View: 1, DB: 38) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 18:13:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/tests_controller.rb:10:in `create'
+
+Rendered rescues/_trace (63.8ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 18:13:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/tests_controller.rb:10:in `create'
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 18:13:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 5404ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 18:13:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/tests_controller.rb:10:in `create'
+
+Rendered rescues/_trace (45.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 18:13:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) [0m
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:10:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (19.9ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (18.9ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 81943ms (View: 1, DB: 39) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:11:55) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/tests_controller.rb:12:in `create'
+
+Rendered rescues/_trace (48.8ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:15:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.4ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (19.1ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 60272ms (View: 1, DB: 20) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:16:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:21:in `key_authenticate'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:17:11) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (19.1ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24364ms (View: 2, DB: 20) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:17:35) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:21:in `key_authenticate'
+
+Rendered rescues/_trace (45.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:17:49) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (18.4ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (16.0ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 41377ms (View: 1, DB: 34) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:18:30) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:21:in `key_authenticate'
+
+Rendered rescues/_trace (56.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:19:03) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (19.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:21:in `key_authenticate'
+
+Rendered rescues/_trace (58.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:19:03) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (19.0ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 14908ms (View: 1, DB: 19) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:19:57) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (26.5ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:21:in `key_authenticate'
+
+Rendered rescues/_trace (66.1ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:19:58) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (19.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 45632ms (View: 1, DB: 20) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:20:54) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (9.5ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (19.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 30477ms (View: 1, DB: 29) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:21:24) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:22:in `key_authenticate'
+
+Rendered rescues/_trace (45.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:21:32) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:22:in `key_authenticate'
+
+Rendered rescues/_trace (54.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:22:48) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 7289ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:23:27) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (4.6ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (1.7ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 42069ms (View: 1, DB: 6) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:24:09) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:22:in `key_authenticate'
+
+Rendered rescues/_trace (200.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:25:59) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (1.0ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:23:in `key_authenticate'
+
+Rendered rescues/_trace (49.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:29:41) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (23.5ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 6909ms (View: 1, DB: 24) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:29:48) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 1357ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:29:49) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:23:in `key_authenticate'
+
+Rendered rescues/_trace (151.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:29:51) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 930ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:29:52) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:23:in `key_authenticate'
+
+Rendered rescues/_trace (135.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:30:16) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.7ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:23:in `key_authenticate'
+
+Rendered rescues/_trace (48.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:30:48) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:23:in `key_authenticate'
+
+Rendered rescues/_trace (69.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:30:49) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:23:in `key_authenticate'
+
+Rendered rescues/_trace (138.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:30:50) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = 'undefined') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/application_controller.rb:23:in `key_authenticate'
+
+Rendered rescues/_trace (49.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:30:51) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (18.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 641ms (View: 1, DB: 19) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:31:07) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (19.2ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 23643ms (View: 1, DB: 20) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 19:32:07) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (14.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 2550602ms (View: 2, DB: 15) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:38) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 703ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 604ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 44ms (View: 10, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 178ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 75ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 111ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 56ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 182ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 43ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 204ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:41) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 55ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:41) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 103ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:41) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 382ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:41) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 50ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 107ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 121ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 23ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 38ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 110ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 34ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 123ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 30ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 113ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 139ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:44) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 31ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:44) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 43ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:44) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 134ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:44) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.6ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 36ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:14:44) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 28ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:15:36) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (66.0ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (60.5ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 322ms (View: 1, DB: 127) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:15:36) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 212ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:15:36) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.5ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 131ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:15:37) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 226ms (View: 12, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:15:37) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 28ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:15:37) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 47ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:15:37) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 66ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:16:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (17.9ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 88ms (View: 1, DB: 18) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:16:50) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (9.1ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (10.8ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 126ms (View: 1, DB: 20) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:16:50) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 42ms (View: 5, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:16:50) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (3.1ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 291ms (View: 1, DB: 3) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:16:51) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 32ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:16:51) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 158ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:16:51) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 36ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:16:51) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 88ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:17:57) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (7.1ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.8ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 105ms (View: 1, DB: 8) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:17:57) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:17:57) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 103ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:17:58) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:17:58) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 96ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:18:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (15.7ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 97ms (View: 2, DB: 16) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:18:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:18:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 95ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:18:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 95ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:18:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 54ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:18:44) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.5ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 57ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:18:44) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 272ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:19:50) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.9ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 71ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:19:50) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 150ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:19:50) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:19:50) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:19:51) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:20:19) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (2.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (8.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 148ms (View: 1, DB: 11) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:20:20) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 326ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:20:20) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 60ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:20:20) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 185ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:20:20) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 30ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:20:21) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 28ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:20:21) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 52ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:21:27) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.5ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (4.1ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 70ms (View: 2, DB: 5) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:21:27) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:21:27) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:21:27) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 111ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:21:28) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:25) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (8.9ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (90.0ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 325ms (View: 3, DB: 99) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:26) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 67ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:26) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 35ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:26) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 97ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:26) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.5ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 42ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:26) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 212ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:27) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:27) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (7.0ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 390ms (View: 1, DB: 7) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:27) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 28ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:28) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (10.6ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 76ms (View: 1, DB: 11) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:28) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 59ms (View: 6, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:28) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 69ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:28) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 37ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:29) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 41ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:29) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 232ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:29) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 31ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:29) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.5ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 287ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:30) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 41ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:30) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 37ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:30) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 33ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:30) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 48ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:31) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 215ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:31) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 47ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:31) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 206ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:31) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 43ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:31) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 85ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:32) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 39ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:32) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 159ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 29ms (View: 3, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 38ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 153ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 28ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:35) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 299ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:35) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:36) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 29ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:36) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:36) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 74ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 296ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.8ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 117ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.6ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 37ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (1.8ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 2) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 105ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:47) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 52ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:47) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 160ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:48) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 28ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:48) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.5ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 54ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:48) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 28ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:52) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:52) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 181ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:53) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:53) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 111ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:53) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 28ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:58) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:58) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 36ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:58) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 30ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:58) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:22:58) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:04) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 251ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:04) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:04) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 112ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:04) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:04) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:11) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.7ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:11) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:11) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 111ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:11) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:11) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 113ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:17) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:17) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:17) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 23ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:17) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.7ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 31ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:18) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 24ms (View: 1, DB: 0) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:25) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.5ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (7.6ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 112ms (View: 1, DB: 8) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:25) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 135ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:25) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:25) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 133ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:26) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (1.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 2) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (51.0ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (32.0ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 172ms (View: 2, DB: 83) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 31ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 113ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:23:34) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:36) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (19.6ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (9.1ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 302ms (View: 1, DB: 29) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:36) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 234ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:37) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 67ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:37) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 57ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:37) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 51ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:38) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 86ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:38) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 83ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:38) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (100.2ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 419ms (View: 1, DB: 101) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 147ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.4ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 260ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 40ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:39) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 38ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 194ms (View: 100, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 75ms (View: 37, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 173ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 99ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:41) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 246ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:41) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 38ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:41) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 69ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 69ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (11.6ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 41ms (View: 1, DB: 12) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 64ms (View: 8, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 62ms (View: 15, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (3.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 290ms (View: 1, DB: 4) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:27:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.3ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 41ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:28:46) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (2.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.7ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 171ms (View: 1, DB: 3) | 401 Unauthorized [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:28:51) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.5ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.7ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 91ms (View: 1, DB: 1) | 401 Unauthorized [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:28:56) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 22ms (View: 1, DB: 0) | 401 Unauthorized [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:29:01) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 1) | 401 Unauthorized [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:29:06) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (1.4ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (1.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 81ms (View: 1, DB: 3) | 401 Unauthorized [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:29:11) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.2ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;36;1mNode Load (0.3ms)[0m   [0;1mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 160ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:29:29) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (0.6ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/tests_controller.rb:25:in `create'
+
+Rendered rescues/_trace (56.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:29:34) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.6ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/tests_controller.rb:25:in `create'
+
+Rendered rescues/_trace (54.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:29:40) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;35;1mSecret Load (91.8ms)[0m   [0mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+
+ActionController::Forbidden (You're private key isn't valid.):
+  app/controllers/application_controller.rb:15:in `block_access'
+  app/controllers/tests_controller.rb:25:in `create'
+
+Rendered rescues/_trace (156.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:29:45) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.7ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 82ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:54) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.4ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.7ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 353ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:55) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.4ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:55) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 29ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:55) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 29ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:55) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.4ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.4ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 31ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:55) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:56) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:58) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 133ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:58) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:58) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.5ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 129ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:59) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 35ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:32:59) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:41) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (8.8ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (14.5ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 116ms (View: 1, DB: 23) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 25ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.4ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 178ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 35ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:42) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 238ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.4ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 44ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:43) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.4ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 120ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:44) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.5ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 27ms (View: 3, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:44) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 42ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:44) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.4ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:44) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 114ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:33:45) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 286ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:06) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (9.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (40.8ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 151ms (View: 2, DB: 50) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:06) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 303ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:06) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (2.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.5ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 41ms (View: 1, DB: 3) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:06) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.4ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 65ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:07) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.4ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 78ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:07) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 31ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:08) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 88ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:08) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.4ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 57ms (View: 2, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:08) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 242ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:08) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 55ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:08) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.4ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 41ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:41:09) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 29ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:31) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (11.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.9ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 120ms (View: 1, DB: 12) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:31) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 55ms (View: 12, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:32) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.4ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 120ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:32) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (43.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 343ms (View: 1, DB: 44) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:32) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (1.5ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.4ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 71ms (View: 1, DB: 2) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:32) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 199ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.3ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 57ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 39ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 30ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:33) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 29ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:34) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.6ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 286ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]
+
+
+Processing TestsController#create (for 127.0.0.1 at 2011-09-12 20:42:34) [POST]
+  Parameters: {"syncing"=>"1"}
+  [4;36;1mSecret Load (0.2ms)[0m   [0;1mSELECT * FROM "secrets" WHERE ("secrets"."private_key" = '0afc7983579e04ce44ac46c23058e3d6ed45b83e') LIMIT 1[0m
+  [4;35;1mNode Load (0.3ms)[0m   [0mSELECT "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes".id = "edges".node_id WHERE (("edges".secret_id = 1)) LIMIT 1[0m
+Completed in 37ms (View: 1, DB: 1) | 200 OK [http://localhost/tests]

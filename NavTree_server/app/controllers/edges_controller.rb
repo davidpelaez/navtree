@@ -1,11 +1,11 @@
 class EdgesController < ApplicationController 
   
-  before_filter :authenticate
+  before_filter :authenticate, :except => [:create]
+  before_filter :key_authenticate, :only => [:create]
   # GET /edges
   # GET /edges.xml
   def index
-    @edges = Edge.all
-
+    @edges = Edge.all  
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @edges }
@@ -13,31 +13,16 @@ class EdgesController < ApplicationController
   end
 
   # GET /edges/1
-  # GET /edges/1.xml
+  # GET /edges/1.xml    
+  #THIS IS FOR AJAX PURPOSES
   def show
-    @edge = Edge.find(params[:id])
-
+    @edge = Edge.find(params[:id]) 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @edge }
     end
-  end
+  end  
 
-  # GET /edges/new
-  # GET /edges/new.xml
-  def new
-    @edge = Edge.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @edge }
-    end
-  end
-
-  # GET /edges/1/edit
-  def edit
-    @edge = Edge.find(params[:id])
-  end
 
   # POST /edges
   # POST /edges.xml
@@ -83,4 +68,6 @@ class EdgesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+
 end

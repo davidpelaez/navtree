@@ -111,7 +111,7 @@ function TabsTable(){
 	this.navigateInTab = function(event){
 		theTab = event.target;
 		theNavtreeTab = myParent.findTab(theTab); 
-        theNavtreeTab.updateURL(event.url);                                             
+        theNavtreeTab.navigateTo(event.url);                                             
 		};     
 
 	//This is not tracked in the server but keeps the table clean once a tab has been closed

@@ -9,15 +9,18 @@ function NavTreeTab(theSafariTab){
 	this.edgeId = null; //This will be used for the next sync to track ancestry
 	this.navTreeTabAncestor = null;  
 	this.url = null;  
+	this.timesTried = 0;
 	this.timerId = null;  
 	this.evaluedURL = false;
 	this.stamp = randomString(10); //This is used by the queue to ensure that a record is posted 5 secs after the record
 
 
 	
-	this.beginTimer = function(){  
+	this.beginTimer = function(time){  
+		time = typeof(time) != 'undefined' ? time : 5000;  //Default value for arugument time defined 
+
 		myNavTreeTabParent.onTimer = true;        
-		myNavTreeTabParent.timerId = setTimeout(function(){myNavTreeTabParent.sync();},5000); 
+		myNavTreeTabParent.timerId = setTimeout(function(){myNavTreeTabParent.sync();},time); 
 	}; 
 	
 	this.stopTimer = function(){  
@@ -32,7 +35,7 @@ function NavTreeTab(theSafariTab){
 		myNavTreeTabParent.beginTimer();                               
 	}; 
 	
-	this.updateURL = function(newURL){
+	this.navigateTo = function(newURL){
 		myNavTreeTabParent.url = newURL; //THERE MIGHT BE A BUG HERE, like the URL isn't always the tab URL??
 		myNavTreeTabParent.synced = false; 
 		//console.log(">> " + newURL);
@@ -40,10 +43,10 @@ function NavTreeTab(theSafariTab){
 		  //  		console.log("------------------------------------"); 
 	}; 
 	
-	this.updateURL(theSafariTab.url);
+	this.navigateTo(theSafariTab.url);
 	
 	
-	this.updateURL(theSafariTab.url);
+
 	this.extra = SIMPLE_NODE; //This is where the behaviour is tracked as the product of all the applicable behaviours
 	
 	this.syncWithServer = function(){return true;};
@@ -78,22 +81,29 @@ function NavTreeTab(theSafariTab){
 	
 	this.sync = function(){  
 		//Check if there's an ancestor edgeId that needs to be attached before SYNC
+		myNavTreeTabParent.timerId = null;
+		myNavTreeTabParent.onTimer = false;
 		myNavTreeTabParent.url = myNavTreeTabParent.tab.url; //THIS ALLOWS US TO DELETE UPDATE URL and only leave timer
 		if(myNavTreeTabParent.navTreeTabAncestor != null){                                 
-			console.log("Ancestro suave");
 			console.log(myNavTreeTabParent.navTreeTabAncestor);
 			//Link the last edge of the ancestor to the edge of this tab. this created a hard link.
 			//The soft link is the result of ancestry + BG*NEW_TAB*n where n is any other prime product			
 			//Check that the parent has been synced, force if othwersie, then link  
-			if(!myNavTreeTabParent.navTreeTabAncestor.synced){  
-				//myNavTreeTabParent.navTreeTabAncestor.stopTimer();
-				//myNavTreeTabParent.navTreeTabAncestor.sync();				
+			if(myNavTreeTabParent.navTreeTabAncestor.synced == false){  
+				if(myNavTreeTabParent.timesTried < 15){             
+					//myNavTreeTabParent.navTreeTabAncestor.sync();
+					//Reset the timer and Return to stop the sync function  
+					console.log("ERROR: ANCESTOR ISNT SYNCED. Waiting before syncing " +500*(myNavTreeTabParent.timesTried+1) +"ms [" + myNavTreeTabParent.timesTried + "]" ) ;			
+					myNavTreeTabParent.timesTried++;	
+					myNavTreeTabParent.beginTimer(500*(myNavTreeTabParent.timesTried+1));                                  
+					return false;                          
+				}else{
+					console.log("Tried 15 times for parent to sync, ignoring parent and syncing");
+				}
 			}			
 			myNavTreeTabParent.edgeId = myNavTreeTabParent.navTreeTabAncestor.edgeId;
-			console.log("Ancestry for soft link was added before sync") ;
 		}
-		myNavTreeTabParent.timerId = null;
-		myNavTreeTabParent.onTimer = false; 
+ 
 		myNavTreeTabParent.evalTabURL();
 		console.log("SYNCING: " + myNavTreeTabParent.url + "[" + myNavTreeTabParent.extra + "]");  
 		console.log("------------------------------------");
@@ -103,13 +113,24 @@ function NavTreeTab(theSafariTab){
 			data: "syncing=1",
 			headers: myNavTreeTabParent.toMap(),
 			complete: function(jqXHR, textStatus){
-				console.log(jQuery.parseJSON( jqXHR.responseText).node );
+				//This is triggered by....?      
+
+				
 				},
-			error: function(jqXHR, textStatus, errorThrown){
-				console.log("The ajax failed"); 
+			error: function(jqXHR, textStatus, errorThrown){ 
+				//This extension fails silently and retries every 5 sec with the data it has. No amount of max tries's defined
+				//This is triggered by HTTP != 200?
+				console.log("The ajax failed. Qeued for re-sync in 5 sec"); 
+				//myNavTreeTabParent.timesTried++;	
+				myNavTreeTabParent.beginTimer();                                  
+				return false;                 				
 				},
-			success: function(){
-				console.log(myNavTreeTabParent.stamp);
+			success: function(data, textStatus, jqXHR){  
+				//This is triggered by HTTP == 200?  
+				okSyncs++;
+				console.log("OK #" + okSyncs + "/" + tabsTable.size());  
+
+
 				myNavTreeTabParent.synced = true; 
 				myNavTreeTabParent.extra = SIMPLE_NODE; 
 				}
