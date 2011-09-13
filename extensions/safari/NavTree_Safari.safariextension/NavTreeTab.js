@@ -105,7 +105,7 @@ function NavTreeTab(theSafariTab){
  
 		myNavTreeTabParent.evalTabURL();
 		console.log("SYNCING: " + myNavTreeTabParent.url + "[" + myNavTreeTabParent.extra + "]");  
-		console.log("------------------------------------");
+
 		var theNode = new Object();
 		theNode.tab = myNavTreeTabParent; //Create the header request.headers["HTTP_TAB"] for rails
 		jQuery.ajax({  
@@ -121,11 +121,12 @@ function NavTreeTab(theSafariTab){
 			success: function(data, textStatus, jqXHR){  
 				//This is triggered by HTTP == 200 
 				okSyncs++;
-				console.log("OK: #" + okSyncs + "/" + tabsTable.size()); 
+				console.log("OK: " + okSyncs + "/" + tabsTable.size()); 
+				console.log("------------------------------------");
 				responseEdge = jQuery.parseJSON( jqXHR.responseText).edge;
-				console.log(responseEdge);
+
 				myNavTreeTabParent.parentEdgeId = responseEdge.id;  
-				console.log(myNavTreeTabParent);
+
 				myNavTreeTabParent.synced = true;    
 				//Reset tab
 				myNavTreeTabParent.extra = SIMPLE_NODE; 

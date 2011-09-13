@@ -2,7 +2,11 @@
 #wrapper {
 	width: 960px;
 	margin: 0 auto;
-}    
+}  
+
+html{
+	background: transparent top left url('/images/bg.png') repeat;
+}  
 
 .edge{
 	border-bottom: solid thin black;
