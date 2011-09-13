@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   private
 
   def block_access
-    raise ActionController::Forbidden, "You're private key isn't valid."   
+    raise ActionController::Forbidden, "You're private key isn't valid or you requested an unauthorized action."   
     false
   end   
   

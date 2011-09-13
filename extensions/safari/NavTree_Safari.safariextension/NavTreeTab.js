@@ -121,9 +121,11 @@ function NavTreeTab(theSafariTab){
 			success: function(data, textStatus, jqXHR){  
 				//This is triggered by HTTP == 200 
 				okSyncs++;
-				console.log("OK: #" + okSyncs + "/" + tabsTable.size());
+				console.log("OK: #" + okSyncs + "/" + tabsTable.size()); 
 				responseEdge = jQuery.parseJSON( jqXHR.responseText).edge;
-				myNavTreeTabParent.parentEdgeId = responseEdge.id;
+				console.log(responseEdge);
+				myNavTreeTabParent.parentEdgeId = responseEdge.id;  
+				console.log(myNavTreeTabParent);
 				myNavTreeTabParent.synced = true;    
 				//Reset tab
 				myNavTreeTabParent.extra = SIMPLE_NODE; 
