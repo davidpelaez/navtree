@@ -1,0 +1,4 @@
+
+.edge{:depth => edge.depth, :id => edge.id, :parent => edge.parent}
+  .url= edge.node.url unless edge.node.nil? 
+  = link_to 'Destroy', edge, :confirm => 'Are you sure?', :method => :delete 

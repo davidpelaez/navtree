@@ -1,0 +1,15 @@
+%h1 Listing edges
+
+#edges
+	=render :partial => "edge", :collection => @edges
+
+:javascript
+	$(function(){
+		$(".edge").each(function(index){
+			$(this).css("margin-left", $(this).attr("depth")*30);
+			
+		});   
+		
+	  
+		
+	});

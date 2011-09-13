@@ -27,17 +27,30 @@ class EdgesController < ApplicationController
   # POST /edges
   # POST /edges.xml
   def create
-    @edge = Edge.new(params[:edge])
-    @edge.secret_id = current_user.secret.id
+    #Search the url as a node, otherwise create it.
+    @node = Node.find_by_url request.headers["HTTP_TAB_URL"]        
+    if @node.blank? then
+      @node = Node.create(:url => request.headers["HTTP_TAB_URL"] )         
+    end       
 
-    respond_to do |format|
-      if @edge.save
-        format.html { redirect_to(@edge, :notice => 'Edge was successfully created.') }
-        format.xml  { render :xml => @edge, :status => :created, :location => @edge }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @edge.errors, :status => :unprocessable_entity }
-      end
+    #Build and Link the edge to the parent and to the node 
+    @edge = Edge.new
+    @edge.secret = @secret
+    @edge.node = @node
+
+    #Find the parent
+    unless request.headers["HTTP_TAB_PARENTEDGEID"] == "null" then
+      puts "Parent: " + request.headers["HTTP_TAB_PARENTEDGEID"]
+      @parent_edge =  Edge.find(request.headers["HTTP_TAB_PARENTEDGEID"].to_i)
+      block_access unless @parent_edge.secret == @secret #Security measure   
+      @edge.parent =   @parent_edge
+    end               
+    #request.headers["HTTP_TAB_EXTRA"]
+    
+    if @edge.save then 
+       render :json => {:edge => {:id => @edge.id, :timestamp => @edge.created_at }}.to_json
+    else
+        render :status => 501
     end
   end
 

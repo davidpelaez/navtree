@@ -44,7 +44,7 @@ function randomString(len, charSet) {
 //Set default AJAX settings
 jQuery.ajaxSetup({
 	type: 'POST',
-  	url: NAVTREE_SERVER + "/tests",  
+  	url: NAVTREE_SERVER + "/edges",  
 	datatype: "json",   	
 	beforeSend: function(jqXHR){
 		jqXHR.setRequestHeader("secret",safari.extension.secureSettings.secretKey);

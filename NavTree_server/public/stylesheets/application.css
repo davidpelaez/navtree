@@ -1,4 +1,19 @@
 /*THIS IS COPIED FROM MANAGAE_BASE*/
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+}    
+
+.edge{
+	border-bottom: solid thin black;
+	padding: 10px 0;
+	
+}   
+
+.edge .url{
+	float: left;
+	margin-right: 15px;
+}
 
 #flash{
 		clear: both;
