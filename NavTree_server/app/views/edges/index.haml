@@ -1,4 +1,12 @@
-%h1 Listing edges
+%h1 Recent edges
+
+#recent
+	-@recent_edges.each do |edge|
+		= render :partial => "edge", :locals => {:edge => edge}
+	
+
+%h1 Listing arranged edges
+
 
 #edges
 
@@ -8,7 +16,7 @@
 
 :javascript
 	$(function(){
-		$(".edge").each(function(index){
+		$("#edges .edge").each(function(index){
 			$(this).css("margin-left", $(this).attr("depth")*20);
 			
 		});   

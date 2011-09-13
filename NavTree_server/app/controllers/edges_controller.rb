@@ -6,6 +6,7 @@ class EdgesController < ApplicationController
   # GET /edges.xml
   def index 
    @edges = Edge.all(:conditions => {:secret_id => current_user.secret.id} ).paginate :per_page => 20, :page => params[:page]
+   @recent_edges = Edge.all(:limit => 5, :order => "created_at DESC")
 
       
 
