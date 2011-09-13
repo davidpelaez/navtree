@@ -4,7 +4,7 @@ NEW_WINDOW = 2;
 NEW_TAB = 3;
 BLANK = 5; 
 POINTED = 7;
-ACTIVE = 11;
+ACTIVE = 11; //This one is only used in new windows/tabs
 BG = 13;
 
 //It's not possible to inherit from an Array in JS, therefore an internal array was created to map the TABS as a tabl
@@ -43,6 +43,15 @@ function TabsTable(){
 				result.push( myParent.table[i] );
 		}
 		return result; //Tab wasn't found
+	};
+	
+	this.findRootNavTreeTabs = function(){    
+		result = Array();
+		for(var i=0; i< myParent.table.length; i++){
+			if(myParent.table[i].navTreeTabAncestor==null)
+				result.push( myParent.table[i] );
+		}
+		return result; //Tab wasn't found
 	};   
 	
 	
@@ -75,35 +84,48 @@ function TabsTable(){
 	*******************/  
 	
 	Array.prototype.removeTab = function(index){ return myParent.table.splice(index,1);};
+	
+	this.pushIntoTable = function(theNavTreeTab){  
+		myParent.table.push(theNavTreeTab);				
+		myParent.attachExtra(theNavTreeTab);
+	};
 
 	//Add a new tab to the table after the required event with the extra NEW_TAB and evaluate URL and Activeness
-	this.addTab = function(theNewTab){ 
-			console.log("Adding new tab");
-			theNavTreeTab = new NavTreeTab(theNewTab);
-			myParent.table.push(theNavTreeTab); 
-			//Attach activeness
-			if(myParent.isTabActive(theNewTab)){
-				theNavTreeTab.extra *= ACTIVE;
-			}else{
-				theNavTreeTab.extra *= BG;
-				//Anything opened in the background is a SOFT CHILD of the active TAB 
-				//It's not ideal, but in some very special cases the active Tab doesn't exist in the table, in that case there simply is no link created
-				theSoftAncestor = myParent.findTab(safari.application.activeBrowserWindow.activeTab);
-				if(theSoftAncestor != false){
-					theNavTreeTab.navTreeTabAncestor = 	theSoftAncestor;
-					console.log(theSoftAncestor);
-					console.log("***");
+	this.addTab = function(theNewTab){     
+				theActiveTab = theNewTab.browserWindow.activeTab; 
+				//IF the active tab hasn't been added
+				if(tabsTable.findTab(theActiveTab) == false){
+					//ADD the active tab before proceeding   
+					console.log("The active tab of the window was added to keep ancestry organized");
+					myParent.pushIntoTable( new NavTreeTab(theActiveTab) );
 				}
+				
+				if(myParent.findTab(theNewTab) == false){
+					myParent.pushIntoTable( new NavTreeTab(theNewTab) );
+				}
+		};
+		
+	this.attachExtra = function(theNavTreeTab){ 
 
-			} 
-			//Attach weather new tab or just new window			
-			if(myParent.isTabNewWindow(theNewTab)){
-				theNavTreeTab.extra *= NEW_WINDOW;
-			}else{
-				theNavTreeTab.extra *= NEW_TAB;
-			}
+		theNewTab = theNavTreeTab.tab;
 
-		};       	
+		//Attach activeness
+		if(myParent.isTabActive(theNewTab)){
+			theNavTreeTab.extra *= ACTIVE;
+		}else{
+			theNavTreeTab.extra *= BG;
+			//Anything opened in the background is a SOFT CHILD of the active TAB of its Window
+			theSoftAncestor = myParent.findTab(theNewTab.browserWindow.activeTab);
+			theNavTreeTab.navTreeTabAncestor = 	theSoftAncestor;
+		} 
+		//Attach weather new tab or just new window			
+		if(myParent.isTabNewWindow(theNewTab)){
+			theNavTreeTab.extra *= NEW_WINDOW;
+		}else{
+			theNavTreeTab.extra *= NEW_TAB;
+		}
+		
+	};
 	
      
     ///NOTA: should i allow here the new tab extra or not??

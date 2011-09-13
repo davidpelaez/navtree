@@ -6,7 +6,7 @@ function NavTreeTab(theSafariTab){
 	var ajaxHeader = new Object();
 	ajaxHeader.secret = safari.extension.secureSettings.secretKey;
 	this.tab = theSafariTab;
-	this.edgeId = null; //This will be used for the next sync to track ancestry
+	this.parentEdgeId = null; //This will be used for the next sync to track ancestry
 	this.navTreeTabAncestor = null;  
 	this.url = null;  
 	this.timesTried = 0;
@@ -60,7 +60,7 @@ function NavTreeTab(theSafariTab){
 	this.toMap = function(){
 		myMap = new Object();
 		myMap.tab_url = myNavTreeTabParent.url;
-		myMap.tab_edgeId = myNavTreeTabParent.edgeId; 
+		myMap.tab_parentEdgeId = myNavTreeTabParent.parentEdgeId; 
 		myMap.tab_extra = myNavTreeTabParent.extra;
 		return myMap;
 	};     
@@ -77,31 +77,30 @@ function NavTreeTab(theSafariTab){
 			}   
 			myNavTreeTabParent.evaluedURL== true;
 		}
-		}; 
+		};  
+		
+
 	
 	this.sync = function(){  
-		//Check if there's an ancestor edgeId that needs to be attached before SYNC
+		//Check if there's an ancestor parentEdgeId that needs to be attached before SYNC
 		myNavTreeTabParent.timerId = null;
 		myNavTreeTabParent.onTimer = false;
 		myNavTreeTabParent.url = myNavTreeTabParent.tab.url; //THIS ALLOWS US TO DELETE UPDATE URL and only leave timer
 		if(myNavTreeTabParent.navTreeTabAncestor != null){                                 
-			console.log(myNavTreeTabParent.navTreeTabAncestor);
+			
 			//Link the last edge of the ancestor to the edge of this tab. this created a hard link.
 			//The soft link is the result of ancestry + BG*NEW_TAB*n where n is any other prime product			
 			//Check that the parent has been synced, force if othwersie, then link  
-			if(myNavTreeTabParent.navTreeTabAncestor.synced == false){  
-				if(myNavTreeTabParent.timesTried < 15){             
+			if(myNavTreeTabParent.navTreeTabAncestor.synced == false){             
 					//myNavTreeTabParent.navTreeTabAncestor.sync();
 					//Reset the timer and Return to stop the sync function  
-					console.log("ERROR: ANCESTOR ISNT SYNCED. Waiting before syncing " +500*(myNavTreeTabParent.timesTried+1) +"ms [" + myNavTreeTabParent.timesTried + "]" ) ;			
+					console.log("ERROR: Ancestor isn't synced. Waiting before syncing " + 500*(myNavTreeTabParent.timesTried+1) +"ms [" + myNavTreeTabParent.timesTried + "]:" ) ;			
 					myNavTreeTabParent.timesTried++;	
 					myNavTreeTabParent.beginTimer(500*(myNavTreeTabParent.timesTried+1));                                  
 					return false;                          
-				}else{
-					console.log("Tried 15 times for parent to sync, ignoring parent and syncing");
-				}
+		   
 			}			
-			myNavTreeTabParent.edgeId = myNavTreeTabParent.navTreeTabAncestor.edgeId;
+			myNavTreeTabParent.parentEdgeId = myNavTreeTabParent.navTreeTabAncestor.parentEdgeId;
 		}
  
 		myNavTreeTabParent.evalTabURL();
@@ -112,31 +111,25 @@ function NavTreeTab(theSafariTab){
 		jQuery.ajax({  
 			data: "syncing=1",
 			headers: myNavTreeTabParent.toMap(),
-			complete: function(jqXHR, textStatus){
-				//This is triggered by....?      
 
-				
-				},
 			error: function(jqXHR, textStatus, errorThrown){ 
 				//This extension fails silently and retries every 5 sec with the data it has. No amount of max tries's defined
-				//This is triggered by HTTP != 200?
+				//This is triggered by HTTP != 200
 				console.log("The ajax failed. Qeued for re-sync in 5 sec"); 
-				//myNavTreeTabParent.timesTried++;	
 				myNavTreeTabParent.beginTimer();                                  
-				return false;                 				
 				},
 			success: function(data, textStatus, jqXHR){  
-				//This is triggered by HTTP == 200?  
+				//This is triggered by HTTP == 200 
 				okSyncs++;
-				console.log("OK #" + okSyncs + "/" + tabsTable.size());  
-
-
-				myNavTreeTabParent.synced = true; 
+				console.log("OK: #" + okSyncs + "/" + tabsTable.size());
+				responseEdge = jQuery.parseJSON( jqXHR.responseText).edge;
+				myNavTreeTabParent.parentEdgeId = responseEdge.id;
+				myNavTreeTabParent.synced = true;    
+				//Reset tab
 				myNavTreeTabParent.extra = SIMPLE_NODE; 
 				}
 		}); 
-		//TODO SYNCED TO TRUE AND RESET THE TAB 
-		//TODO MANAGE ERRORS		
+   	
 	};
 
 }
