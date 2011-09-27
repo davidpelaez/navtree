@@ -2,6 +2,7 @@ class EdgesController < ApplicationController
   
   before_filter :authenticate, :except => [:create]
   before_filter :key_authenticate, :only => [:create]
+  protect_from_forgery   :except => [:create]
 
 
   # GET /edges/1
@@ -20,9 +21,9 @@ class EdgesController < ApplicationController
   # POST /edges.xml
   def create
     #Search the url as a node, otherwise create it.
-    @node = Node.find_by_url request.headers["HTTP_TAB_URL"]        
+    @node = Node.find_by_url request.headers["HTTP_X_TAB_URL"]        
     if @node.blank? then
-      @node = Node.create(:url => request.headers["HTTP_TAB_URL"] )         
+      @node = Node.create(:url => request.headers["HTTP_X_TAB_URL"] )         
     end       
 
     #Build and Link the edge to the parent and to the node 
@@ -31,16 +32,16 @@ class EdgesController < ApplicationController
     @edge.node = @node
 
     #Find the parent
-    unless request.headers["HTTP_TAB_PARENTEDGEID"] == "null" then
-      puts "Parent: " + request.headers["HTTP_TAB_PARENTEDGEID"]
-      @parent_edge =  Edge.find(request.headers["HTTP_TAB_PARENTEDGEID"].to_i)
+    unless request.headers["HTTP_X_TAB_PARENTEDGEID"] == "null" then
+      puts "Parent: " + request.headers["HTTP_X_TAB_PARENTEDGEID"]
+      @parent_edge =  Edge.find(request.headers["HTTP_X_TAB_PARENTEDGEID"].to_i)
       block_access unless @parent_edge.secret == @secret #Security measure   
       @edge.parent =   @parent_edge
     end             
 
-    @edge.title = request.headers["HTTP_TAB_TITLE"]
+    @edge.title = request.headers["HTTP_X_TAB_TITLE"]
        
-    @edge.extra = request.headers["HTTP_TAB_EXTRA"]
+    @edge.extra = request.headers["HTTP_X_TAB_EXTRA"]
     
     if @edge.save then 
        render :json => {:edge => {:id => @edge.id, :timestamp => @edge.created_at }}.to_json
@@ -76,6 +77,7 @@ class EdgesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
   
 
 end
