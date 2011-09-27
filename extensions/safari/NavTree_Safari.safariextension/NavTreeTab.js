@@ -59,11 +59,12 @@ function NavTreeTab(theSafariTab){
    
 	this.toMap = function(){
 		myMap = new Object();
-		myMap.tab_url = myNavTreeTabParent.url;
-		myMap.tab_title = myNavTreeTabParent.tab.title;
-		myMap.tab_parentEdgeId = myNavTreeTabParent.parentEdgeId; 
-		myMap.tab_extra = myNavTreeTabParent.extra;
-		return myMap;
+		myMap.x_tab_url = myNavTreeTabParent.url;
+		myMap.x_tab_title = myNavTreeTabParent.tab.title;
+		myMap.x_tab_parentEdgeId = myNavTreeTabParent.parentEdgeId; 
+		myMap.x_tab_extra = myNavTreeTabParent.extra;
+		return {"X-tab-url":myNavTreeTabParent.url,"X-tab-title":myNavTreeTabParent.tab.title,"X-tab-parentEdgeId":myNavTreeTabParent.parentEdgeId,"X-tab-extra":myNavTreeTabParent.extra};
+		/*return myMap;*/
 	};     
 	
 	//Check if the tab is blank or Pointed 

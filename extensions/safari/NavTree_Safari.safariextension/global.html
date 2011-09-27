@@ -5,7 +5,7 @@
 <script src="NavTreeTab.js" type="text/javascript"></script>
 <script> 
 
-NAVTREE_SERVER = "http://http://growanavtree.com"; //NEVER ADD Trailing Sladge /  
+NAVTREE_SERVER = "http://growanavtree.com"; //NEVER ADD Trailing Sladge /  
 
 var date = new Date();  
 var okSyncs = 0;
@@ -45,9 +45,10 @@ function randomString(len, charSet) {
 jQuery.ajaxSetup({
 	type: 'POST',
   	url: NAVTREE_SERVER + "/edges",  
-	datatype: "json",   	
+	datatype: "json",
+	contentType: "application/json;charset=UTF-8",   	
 	beforeSend: function(jqXHR){
-		jqXHR.setRequestHeader("secret",safari.extension.secureSettings.secretKey);
+		jqXHR.setRequestHeader("x-secret",safari.extension.secureSettings.secretKey);
 		},
 	data: "test=1",
  });
