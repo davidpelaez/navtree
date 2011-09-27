@@ -108,23 +108,23 @@ function TabsTable(){
 	this.attachExtra = function(theNavTreeTab){ 
 
 		theNewTab = theNavTreeTab.tab;
-
-		//Attach activeness
-		if(myParent.isTabActive(theNewTab)){
-			theNavTreeTab.extra *= ACTIVE;
-		}else{
-			theNavTreeTab.extra *= BG;
-			//Anything opened in the background is a SOFT CHILD of the active TAB of its Window
-			theSoftAncestor = myParent.findTab(theNewTab.browserWindow.activeTab);
-			theNavTreeTab.navTreeTabAncestor = 	theSoftAncestor;
-		} 
-		//Attach weather new tab or just new window			
-		if(myParent.isTabNewWindow(theNewTab)){
-			theNavTreeTab.extra *= NEW_WINDOW;
-		}else{
-			theNavTreeTab.extra *= NEW_TAB;
-		}
-		
+   		if(theNavTreeTab.evaluedURL==false){ 
+			//Attach activeness
+			if(myParent.isTabActive(theNewTab)){
+				theNavTreeTab.extra *= ACTIVE;
+			}else{
+				theNavTreeTab.extra *= BG;
+				//Anything opened in the background is a SOFT CHILD of the active TAB of its Window
+				theSoftAncestor = myParent.findTab(theNewTab.browserWindow.activeTab);
+				theNavTreeTab.navTreeTabAncestor = 	theSoftAncestor;
+			} 
+			//Attach weather new tab or just new window			
+			if(myParent.isTabNewWindow(theNewTab)){
+				theNavTreeTab.extra *= NEW_WINDOW;
+			}else{
+				theNavTreeTab.extra *= NEW_TAB;
+			}
+		}		
 	};
 	
      

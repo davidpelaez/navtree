@@ -70,14 +70,15 @@ function NavTreeTab(theSafariTab){
 	//Add this to the EXTRA right before SYNC
 	this.evalTabURL = function(){
 		//TODO Attach the result to the NavTreeTab extra info 
-		if(myNavTreeTabParent.evaluedURL==false){ //This is to avoid adding multiple times the same extra
+		console.log(myNavTreeTabParent.evaluedURL);
+		if(!myNavTreeTabParent.evaluedURL){ //This is to avoid adding multiple times the same extra
 			if(myNavTreeTabParent.url != ""){
 				myNavTreeTabParent.extra *= POINTED;
 			}else{
 				myNavTreeTabParent.extra *= BLANK; 
 			}   
-			myNavTreeTabParent.evaluedURL== true;
-		}
+		}       
+		myNavTreeTabParent.evaluedURL = true;
 		};  
 		
 

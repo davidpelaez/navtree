@@ -9,11 +9,11 @@
 	<key>CFBundleDisplayName</key>
 	<string>NavTree</string>
 	<key>CFBundleIdentifier</key>
-	<string>me.davidpelaez.navtreesafari</string>
+	<string>me.davidpelaez.navtree.safari</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>0.1</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Chrome</key>
@@ -38,6 +38,8 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://growanavtree.com/manifest/safari.plist</string>
 	<key>Website</key>
 	<string>http://growanavtree.com/</string>
 </dict>
