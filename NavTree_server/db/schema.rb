@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110913155302) do
+ActiveRecord::Schema.define(:version => 20110929031828) do
 
   create_table "edges", :force => true do |t|
     t.datetime "created_at"
@@ -18,14 +18,14 @@ ActiveRecord::Schema.define(:version => 20110913155302) do
     t.string   "ancestry"
     t.integer  "secret_id"
     t.integer  "extra"
-    t.string   "title"
+    t.text     "title",      :limit => 255
   end
 
   create_table "nodes", :force => true do |t|
     t.boolean  "filtered"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "url"
+    t.text     "url",        :limit => 255
   end
 
   create_table "secrets", :force => true do |t|

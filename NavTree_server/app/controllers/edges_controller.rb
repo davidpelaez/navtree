@@ -22,7 +22,7 @@ class EdgesController < ApplicationController
   # POST /edges.xml
   def create
     #Search the url as a node, otherwise create it.                   
-    if request.headers["HTTP_X_TAB_URL"].nil? then
+    if request.headers["HTTP_X_TAB_URL"].nil? || request.headers["HTTP_X_TAB_URL"] == "null" then
       node_url = ""
     else
       node_url = Base64.decode64(request.headers["HTTP_X_TAB_URL"])
