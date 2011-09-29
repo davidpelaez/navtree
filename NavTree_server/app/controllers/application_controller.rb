@@ -18,14 +18,9 @@ class ApplicationController < ActionController::Base
   
   #Find the secret using the key, otherwise reject.
   def key_authenticate    
-    ##FOR UTF-8
-    #request.headers["HTTP_X_TAB_URL"].force_encoding("UTF-8")  
-    #request.headers["HTTP_X_TAB_EXTRA"].force_encoding("UTF-8")  
-    #request.headers["HTTP_X_TAB_TITLE"].force_encoding("UTF-8")  
-    #request.headers["HTTP_X_TAB_PARENTEDGEID"].force_encoding("UTF-8")   
-    #request.headers["HTTP_X_SECRET"].force_encoding("UTF-8")  
-    #END Encoding
      @secret = Secret.find_by_private_key( request.headers["HTTP_X_SECRET"]) 
      if @secret.blank?  then      block_access  end  
-  end
+  end  
+  
+  
 end

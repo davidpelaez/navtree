@@ -1,3 +1,4 @@
+# encoding: utf-8
 class EdgesController < ApplicationController 
   
   before_filter :authenticate, :except => [:create]
@@ -20,16 +21,25 @@ class EdgesController < ApplicationController
   # POST /edges
   # POST /edges.xml
   def create
-    #Search the url as a node, otherwise create it.
-    @node = Node.find_by_url request.headers["HTTP_X_TAB_URL"]        
+    #Search the url as a node, otherwise create it.                   
+    if request.headers["HTTP_X_TAB_URL"].nil? then
+      node_url = ""
+    else
+      node_url = Base64.decode64(request.headers["HTTP_X_TAB_URL"])
+    end
+    @node = Node.find_by_url node_url
     if @node.blank? then
-      @node = Node.create(:url => request.headers["HTTP_X_TAB_URL"] )         
-    end       
+      @node = Node.create(:url => node_url )         
+    end 
+    
+
 
     #Build and Link the edge to the parent and to the node 
     @edge = Edge.new
     @edge.secret = @secret
     @edge.node = @node
+
+    @edge.title = Base64.decode64(request.headers["HTTP_X_TAB_TITLE"]) unless  request.headers["HTTP_X_TAB_TITLE"].nil? || request.headers["HTTP_X_TAB_TITLE"] == "null"      
 
     #Find the parent
     unless request.headers["HTTP_X_TAB_PARENTEDGEID"] == "null" then
@@ -38,8 +48,9 @@ class EdgesController < ApplicationController
       block_access unless @parent_edge.secret == @secret #Security measure   
       @edge.parent =   @parent_edge
     end             
+    
 
-    @edge.title = request.headers["HTTP_X_TAB_TITLE"]
+
        
     @edge.extra = request.headers["HTTP_X_TAB_EXTRA"]
     
