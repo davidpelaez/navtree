@@ -19,3 +19,10 @@ closeHandler = function(event){
 	}
 };
 
+//React when the button is clicked according to the current status/mode
+commandHandler = function(event){ 
+	if(event.command == "click_menu_button"){
+		buttonManager(event.target);
+	};
+};
+

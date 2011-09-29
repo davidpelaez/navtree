@@ -59,11 +59,13 @@ function NavTreeTab(theSafariTab){
    
 	this.toMap = function(){
 		myMap = new Object();
-		myMap.x_tab_url = myNavTreeTabParent.url;
-		myMap.x_tab_title = myNavTreeTabParent.tab.title;
-		myMap.x_tab_parentEdgeId = myNavTreeTabParent.parentEdgeId; 
-		myMap.x_tab_extra = myNavTreeTabParent.extra;
-		return {"X-tab-url":myNavTreeTabParent.url,"X-tab-title":myNavTreeTabParent.tab.title,"X-tab-parentEdgeId":myNavTreeTabParent.parentEdgeId,"X-tab-extra":myNavTreeTabParent.extra};
+		myMap.url = Base64.encode(myNavTreeTabParent.url);
+		myMap.title = Base64.encode(myNavTreeTabParent.tab.title);
+		myMap.parentEdgeId = myNavTreeTabParent.parentEdgeId; 
+		myMap.extra = myNavTreeTabParent.extra; 
+		console.log(myMap.x_tab_title);
+		console.log(myMap.x_tab_url);
+		return {"X-tab-url":myMap.url,"X-tab-title":myMap.title,"X-tab-parentEdgeId":myMap.parentEdgeId,"X-tab-extra":myMap.extra};
 		/*return myMap;*/
 	};     
 	
