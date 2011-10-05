@@ -11,7 +11,23 @@ class DashboardController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @nodes }
     end
   end
+  
+  #Return the complete navtree of current_user according to the requested format
+  def navtree
+    @edges = Edge.all(:conditions => {:secret_id => current_user.secret.id} )
+    target = Tempfile.new("navtree_#{current_user.secret.id}_")
+    target.write(@edges.to_json(:include => :node))
+    target.close
+    target.open
+    respond_to do |format|
+      format.json  {                                   
+        #render :file => target.path, :type=>"application/json"   
+        send_file target.path, :type => "application/json"#, :x_sendfile => true
+        
+        }
+    end
+  end
+  
 end

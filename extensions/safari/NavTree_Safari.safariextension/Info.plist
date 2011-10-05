@@ -20,19 +20,34 @@
 	<dict>
 		<key>Global Page</key>
 		<string>global.html</string>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>feedback.html</string>
+				<key>Height</key>
+				<real>100</real>
+				<key>Identifier</key>
+				<string>feedback</string>
+				<key>Width</key>
+				<real>200</real>
+			</dict>
+		</array>
 		<key>Toolbar Items</key>
 		<array>
 			<dict>
 				<key>Command</key>
-				<string>click_menu_button</string>
+				<string></string>
 				<key>Identifier</key>
-				<string>navtree_menu_button</string>
+				<string>navtree_menu_button-click_menu_button</string>
 				<key>Image</key>
-				<string>nodes.png</string>
+				<string>icons/nodesV.png</string>
 				<key>Label</key>
 				<string>NavTree Browsing Recorder</string>
 				<key>Palette Label</key>
 				<string>NavTree extension that records browsing URLs</string>
+				<key>Popover</key>
+				<string>feedback</string>
 			</dict>
 		</array>
 	</dict>
