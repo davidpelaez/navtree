@@ -14,6 +14,7 @@ import org.json.*;
 
 
 public Navtree navtree;
+int margin = 25; //The minimun distance fromt the start and the end of the window
 
 
 void setup() {
@@ -21,11 +22,21 @@ void setup() {
   navtree = new Navtree(); 
   println(navtree.getTimespanDays() + " days in tree");
   //java.util.Date time = new java.util.Date();
-  //time.setDate(1280512800);
+noLoop();
   
 }
 
 void draw() {
   background(255);
+  Node theRoot;
+  //Draw the roots and all their subtrees
+
+  for(int i=0; i < navtree.roots.size(); i++){
+    theRoot = (Node)navtree.roots.get(i);
+      fill(0);
+    theRoot.drawNode(0);
+          fill(100);
+    theRoot.drawSubtree();
+  }
 }
 

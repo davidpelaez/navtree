@@ -1,15 +1,17 @@
 class Navtree {
 
   int NULL_PARENT = -1;
+  int dateDelta = 0;
 
   String[] myJsonStrings;
   public java.util.Hashtable nodes;
-  public java.util.Hashtable roots;
+  public ArrayList roots;
   public int maxDate, minDate; //This is to find what span of time's being graphed
+  public Node oldestNode, youngestNode;
 
   Navtree() {
     nodes = new Hashtable();
-    roots = new Hashtable();
+    roots = new ArrayList();
     //Load the Json file, build in memory the tree.  
     myJsonStrings = loadStrings("myNavtree.json");
     println(myJsonStrings.length + " nodes Loaded");
@@ -37,10 +39,9 @@ class Navtree {
         hasChildren = jsonData.getBoolean("has_children");
         date = (Integer)((Number)jsonData.get("date")).intValue();
         //Is this is the first node in the tree, then set that node's date as the reference point & avoid nullPointer
-        if(i==0){
+        if (i==0) {
           maxDate = date;
           minDate = date;
-          
         }
         compareDate(date);
         children = (String)jsonData.get("children");
@@ -54,7 +55,14 @@ class Navtree {
         theNode = new Node(this, id, url, parent, root, extra, date, hasChildren, children);
         nodes.put(theNode.id, theNode);
         if (root) {
-          roots.put(theNode.id, theNode);
+          roots.add(theNode);
+        }
+        //Check if this Node has the date to become the oldest or youngest Node.
+        if (date == maxDate) {
+          oldestNode = theNode;
+        }
+        if (date == minDate) {
+          youngestNode = theNode;
         }
         //println(JSONObject.getNames(nytData));
       }
@@ -65,8 +73,14 @@ class Navtree {
     }//Tree mapping in memory ends
     println(nodes.size() + " nodes");
     println(roots.size() + " roots");
-        println("maxDate: " + getMaxDate() + " - " + maxDate);
-            println("minDate: " + getMinDate() + " - " + minDate);
+    println("maxDate: " + getMaxDate() + " - " + maxDate);
+    println("minDate: " + getMinDate() + " - " + minDate);
+    println("oldest: " + oldestNode.date);
+    println("youngest: " + youngestNode.date);
+    dateDelta = (maxDate-minDate); //SHOULD I KEEP THIS?
+    println("dateDelta: " + dateDelta);
+    println("maxdateDelta: " + oldestNode.getDelta());
+    println("mindateDelta: " + youngestNode.getDelta());
   } //Constuctor ends
 
 
@@ -86,8 +100,8 @@ class Navtree {
     time.setTime((long)maxDate*1000);
     return time;
   }
-  
-    public Date getMinDate() {
+
+  public Date getMinDate() {
     Date time = new Date();
     time.setTime((long)minDate*1000);
     return time;
