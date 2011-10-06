@@ -17,17 +17,20 @@ class DashboardController < ApplicationController
   #Return the complete navtree of current_user according to the requested format
   def navtree
     @edges = Edge.all(:conditions => {:secret_id => current_user.secret.id} )
-    target = Tempfile.new("navtree_#{current_user.secret.id}_") 
+    #target = Tempfile.new("navtree_#{current_user.secret.id}_") 
+    target_path =    "#{RAILS_ROOT}/tmp/navtree_#{current_user.secret.id}_#{Process.pid}"
+    target = File.open(target_path, 'w') 
+    #{RAILS_ROOT}/tmp/navtree_#{current_user.secret.id}_#{Process.pid}
     @edges.each do |edge|
     target.write(edge.to_json + "\n")      
     end
 
     target.close
-    target.open     
+    #target.open     
     respond_to do |format|
       format.json  {                                   
         #render :file => target.path, :type=>"application/json"   
-        send_file target.path, {:type => "application/json",  :filename => "navtree_#{current_user.id}-#{Time.now.to_i}.json"}  #, :x_sendfile => true
+        send_file target_path, {:type => "application/json",  :filename => "navtree_#{current_user.id}-#{Time.now.to_i}.json"}  #, :x_sendfile => true
         
         }
     end

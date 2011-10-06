@@ -16,8 +16,8 @@ class Navtree {
     String theLine;
     //For node creation in memory
     int id, date, parent, extra;
-    String url;
-    boolean root;
+    String url, children;
+    boolean root, hasChildren;
     Node theNode;
     for (int i=0; i < myJsonStrings.length; i++) {
       theLine = myJsonStrings[i];    
@@ -34,6 +34,7 @@ class Navtree {
         }
         extra = (Integer)((Number)jsonData.get("extra")).intValue();
         root = jsonData.getBoolean("root");
+        hasChildren = jsonData.getBoolean("has_children");
         date = (Integer)((Number)jsonData.get("date")).intValue();
         //Is this is the first node in the tree, then set that node's date as the reference point & avoid nullPointer
         if(i==0){
@@ -42,6 +43,7 @@ class Navtree {
           
         }
         compareDate(date);
+        children = (String)jsonData.get("children");
         try {
           url = (String)jsonData.get("url");
         }
@@ -49,7 +51,7 @@ class Navtree {
           url = "";
         }
         //Create the node in memory & attach to hastable
-        theNode = new Node(this, id, url, parent, root, extra, date);
+        theNode = new Node(this, id, url, parent, root, extra, date, hasChildren, children);
         nodes.put(theNode.id, theNode);
         if (root) {
           roots.put(theNode.id, theNode);
@@ -96,6 +98,7 @@ class Navtree {
     // Get msec from each, and subtract.
     long diff = getMaxDate().getTime() - getMinDate().getTime();
     return (int)(diff/1000);
+    //Thanks to http://bit.ly/qqpd5e
   }
 
   public int getTimespanDays() {
