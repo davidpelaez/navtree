@@ -19,10 +19,13 @@ class Edge < ActiveRecord::Base
   end
 
   #This makes the edge as a node in the tree, so that it can interact with processing
-  def as_json(options={})
-    { :id => self.id, :url => self.node.url , :root => self.is_root?, :parent => self.parent ,    
+  def as_json(options={}) 
+    parent = self.parent
+    parent = self.parent.id unless self.parent.nil?
+    { :id => self.id, :url => self.node.url , :root => self.is_root?, :parent => parent ,    
       :extra => self.extra, :date => self.created_at.to_i,    
-      :has_children => self.has_children?, :children => self.children_to_s }
+      :has_children => self.has_children?, :children => self.children_to_s,              
+      :branching => self.children.count, :depth => self.depth}
   end
 
 end

@@ -1,6 +1,6 @@
 class Navtree {
 
-  int NULL_PARENT = -1;
+  public int NULL_PARENT = -1;
   int dateDelta = 0;
 
   String[] myJsonStrings;
@@ -52,6 +52,7 @@ class Navtree {
           url = "";
         }
         //Create the node in memory & attach to hastable
+        println(parent);
         theNode = new Node(this, id, url, parent, root, extra, date, hasChildren, children);
         nodes.put(theNode.id, theNode);
         if (root) {
@@ -77,7 +78,7 @@ class Navtree {
     println("minDate: " + getMinDate() + " - " + minDate);
     println("oldest: " + oldestNode.date);
     println("youngest: " + youngestNode.date);
-    dateDelta = (maxDate-minDate); //SHOULD I KEEP THIS?
+    dateDelta = (maxDate-minDate); //SHOU
     println("dateDelta: " + dateDelta);
     println("maxdateDelta: " + oldestNode.getDelta());
     println("mindateDelta: " + youngestNode.getDelta());

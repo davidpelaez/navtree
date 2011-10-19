@@ -22,7 +22,7 @@
 
 	%body
 		#wrapper
-			#session_button
+			#session_button= link_to "logout", "/sign_out"
 			#flash
 				-flash.each do |key, msg|
 					= content_tag :span, msg, :id => key, :class => "flash"

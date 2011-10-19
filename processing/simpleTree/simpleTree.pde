@@ -18,25 +18,28 @@ int margin = 25; //The minimun distance fromt the start and the end of the windo
 
 
 void setup() {
-  size(850, 700);
+  size(1000, 400);
   navtree = new Navtree(); 
   println(navtree.getTimespanDays() + " days in tree");
   //java.util.Date time = new java.util.Date();
-noLoop();
-  
+  noLoop();
+  smooth();
 }
 
 void draw() {
+  scale(2);
+  translate(0, -(height/3));
   background(255);
+  noStroke();
   Node theRoot;
   //Draw the roots and all their subtrees
 
-  for(int i=0; i < navtree.roots.size(); i++){
+  for (int i=0; i < navtree.roots.size(); i++) {
     theRoot = (Node)navtree.roots.get(i);
-      fill(0);
+
     theRoot.drawNode(0);
-          fill(100);
-    theRoot.drawSubtree();
+
+    //theRoot.drawSubtree();
   }
 }
 

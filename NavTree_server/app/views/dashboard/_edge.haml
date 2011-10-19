@@ -1,7 +1,22 @@
+-if @previous_edge.nil? then 
+	-@previous_edge = edge                      
+	.big_date=edge.created_at.strftime("%d %b %Y") 
+
+
+-if edge.created_at.strftime("%D") != @previous_edge.created_at.strftime("%D") then #If this edge is in a different day:
+
+	.big_date=edge.created_at.strftime("%d %b %Y") 
+	
 
 .edge{:depth => edge.depth, :id => edge.id, :parent => edge.parent} 
-	.id= edge.id
 	.title=if edge.title.blank? then edge.node.url else edge.title  end
-	.parent= edge.parent.id unless edge.parent.nil?
-	.date=edge.created_at
+	.children
+		-if edge.children.count > 0 then
+			= "#{edge.children.count} children"
+		-else
+			Childless
+					
+	.date=edge.created_at.strftime("%d %b %Y")
+	.time=edge.created_at.strftime("%I:%M %p")
 	= link_to 'Destroy', edge, :confirm => 'Are you sure?', :method => :delete 
+- @previous_edge = edge

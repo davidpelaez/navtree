@@ -6,8 +6,8 @@ class DashboardController < ApplicationController
   # GET /stats.xml
   def index
     @secret = current_user.secret
-    @edges = Edge.all(:conditions => {:secret_id => current_user.secret.id} ).paginate :per_page => 20, :page => params[:page]
-    @recent_edges = Edge.all(:limit => 5, :order => "created_at DESC")
+    @edges = Edge.all(:conditions => {:secret_id => current_user.secret.id},:order => "created_at DESC" ).paginate :per_page => 100, :page => params[:page]
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,7 +22,7 @@ class DashboardController < ApplicationController
     target = File.open(target_path, 'w') 
     #{RAILS_ROOT}/tmp/navtree_#{current_user.secret.id}_#{Process.pid}
     @edges.each do |edge|
-    target.write(edge.to_json + "\n")      
+      target.write(edge.to_json + "\n")      
     end
 
     target.close

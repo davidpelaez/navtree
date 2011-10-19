@@ -50,8 +50,12 @@ html{
 .edge{
 	border-bottom: solid thin black;
 	padding: 10px 0;
-	
-} 
+	margin-left: 30px;	
+}                   
+
+.big_date{
+	font-size: 200%;
+}
 #big_desc{
 	color:RGB(251,176,59);
 	font-size: 170%; 
