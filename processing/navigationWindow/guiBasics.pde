@@ -1,8 +1,8 @@
-ControlGroup consoleGroup, toolsGroup, statusGroup;
+ControlGroup consoleGroup, toolsGroup, infoGroup;
 Textarea console;
 
 int minDistance = 600, maxDistance = 2500; //600 is almos real size as indicated in the drawing 2d commands, that means that an ellipse of 100px appears like 100px in screen at 600 of distance
-int consoleGroupX, consoleGroupY;
+int consoleGroupX, consoleGroupY, infoGroupX,infoGroupY;
 PMatrix3D currCameraMatrix;
 PGraphics3D g3; 
 ControlP5 controlP5;
@@ -66,29 +66,34 @@ void gui() {
 DEFINE THE BASIC GUI ELEMENTS TO CONTROL THE SPACE:
  1. A group for feedback in the bottom of the window.
  2. A group on the top for the tools.
- 3. A status bar in the bottom of the window for basic info
+ 3. A info bar in the bottom of the window for basic info
  */
 
 public void createGroups() { //All items are 10px away from the border of the window
   toolsGroup = controlP5.addGroup("tools", 10, 20); 
-  statusGroup = controlP5.addGroup("status", 0, height-170);
+
   consoleGroupX = 10;
   consoleGroupY = height-75;
+  int consoleWidth = width-200;
+  infoGroupX = consoleGroupX+10+consoleWidth;
+  infoGroupY = consoleGroupY;
   consoleGroup = controlP5.addGroup("console", consoleGroupX, consoleGroupY);  
+    infoGroup = controlP5.addGroup("info",infoGroupX , infoGroupY);
   //Make the groups trigger events
   toolsGroup.activateEvent(true);  
-  statusGroup.activateEvent(true); 
+  infoGroup.activateEvent(true); 
   consoleGroup.activateEvent(true);
   //Color the background of the groups
-  statusGroup.setBackgroundColor(GROUP_BACKGROUND);
+  infoGroup.setBackgroundColor(GROUP_BACKGROUND);
   toolsGroup.setBackgroundColor(GROUP_BACKGROUND);
   consoleGroup.setBackgroundColor(GROUP_BACKGROUND);
   //Show the background
-  statusGroup.setBackgroundHeight(65);
+  infoGroup.setBackgroundHeight(65);
   toolsGroup.setBackgroundHeight(65);
   consoleGroup.setBackgroundHeight(65);
   //Set the width
-  consoleGroup.setWidth(width-20);
+  consoleGroup.setWidth(consoleWidth);
+    infoGroup.setWidth(width-consoleWidth-30);
 }
 
 public void   createControllers() {
@@ -122,7 +127,14 @@ void controlEvent(ControlEvent theEvent) {
         console.show();
         consoleGroup.setPosition(consoleGroupX, consoleGroupY);
       }
-    }
+    }else if(theEvent.group() == infoGroup){ //If the activated group is the infoGroup
+      if(infoGroup.isOpen()){ //Relocate the infoGroup wether opened or not
+       infoGroup.setPosition(infoGroupX,infoGroupY);
+      }else{
+       infoGroup.setPosition(infoGroupX,height-10);
+      }
+      
+    }//END groups IFS
   }
   else if (theEvent.isController()) {
     println("got something from a controller "+theEvent.controller().name());
