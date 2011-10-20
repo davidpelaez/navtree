@@ -103,12 +103,12 @@ class Node{
     try {
       if (parent != -1) {
         Node theParent = (Node)navtree.nodes.get(parent);
-        println("-----");
+        /*println("-----");
         println(parent);
         println(navtree.nodes.containsKey(parent));
         //println(navtree.nodes.keySet());
         println(this);
-        println(theParent);
+        println(theParent);*/
         line(getX(), getY()+50, theParent.getX(), theParent.getY());
         noStroke();
       }

@@ -15,7 +15,6 @@ PImage bg;
 color GROUP_BACKGROUND, TEXT_COLOR;
 
 void createNavigableSketch() {
-  size(1000, 700, OPENGL); //This allows us to use PEASY. Just draw like it was regular 2d.   
   setupCam(); 
   setupGUI();
 }

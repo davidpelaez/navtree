@@ -1,3 +1,5 @@
+import controlP5.*;
+
 /***
  Simple Tree representing the Navtree loaded as a Json File. 
  David Pelaez Tamayo - hello@davidpelaez.me - October 2011. 
@@ -13,11 +15,13 @@
 import org.json.*; 
 
 
+ControlP5 controlP5;
 public Navtree navtree;
 int margin = 25; //The minimun distance fromt the start and the end of the window
 
 
 void setup() {
+  controlP5 = new ControlP5(this);
   size(1000, 400);
   navtree = new Navtree(); 
   println(navtree.getTimespanDays() + " days in tree");
