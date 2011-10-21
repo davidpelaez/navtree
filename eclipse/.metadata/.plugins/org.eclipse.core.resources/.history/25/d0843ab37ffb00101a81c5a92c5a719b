@@ -1,0 +1,21 @@
+package navtree;
+
+import processing.core.*;
+import processing.opengl.*;
+import controlP5.*;
+import peasy.*;
+import org.json.*; 
+
+public class SimpleTree extends navigable.NavigableCamera{
+	
+	@override
+	public void myDraw(){
+		
+	}
+	
+	@override
+	public void mySetup(){
+		
+	}
+
+}

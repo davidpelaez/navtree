@@ -1,4 +1,4 @@
-class Node{
+class Node {
 
   public int id, parent, extra;
   public int date;
@@ -14,22 +14,21 @@ class Node{
     parent = nparent;
     root = nroot;
     hasChildren = nhasChildren;
-
     extra = nextra;
     date = ndate; //This comes as unix time because it's easier to use to create the graph
     navtree = ntree;
 
     if (nchildren.length()>0) {
-
       String[] splitted = nchildren.split(",");
-
-
-
       children = new int[splitted.length];
       for (int i=0;i<children.length;i++) {
         children[i] = Integer.parseInt( splitted[i].trim() );
       }
     }//Array of children ids ends
+  }
+
+  public Node getParent() {
+    return (Node)navtree.nodes.get(parent);
   }
 
   public boolean isRoot() {
@@ -44,7 +43,7 @@ class Node{
 
   //The position that the node should have in the graph in X
   public float getX() {
-    int y2_y1 = (width-margin)-(margin);
+    int y2_y1 = (maxTreeWidth-margin)-(margin);
 
     int x2_x1 = (navtree.dateDelta)-(0); //Only for clarity purposes!
 
@@ -58,12 +57,29 @@ class Node{
   }
 
   //The position that the node should have in the graph in Y
+  //Remember to use X and rotation to determine Y.
   public float getY() {
-    return height/2;
+    if (isRoot()) { //All root are on the baseline
+      return yBase;
+    }
+    else {
+      //Changes according to the branching factor
+      Node parentNode = getParent();
+      float _angle = parentNode.getAngle(id);
+      float _x = getX()-parentNode.getX();
+      float _tan = tan(radians(_angle)); 
+      float _y = (_tan*_x); //Use this angle to caclulate the Y in combination with Y
+      if ( _angle < 0) { 
+        return yBase-_y;
+      }
+      else { 
+        return yBase+_y;
+      }
+    }
   }
 
   //Draw the representation of the node
-  public void drawNode(int angle) { //THE ANGLE is to control branching, so that there's no node overlapping
+  public void drawNode() { 
     stroke(0, 255, 0);
     if (!root) {
       drawConnection();
@@ -72,18 +88,14 @@ class Node{
 
     //println(getDelta());
     if (root) {
-      if (hasChildren) {
-        fill(0);
-      }
-      else {
-        fill(0, 0, 255);
-      }
+
+      fill(0, 0, 255);
     }
     else {
       fill(255, 0, 0);
     }
     noStroke();
-    ellipse(getX(), getY()+angle, 2, 2);
+    ellipse(getX(), getY(), 15, 15);
     drawSubtree();
   }
 
@@ -104,12 +116,12 @@ class Node{
       if (parent != -1) {
         Node theParent = (Node)navtree.nodes.get(parent);
         /*println("-----");
-        println(parent);
-        println(navtree.nodes.containsKey(parent));
-        //println(navtree.nodes.keySet());
-        println(this);
-        println(theParent);*/
-        line(getX(), getY()+50, theParent.getX(), theParent.getY());
+         println(parent);
+         println(navtree.nodes.containsKey(parent));
+         //println(navtree.nodes.keySet());
+         println(this);
+         println(theParent);*/
+        line(getX(), getY(), theParent.getX(), theParent.getY());
         noStroke();
       }
     }
@@ -118,13 +130,31 @@ class Node{
     }
   }
 
+
+  //Tell to a child how much it should bend. The function calculates on what portion of 110 radius it should appear. 
+  //The node should rotate that accordingly to its X before DRAWING
+  //Returns DEGREES
+  public float getAngle(int id) {
+    //Locate the child asking
+    Node theChild;
+    int i;
+    for (i=0;i<children.length;i++) {
+      if (children[i] == id) {
+        //theChild = (Node)navtree.nodes.get(children[i]);
+        break;
+      }
+    }
+    //Calculate the angle
+    return (110*i/children.length);
+  }
+
   //Draws all the nodes that are children of this one NOT including this node of course
   public void drawSubtree() {
     Node theChild;
     if (children != null) {
       for (int i=0;i<children.length;i++) {
         theChild = (Node)navtree.nodes.get(children[i]);
-        theChild.drawNode(50);
+        theChild.drawNode();
       }
     }
   }//Subtree drawing ends

@@ -1,0 +1,56 @@
+package navigable;
+
+/*NAVIGABLE SKETCH by David Pelaez
+ *http://davidpelaez.me 
+ *This class implements a processing sketch that uses:
+ * - Peasy Cam to create mouse oriented navigation
+ * - ControlP5 for GUI
+ * - Has an abstract method myDrawing() that has to be implemented by the child class 
+ */
+
+import processing.core.*;
+import processing.opengl.*;
+import controlP5.*;
+import peasy.*;
+
+public abstract class NavigableSketch extends PApplet{
+	
+	/*
+	 * Attributes
+	 */
+	
+	
+	
+	/*
+	 * Abstract methods to customize the sketch behaviour
+	 */
+	abstract void myDraw();
+	abstract void mySetup();
+	
+	/*
+	 * Class Methods
+	 */
+	
+	public void NavigableSketch(){
+		
+		
+	}
+	
+	public void Setup(){
+		  size(1000, 400, OPENGL); //This allows us to use PEASY. Just draw like it was regular 2d.   
+		  createNavigableSketch();
+		  maxTreeWidth = width;
+		  navtree = new Navtree(); 
+		  toConsole(navtree.getTimespanDays() + " days in tree");
+		  frameRate(12); //Reduces memory ocnsumtion?
+		
+	}//Setup ends
+	
+	public void Draw(){
+		
+		
+	}//Draw ends
+	
+	
+
+}//NavigableSketh ends

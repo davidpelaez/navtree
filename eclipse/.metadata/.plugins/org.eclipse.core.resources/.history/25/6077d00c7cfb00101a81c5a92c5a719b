@@ -1,0 +1,135 @@
+package navigable;
+
+/*NAVIGABLE SKETCH by David Pelaez
+ *http://davidpelaez.me 
+ *This class implements a processing sketch that uses:
+ * - Peasy Cam to create mouse oriented navigation
+ * - ControlP5 for GUI
+ * - Has an abstract method myDrawing() that has to be implemented by the child class 
+ */
+
+import processing.core.*;
+import processing.opengl.*;
+import controlP5.*;
+import peasy.*;
+
+public abstract class NavigableSketch extends PApplet{
+	
+	/*
+	 * Attributes
+	 */
+	
+	ControlGroup consoleGroup, toolsGroup, infoGroup;
+	Textarea console;
+
+	int minDistance = 300, maxDistance = 4500; //600 is almos real size as indicated in the drawing 2d commands, that means that an ellipse of 100px appears like 100px in screen at 600 of distance
+	int consoleGroupX, consoleGroupY, infoGroupX, infoGroupY;
+	PMatrix3D currCameraMatrix;
+	PGraphics3D g3; 
+	private ControlP5 controlP5;
+	PeasyCam cam;
+	PImage bg;
+	/*left-drag to rotate 
+	 mouse wheel, or right-drag up and down to zoom 
+	 middle-drag (cmd-left-drag on mac) to pan 
+	 double-click to reset*/
+	color GROUP_BACKGROUND, TEXT_COLOR;
+	
+	
+	/*
+	 * Abstract methods to customize the sketch behaviour
+	 */
+	abstract void myDraw();
+	abstract void mySetup();
+	
+	/*
+	 * Class Methods
+	 */
+	
+	public void NavigableSketch(){
+		
+		
+	}
+	
+	public void Setup(){
+		  size(1000, 400, OPENGL); //This allows us to use PEASY. Just draw like it was regular 2d.   
+		  createNavigableSketch();
+		  maxTreeWidth = width;
+		  navtree = new Navtree(); 
+		  toConsole(navtree.getTimespanDays() + " days in tree");
+		  frameRate(12); //Reduces memory ocnsumtion?
+		
+	}//Setup ends
+	
+	public void Draw(){
+		
+		
+	}//Draw ends
+	
+	void createNavigableSketch() {
+		  setupCam(); 
+		  setupGUI();
+		}
+
+
+
+
+
+
+		public void setupCam() {
+		  g3 = (PGraphics3D)g; //Used by ControlP5
+		  cam = new PeasyCam(this, 100); //Look at distance 100. 
+		  cam.setMinimumDistance((double)minDistance);
+		  cam.setMaximumDistance((double)maxDistance);
+		  cam.setLeftDragHandler(null);
+		  cam.setRightDragHandler(null);
+		}
+
+		public void recordCurrentCamera() {
+		  currCameraMatrix = new PMatrix3D(g3.camera);
+		  camera();
+		}
+
+		public void restoreCamera() {
+		  g3.camera = currCameraMatrix;
+		}
+
+		
+
+		public void zoom(int value) {
+		  cam.setDistance(value, 1000);
+		}
+
+		void controlEvent(ControlEvent theEvent) {
+		  if (theEvent.isGroup()) {
+		    //println("got an event from group "+theEvent.group().name()+", isOpen? "+theEvent.group().isOpen());
+		    if (theEvent.group() == consoleGroup) {
+		      //Toggle on/off the console when the group is clicked
+		      if (console.isVisible()) { 
+		        console.hide();
+		        consoleGroup.setPosition(consoleGroupX, height-10);
+		      }
+		      else { 
+		        console.show();
+		        consoleGroup.setPosition(consoleGroupX, consoleGroupY);
+		      }
+		    }
+		    else if (theEvent.group() == infoGroup) { //If the activated group is the infoGroup
+		      if (infoGroup.isOpen()) { //Relocate the infoGroup wether opened or not
+		        infoGroup.setPosition(infoGroupX, infoGroupY);
+		      }
+		      else {
+		        infoGroup.setPosition(infoGroupX, height-10);
+		      }
+		    }//END groups IFS
+		  }
+		  else if (theEvent.isController()) {
+		    //println("got something from a controller "+theEvent.controller().name());
+		  }
+		}
+
+		
+	
+	
+
+}//NavigableSketh ends

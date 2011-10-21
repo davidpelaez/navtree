@@ -1,0 +1,18 @@
+package navigable;
+
+/*NAVIGABLE SKETCH by David Pelaez
+ *http://davidpelaez.me 
+ *This class implements a processing sketch that uses:
+ * - Peasy Cam to create mouse oriented navigation
+ * - ControlP5 for GUI
+ * - Creates a  
+ */
+
+import processing.core.*;
+import processing.opengl.*;
+import controlP5.*;
+import peasy.*;
+
+public class navigableSketch extends PApplet{
+
+}

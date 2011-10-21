@@ -1,0 +1,9 @@
+package navigable;
+
+/*
+ * Manage all the 3d camera related issues, like PeasyCam and camara record and reset for GUI drawing
+ */
+
+public class NavigableCamera {
+
+}

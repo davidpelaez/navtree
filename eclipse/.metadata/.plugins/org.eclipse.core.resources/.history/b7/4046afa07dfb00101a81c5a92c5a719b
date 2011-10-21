@@ -1,0 +1,41 @@
+package navigable;
+
+import peasy.PeasyCam;
+import processing.core.PGraphics3D;
+import processing.core.PMatrix3D;
+
+/*
+ * Manage all the 3d camera related issues, like PeasyCam and camara record and reset for GUI drawing
+ */
+
+public class NavigableCamera {
+	
+	PMatrix3D currCameraMatrix;
+	PGraphics3D g3; 
+	PeasyCam cam;
+	
+	PApplet sketch;
+	public void NavigableCamera(PApplet _sketch)
+	{
+		sketch = _sketch;
+	}
+	
+	public void setupCam() {
+		  g3 = (PGraphics3D)g; //Used by ControlP5
+		  cam = new PeasyCam(this, 100); //Look at distance 100. 
+		  cam.setMinimumDistance((double)minDistance);
+		  cam.setMaximumDistance((double)maxDistance);
+		  cam.setLeftDragHandler(null);
+		  cam.setRightDragHandler(null);
+		}
+
+		public void recordCurrentCamera() {
+		  currCameraMatrix = new PMatrix3D(g3.camera);
+		  camera();
+		}
+
+		public void restoreCamera() {
+		  g3.camera = currCameraMatrix;
+		}
+
+}

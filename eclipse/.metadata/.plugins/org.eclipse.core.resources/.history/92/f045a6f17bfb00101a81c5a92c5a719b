@@ -1,0 +1,40 @@
+package navigable;
+
+import controlP5.*;
+
+public class NavigableGUI {
+	private ControlP5 controlP5;
+	
+	public void NaviableGUI(ControlP5 _controlP5){
+		
+	
+	}
+	
+	
+	public void setupGUI() {
+		  setupColors();
+		  //Load the controlP5 interface
+		  controlP5 = new ControlP5(this);
+		  controlP5.setAutoDraw(false);
+		  createGroups();
+		  createControllers();
+		  //Load Background
+		  bg = loadImage("bg.png");
+		}
+	
+	public void draw(){
+		
+	}
+	
+	public void createGroups(){
+		
+	}
+	
+	public void createControllers(){
+		
+		
+	}
+	
+	
+
+}

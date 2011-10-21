@@ -1,7 +1,7 @@
 ControlGroup consoleGroup, toolsGroup, infoGroup;
 Textarea console;
 
-int minDistance = 600, maxDistance = 2500; //600 is almos real size as indicated in the drawing 2d commands, that means that an ellipse of 100px appears like 100px in screen at 600 of distance
+int minDistance = 300, maxDistance = 4500; //600 is almos real size as indicated in the drawing 2d commands, that means that an ellipse of 100px appears like 100px in screen at 600 of distance
 int consoleGroupX, consoleGroupY, infoGroupX, infoGroupY;
 PMatrix3D currCameraMatrix;
 PGraphics3D g3; 

@@ -1,0 +1,7 @@
+package navigable;
+
+import controlP5.*;
+
+public class NavigableGUI {
+
+}
