@@ -1,0 +1,76 @@
+package navtree;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/*
+ * This class has a series of  methods that read information from JSON data to make the Navtree class easier to read 
+ */
+
+public class JSONNodeReader {
+
+	JSONObject nodeData;
+	public int id, parentId, extra;
+	public int unixDate;
+	public String url, children;	
+	public boolean isRoot, hasChildren;
+	
+
+	JSONNodeReader(JSONObject _nodeData) {
+		nodeData = _nodeData;
+		try {
+			id = (Integer) ((Number) nodeData.get("id")).intValue();
+			try {
+				parentId = (Integer) ((Number) nodeData.get("parent")).intValue();
+			} catch (ClassCastException e) {
+				parentId = Node.NULL_PARENT;
+			} 
+			extra = (Integer) ((Number) nodeData.get("extra")).intValue();
+			unixDate = (Integer) ((Number) nodeData.get("date")).intValue();
+			try {
+				url = (String) nodeData.get("url");
+			} catch (ClassCastException e) {
+				url = "";
+			}
+			children = (String) nodeData.get("children");
+			hasChildren = nodeData.getBoolean("has_children");
+		} catch (JSONException e) {
+			System.out.println("There was an error parsing the JSONObject.");
+			System.out.println(e);
+		}
+
+	}
+
+	public int getId() {
+return id;
+	}
+
+	public int getParentId() {
+		return parentId;
+	}
+
+	public int getExtra() {
+		return extra;
+	}
+
+	public int getUnixDate() {
+		return unixDate;
+	}
+
+	public String getUrl() {
+			return url;
+	}
+
+	public String getChildren() {
+		return children;
+	}
+
+	public boolean getHasChildren() {
+		return hasChildren;
+	}
+
+	public boolean getIsRoot() {
+		return nodeData.getBoolean("root");
+	}
+
+}

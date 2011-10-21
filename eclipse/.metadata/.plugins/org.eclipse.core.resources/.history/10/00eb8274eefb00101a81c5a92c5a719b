@@ -1,0 +1,94 @@
+package navtree;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/*
+ * This class has a series of  methods that read information from JSON data to make the Navtree class easier to read 
+ */
+
+public class JSONNodeReader {
+
+	JSONObject nodeData;
+	public int id, parentId, extra;
+	public int unixDate;
+	public String url, children;	
+	public boolean isRoot, hasChildren;
+	
+
+	JSONNodeReader(JSONObject _nodeData) {
+		nodeData = _nodeData;
+		try {
+			id = (Integer) ((Number) nodeData.get("id")).intValue();
+
+		} catch (JSONException e) {
+			System.out.println("There was an error parsing the JSONObject.");
+			System.out.println(e);
+		}
+
+	}
+
+	public int getId() {
+		try {
+			return 
+		} catch (JSONException e) {
+			System.out.println("There was an error parsing the JSONObject.");
+			System.out.println(e);
+		}
+	}
+
+	public int getParentId() {
+		int parentId = null;
+		try {
+			parentId = (Integer) ((Number) nodeData.get("parent")).intValue();
+		} catch (ClassCastException e) {
+			parentId = Node.NULL_PARENT;
+		} catch (JSONException e) {
+			System.out.println("There was an error parsing the JSONObject.");
+			System.out.println(e);
+		}
+		return parentId;
+	}
+
+	public int getExtra() {
+		try {
+			return (Integer) ((Number) nodeData.get("extra")).intValue();
+		} catch (JSONException e) {
+			System.out.println("There was an error parsing the JSONObject.");
+			System.out.println(e);
+		}
+
+	}
+
+	public int getUnixDate() {
+		try {
+			return (Integer) ((Number) nodeData.get("date")).intValue();
+		} catch (JSONException e) {
+			System.out.println("There was an error parsing the JSONObject.");
+			System.out.println(e);
+		}
+	}
+
+	public String getUrl() {
+		String url;
+		try {
+			url = (String) nodeData.get("url");
+		} catch (ClassCastException e) {
+			url = "";
+		}
+		return url;
+	}
+
+	public String getChildren() {
+		return (String) nodeData.get("children");
+	}
+
+	public boolean getHasChildren() {
+		return nodeData.getBoolean("has_children");
+	}
+
+	public boolean getIsRoot() {
+		return nodeData.getBoolean("root");
+	}
+
+}

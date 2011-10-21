@@ -1,0 +1,45 @@
+package navtree;
+
+public class Navtree {
+	
+	public java.util.HashMap<Integer, Node> nodeTable;
+	public Node[] nodes;
+	public Edge[] edges;
+	int nodeCount, edgeCount;
+
+	Navtree(){
+		
+		
+	}
+	
+	
+	private void addEdge(String fromLabel, String toLabel) {
+		Node from = findNode(fromLabel);
+		Node to = findNode(toLabel);
+		Edge e = new Edge(from, to);
+		if (edgeCount == edges.length) {
+		edges = (Edge[]) expand(edges);
+		}
+		edges[edgeCount++] = e;
+		}
+	
+	private void addNode() {
+		Node from = findNode(fromLabel);
+		Node to = findNode(toLabel);
+		Edge e = new Edge(from, to);
+		if (edgeCount == edges.length) {
+		edges = (Edge[]) expand(edges);
+		}
+		edges[edgeCount++] = e;
+		}
+	
+	public Node findNode(String label) {
+		label = label.toLowerCase( );
+		Node n = (Node) nodeTable.get(label);
+		if (n == null) {
+		return addNode(label);
+		}
+		return n;
+		}
+	
+}

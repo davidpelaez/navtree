@@ -1,0 +1,22 @@
+package navtree;
+
+public class Node {
+
+	public int id, parentId, extra;
+	public int unix_date;
+	public String url;
+	public int[] childrenIds = null; // Array with the ids of the children
+	public boolean isRoot, hasChildren;
+	
+	Node(int _id, String _url, int _parentId, boolean _isRoot, int _extra, int _unixDate, boolean _hasChildren, String _childrenIds) {
+		id = _id;
+		parentId = _parentId;
+		isRoot = _isRoot;
+		extra = _extra;
+		unix_date = _unixDate;
+		hasChildren = _hasChildren;
+		childrenIds = _childrenIds;
+		
+	}
+
+}

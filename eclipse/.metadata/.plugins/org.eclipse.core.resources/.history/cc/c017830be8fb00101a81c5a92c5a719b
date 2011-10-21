@@ -1,0 +1,15 @@
+package navtree;
+
+public class Edge {
+	
+	public Node from, to;
+	public float length;
+	public int fromId, toId;
+	
+	
+	Edge(Node _fromId, Node _toId){
+		from = _from;
+		to = _to;
+	}
+
+}

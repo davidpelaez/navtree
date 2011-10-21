@@ -1,18 +1,10 @@
 INDEX VERSION 1.126+/Volumes/Rulos/David/Documents/development/NavTree/eclipse/.metadata/.plugins/org.eclipse.jdt.core
-2256970946.index
+375542697.index
+1640734316.index
+400064675.index
+2504777743.index
+3106119876.index
 3765020915.index
-1107559684.index
-3133678439.index
-1727389316.index
-1017074160.index
-4039698945.index
-3176898654.index
-2111552386.index
-3944084352.index
-175273543.index
-4220307733.index
-3296508981.index
-3050250849.index
-3910020804.index
-1619426194.index
-3445747362.index
+5385973.index
+1710906564.index
+1462155739.index

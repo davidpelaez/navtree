@@ -1,0 +1,9 @@
+package navtree;
+
+/*
+ * This class has a series of static methods that read information from JSON data to make the Navtree class easier to read 
+ */
+
+public class JSONNodeReader {
+
+}

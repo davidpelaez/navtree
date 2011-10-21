@@ -1,0 +1,59 @@
+package navtree;
+
+import org.json.JSONObject;
+
+/*
+ * This class has a series of  methods that read information from JSON data to make the Navtree class easier to read 
+ */
+
+public class JSONNodeReader {
+	
+	JSONObject nodeData;
+	
+	JSONNodeReader(JSONObject _nodeData)
+	{
+		
+	}
+	
+	public int getId(){
+		
+	}
+	
+	public int getParentId(){
+		int parentId;
+		try {
+	         parentId = (Integer)((Number)nodeData.get("parent")).intValue();
+	        }
+	        catch (ClassCastException e) {
+	          parent = Node.NULL_PARENT;
+	        }
+		return parentId;
+	}
+	
+	public int getExtra(){
+		
+	}
+	
+	public int getUnixDate(){
+		
+	}
+	
+	public String getUrl(){
+		
+	}
+	
+	public String getChildren(){
+		
+	}
+	
+	public boolean  getHasChildren(){
+		
+	}
+	
+	public boolean getIsRoot(){
+		
+	}
+	
+	
+
+}

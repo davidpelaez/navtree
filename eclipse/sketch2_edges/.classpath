@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="data"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="libraries/controlP5.jar"/>
+	<classpathentry kind="lib" path="libraries/core.jar"/>
+	<classpathentry kind="lib" path="libraries/json.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="libraries/native_jogl"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libraries/peasycam.jar"/>
+	<classpathentry kind="lib" path="libraries/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="libraries/jogl.jar"/>
+	<classpathentry kind="lib" path="libraries/opengl.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/Volumes/Rulos/David/Documents/development/NavTree/eclipse/testEclipse/libraries/native_jogl/macosx"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,18 @@
+package navtree;
+
+public class Edge {
+
+	public Node from, to;
+	public float length;
+	public int fromId, toId;
+
+	Edge(int _fromId, int _toId) {
+		fromId = _fromId;
+		toId = _toId;
+	}
+
+	public void draw() {
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package navtree;
+
+public class Node {
+
+	public int id, parent, extra;
+	public int date;
+	public String url;
+	public int[] children = null; // Array with the ids of the children
+	public boolean root, hasChildren;
+	
+	Node(int id, String url, int parent, boolean root, int extra, int date, boolean hasChildren, String children) {
+
+}
