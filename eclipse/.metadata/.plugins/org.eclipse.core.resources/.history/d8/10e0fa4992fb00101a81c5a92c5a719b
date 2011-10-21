@@ -1,0 +1,169 @@
+package navtree;
+
+import processing.core.*;
+import java.util.*;   
+
+import org.json.*;
+import java.io.*;
+
+public class Navtree {
+	
+public SimpleTree applet;
+
+  public int NULL_PARENT = -1;
+  int dateDelta = 0;
+
+  String[] myJsonStrings;
+  public java.util.Hashtable nodes;
+  public ArrayList<Node> roots;
+  public int maxDate, minDate; //This is to find what span of time's being graphed
+  public Node oldestNode, youngestNode;
+
+  Navtree(SimpleTree _parent) {
+	  applet = _parent;
+    nodes = new Hashtable();
+    roots = new ArrayList<Node>();
+    
+    //Load the Json file, build in memory the tree.  
+    myJsonStrings = loadJson();
+    System.out.println(myJsonStrings.length + " nodes Loaded");
+    String theLine;
+    //For node creation in memory
+    int id, date, parent, extra;
+    int a = 1;
+    int b =a;
+    String url, children;
+    boolean root, hasChildren;
+    Node theNode;
+    for (int i=0; i < myJsonStrings.length; i++) {
+      theLine = myJsonStrings[i];    
+      try {
+        //For each line there's the Json of a node.
+        //Read the node
+        JSONObject jsonData = new JSONObject(theLine);
+        id = (Integer)((Number)jsonData.get("id")).intValue();
+        try {
+          parent = (Integer)((Number)jsonData.get("parent")).intValue();
+        }
+        catch (ClassCastException e) {
+          parent = NULL_PARENT;
+        }
+        extra = (Integer)((Number)jsonData.get("extra")).intValue();
+        root = jsonData.getBoolean("root");
+        hasChildren = jsonData.getBoolean("has_children");
+        date = (Integer)((Number)jsonData.get("date")).intValue();
+        //Is this is the first node in the tree, then set that node's date as the reference point & avoid nullPointer
+        if (i==0) {
+          maxDate = date;
+          minDate = date;
+        }
+        compareDate(date);
+        children = (String)jsonData.get("children");
+        try {
+          url = (String)jsonData.get("url");
+        }
+        catch (ClassCastException e) {
+          url = "";
+        }
+        //Create the node in memory & attach to hastable
+        //println(parent);
+        theNode = new Node(this, id, url, parent, root, extra, date, hasChildren, children);
+        nodes.put(theNode.id, theNode);
+        if (root) {
+          roots.add(theNode);
+        }
+        //Check if this Node has the date to become the oldest or youngest Node.
+        if (date == maxDate) {
+          oldestNode = theNode;
+        }
+        if (date == minDate) {
+          youngestNode = theNode;
+        }
+        //println(JSONObject.getNames(nytData));
+      }
+      catch (JSONException e) {
+    	  applet.toConsole ("There was an error parsing the JSONObject.");
+        applet.toConsole (e);
+      }
+    }//Tree mapping in memory ends
+    System.out.println(nodes);
+    //applet.toConsole(nodes.size() + " nodes");
+    applet.toConsole(roots.size() + " roots");
+    applet.toConsole("maxDate: " + getMaxDate() + " - " + maxDate);
+    applet.toConsole("minDate: " + getMinDate() + " - " + minDate);
+    applet.toConsole("oldest: " + oldestNode.date);
+    applet.toConsole("youngest: " + youngestNode.date);
+    dateDelta = (maxDate-minDate); //SHOU
+    applet.toConsole("dateDelta: " + dateDelta);
+    applet.toConsole("maxdateDelta: " + oldestNode.getDelta());
+    applet.toConsole("mindateDelta: " + youngestNode.getDelta());
+  } //Constuctor ends
+
+
+  public void compareDate(int theDate) {
+    //The date is bigger
+    if (theDate>maxDate) {
+      maxDate = theDate;
+    }
+    //The date is smaller that the one recorded so far
+    if (theDate<minDate) {
+      minDate = theDate;
+    }
+  }//CompareDate ends
+
+  public Date getMaxDate() {
+    Date time = new Date();
+    time.setTime((long)maxDate*1000);
+    return time;
+  }
+
+  public Date getMinDate() {
+    Date time = new Date();
+    time.setTime((long)minDate*1000);
+    return time;
+  }
+
+  //Get the difference in second the max and the min date  
+  public int getTimespanSeconds() {
+    // Get msec from each, and subtract.
+    long diff = getMaxDate().getTime() - getMinDate().getTime();
+    return (int)(diff/1000);
+    //Thanks to http://bit.ly/qqpd5e
+  }
+
+  public int getTimespanDays() {
+    return getTimespanSeconds()/86400;
+  }
+  
+  
+  public String[] loadJson() {
+		
+		ArrayList<String> fileLines = new ArrayList<String>();
+		String[] lines = null;
+		 try{
+			    // Open the file that is the first 
+			    // command line parameter
+			    FileInputStream fstream = new FileInputStream("myNavtree.json");
+			    // Get the object of DataInputStream
+			    DataInputStream in = new DataInputStream(fstream);
+			        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+			    String strLine;
+			    //Read File Line By Line
+			    while ((strLine = br.readLine()) != null)   {
+			      // Print the content on the console
+			      fileLines.add(strLine);
+			    }
+			    //Close the input stream
+			    in.close();
+			    lines = fileLines.toArray(new String[1]);
+			    
+			    }catch (Exception e){//Catch exception if any
+			      System.err.println("Error: " + e.getMessage());
+			    }
+			    return lines;
+	}
+  
+  
+  
+  
+}

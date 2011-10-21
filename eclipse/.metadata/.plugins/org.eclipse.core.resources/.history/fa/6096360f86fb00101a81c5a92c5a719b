@@ -1,0 +1,54 @@
+package navtree;
+import controlP5.*;
+
+public class SimpleTree extends navigable.NavigableSketch {
+	
+	int maxTreeWidth;
+	
+	public Navtree navtree;
+	int margin = 25; //The minimun distance fromt the start and the end of the window
+	
+	@Override
+	public void myDraw() {
+		noStroke();
+		Node theRoot;
+		// Draw the roots and all their subtrees
+		for (int i = 0; i < navtree.roots.size(); i++) {
+			theRoot = (Node) navtree.roots.get(i);
+			theRoot.drawNode();
+		}
+	}
+
+	public void treeWidth(int value) {
+		maxTreeWidth = value;
+	}
+
+	@Override
+	public void mySetup() {
+		  maxTreeWidth = width;
+		  navtree = new Navtree(); // new Navtree((navigable.NavigableSketch)this); 
+		toConsole("Overritten setup talking");
+		// Slider to control the width of the tree
+		controlP5.addSlider("treeWidth", width - 20, 4500, width - 20,
+				width - 505, 10, 170, 10).setColorCaptionLabel(TEXT_COLOR); // def,
+																			// x,
+																			// y,
+																			// w,h
+																			// .setGroup(toolsGroup);
+	}
+
+	/*
+	 * Connecting this sketch with the parent
+	 */
+
+	@Override
+	public void toConsole(Object msg) {
+		super.toConsole(msg);
+	}
+
+	@Override
+	public void controlEvent(ControlEvent theEvent) {
+		super.controlEvent(theEvent);
+	}
+
+}

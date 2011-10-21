@@ -1,0 +1,214 @@
+package navigable;
+
+/*NAVIGABLE SKETCH by David Pelaez
+ *http://davidpelaez.me 
+ *This class implements a processing sketch that uses:
+ * - Peasy Cam to create mouse oriented navigation
+ * - ControlP5 for GUI
+ * - Has an abstract method myDrawing() that has to be implemented by the child class 
+ */
+
+import processing.core.*;
+import processing.opengl.*;
+import controlP5.*;
+import peasy.*;
+
+public  class NavigableSketch extends PApplet {
+	
+	public ControlGroup consoleGroup, toolsGroup, infoGroup;
+	public Textarea console;
+
+	int minDistance = 300, maxDistance = 4500; //600 is almos real size as indicated in the drawing 2d commands, that means that an ellipse of 100px appears like 100px in screen at 600 of distance
+	int consoleGroupX, consoleGroupY, infoGroupX, infoGroupY;
+	public PMatrix3D currCameraMatrix;
+	public PGraphics3D g3; 
+	public ControlP5 controlP5;
+	public PeasyCam cam;
+	public PImage bg;
+	/*left-drag to rotate 
+	 mouse wheel, or right-drag up and down to zoom 
+	 middle-drag (cmd-left-drag on mac) to pan 
+	 double-click to reset*/
+	int GROUP_BACKGROUND, TEXT_COLOR;
+	
+	public void myDraw(){
+		fill(255, 0, 0);
+		  ellipse(0, 0, 100, 100);   //Sample object in the space
+		  fill(0, 255, 0);
+		  ellipse(100, 100, 100, 100);   //Sample object in the space
+		  fill(0, 0, 255);
+		  ellipse(900, 200, 100, 100);   //Sample object in the space
+	}
+	public void mySetup(){
+		
+	}
+
+
+
+
+
+
+	public void setup() {  
+	  size(1000, 400, OPENGL); //This allows us to use PEASY. Just draw like it was regular 2d.   
+	  setupCam(); 
+	  setupGUI();	  
+	  frameRate(12); //Reduces memory ocnsumtion?
+	  mySetup();
+	}
+
+	public void draw() {
+	  //Prepare the space
+	  myBackground();
+	  hint(ENABLE_DEPTH_TEST); //Draw everything on top of the last thing
+	  cam.feed();
+	  //REady to draw in navigable space
+	  myDraw();
+	  //Your draw ends here
+	  //Disable the zbuffer, allowing you to draw on top of everything at will. Here's where the GUI is drawn
+	  hint(DISABLE_DEPTH_TEST); 
+	  gui();
+	}
+
+
+	public void setupGUI() {
+	  setupColors();
+	  //Load the controlP5 interface
+	  controlP5 = new ControlP5(this);
+	  controlP5.setAutoDraw(false);
+	  createGroups();
+	  createControllers();
+	  //Load Background
+	  bg = loadImage("bg.png");
+	}
+
+	public void setupColors() {
+	  TEXT_COLOR = color(100);//Dark gray
+	  GROUP_BACKGROUND = color(200, 200, 200, 200); //Light gray 200 Opacity
+	}
+
+
+	public void setupCam() {
+	  g3 = (PGraphics3D)g; //Used by ControlP5
+	  cam = new PeasyCam(this, 100); //Look at distance 100. 
+	  cam.setMinimumDistance((double)minDistance);
+	  cam.setMaximumDistance((double)maxDistance);
+	  cam.setLeftDragHandler(null);
+	  cam.setRightDragHandler(null);
+	}
+
+	public void recordCurrentCamera() {
+	  currCameraMatrix = new PMatrix3D(g3.camera);
+	  camera();
+	}
+
+	public void restoreCamera() {
+	  g3.camera = currCameraMatrix;
+	}
+
+	void gui() {
+	  recordCurrentCamera();
+	  //Keep the slider and the cam distance synced
+	  Controller zoom = controlP5.controller("zoom");
+	  if (!zoom.isInside()) {
+	    zoom.setBroadcast(false);
+	    zoom.setValue((int)cam.getDistance()); 
+	    zoom.setBroadcast(true);
+	  }
+	  controlP5.draw();
+	  restoreCamera();
+	}
+
+	/*
+	DEFINE THE BASIC GUI ELEMENTS TO CONTROL THE SPACE:
+	 1. A group for feedback in the bottom of the window.
+	 2. A group on the top for the tools.
+	 3. A info bar in the bottom of the window for basic info
+	 */
+
+	public void createGroups() { //All items are 10px away from the border of the window
+	  toolsGroup = controlP5.addGroup("tools", 10, 20); 
+
+	  consoleGroupX = 10;
+	  consoleGroupY = height-75;
+	  int consoleWidth = width-200;
+	  infoGroupX = consoleGroupX+10+consoleWidth;
+	  infoGroupY = consoleGroupY;
+	  consoleGroup = controlP5.addGroup("console", consoleGroupX, consoleGroupY);  
+	  infoGroup = controlP5.addGroup("info", infoGroupX, infoGroupY);
+	  //Make the groups trigger events
+	  toolsGroup.activateEvent(true);  
+	  infoGroup.activateEvent(true); 
+	  consoleGroup.activateEvent(true);
+	  //Color the background of the groups
+	  infoGroup.setBackgroundColor(GROUP_BACKGROUND);
+	  toolsGroup.setBackgroundColor(GROUP_BACKGROUND);
+	  consoleGroup.setBackgroundColor(GROUP_BACKGROUND);
+	  //Show the background
+	  infoGroup.setBackgroundHeight(65);
+	  toolsGroup.setBackgroundHeight(65);
+	  consoleGroup.setBackgroundHeight(65);
+	  //Set the width
+	  consoleGroup.setWidth(consoleWidth);
+	  infoGroup.setWidth(width-consoleWidth-30);
+	}
+
+	public void   createControllers() {
+	  int distance = (int)cam.getDistance();
+	  controlP5.addSlider("zoom", minDistance, maxDistance, distance, width-205, 10, 170, 10).setColorCaptionLabel(TEXT_COLOR); //def, x, y, w,h .setGroup(toolsGroup);
+	  int _width = consoleGroup.getWidth()-18;
+	  int _height = consoleGroup.getBackgroundHeight()-10;
+
+	  console = controlP5.addTextarea( "console_textarea", "-", consoleGroupX + 5, consoleGroupY+5, _width, _height);
+	  console.setColor(TEXT_COLOR);
+	}
+
+	void console(boolean a) {
+	  println("UNO");
+	}
+
+	public void zoom(int value) {
+	  cam.setDistance(value, 1000);
+	}
+
+	public void controlEvent(ControlEvent theEvent) {
+	  if (theEvent.isGroup()) {
+	    //println("got an event from group "+theEvent.group().name()+", isOpen? "+theEvent.group().isOpen());
+	    if (theEvent.group() == consoleGroup) {
+	      //Toggle on/off the console when the group is clicked
+	      if (console.isVisible()) { 
+	        console.hide();
+	        consoleGroup.setPosition(consoleGroupX, height-10);
+	      }
+	      else { 
+	        console.show();
+	        consoleGroup.setPosition(consoleGroupX, consoleGroupY);
+	      }
+	    }
+	    else if (theEvent.group() == infoGroup) { //If the activated group is the infoGroup
+	      if (infoGroup.isOpen()) { //Relocate the infoGroup wether opened or not
+	        infoGroup.setPosition(infoGroupX, infoGroupY);
+	      }
+	      else {
+	        infoGroup.setPosition(infoGroupX, height-10);
+	      }
+	    }//END groups IFS
+	  }
+	  else if (theEvent.isController()) {
+	    //println("got something from a controller "+theEvent.controller().name());
+	  }
+	}
+
+	public void toConsole(Object msg) {
+	  String current = console.text();
+	  console.setText(msg.toString() + "\n" + current);
+	}
+
+	public void myBackground() {
+	  recordCurrentCamera();
+	  background(100);
+	  image(bg, 0, 0);
+	  restoreCamera();
+	}
+
+
+}// NavigableSketh ends

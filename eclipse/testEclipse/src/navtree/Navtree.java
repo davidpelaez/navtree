@@ -1,27 +1,37 @@
 package navtree;
 
-import java.util.ArrayList;
-import java.util.Hashtable;   
+import processing.core.*;
+import java.util.*;   
+
+import org.json.*;
+import java.io.*;
+
 public class Navtree {
+	
+public SimpleTree applet;
 
   public int NULL_PARENT = -1;
   int dateDelta = 0;
 
   String[] myJsonStrings;
   public java.util.Hashtable nodes;
-  public ArrayList roots;
+  public ArrayList<Node> roots;
   public int maxDate, minDate; //This is to find what span of time's being graphed
   public Node oldestNode, youngestNode;
 
-  Navtree() {
+  Navtree(SimpleTree _parent) {
+	  applet = _parent;
     nodes = new Hashtable();
-    roots = new ArrayList();
+    roots = new ArrayList<Node>();
+    
     //Load the Json file, build in memory the tree.  
-    myJsonStrings = loadStrings("myNavtree.json");
-    toConsole(myJsonStrings.length + " nodes Loaded");
+    myJsonStrings = loadJson();
+    System.out.println(myJsonStrings.length + " nodes Loaded");
     String theLine;
     //For node creation in memory
     int id, date, parent, extra;
+    int a = 1;
+    int b =a;
     String url, children;
     boolean root, hasChildren;
     Node theNode;
@@ -72,20 +82,23 @@ public class Navtree {
         //println(JSONObject.getNames(nytData));
       }
       catch (JSONException e) {
-        println ("There was an error parsing the JSONObject.");
-        println (e);
+    	  applet.toConsole ("There was an error parsing the JSONObject.");
+        applet.toConsole (e);
       }
     }//Tree mapping in memory ends
-    toConsole(nodes.size() + " nodes");
-    toConsole(roots.size() + " roots");
-    toConsole("maxDate: " + getMaxDate() + " - " + maxDate);
-    toConsole("minDate: " + getMinDate() + " - " + minDate);
-    toConsole("oldest: " + oldestNode.date);
-    toConsole("youngest: " + youngestNode.date);
+    System.out.println(nodes.size());
+    //applet.toConsole(nodes.size() + " nodes");
     dateDelta = (maxDate-minDate); //SHOU
-    toConsole("dateDelta: " + dateDelta);
-    toConsole("maxdateDelta: " + oldestNode.getDelta());
-    toConsole("mindateDelta: " + youngestNode.getDelta());
+    /*
+    applet.toConsole(roots.size() + " roots");
+    applet.toConsole("maxDate: " + getMaxDate() + " - " + maxDate);
+    applet.toConsole("minDate: " + getMinDate() + " - " + minDate);
+    applet.toConsole("oldest: " + oldestNode.date);
+    applet.toConsole("youngest: " + youngestNode.date);
+    
+    applet.toConsole("dateDelta: " + dateDelta);
+    applet.toConsole("maxdateDelta: " + oldestNode.getDelta());
+    applet.toConsole("mindateDelta: " + youngestNode.getDelta());*/
   } //Constuctor ends
 
 
@@ -123,4 +136,36 @@ public class Navtree {
   public int getTimespanDays() {
     return getTimespanSeconds()/86400;
   }
+  
+  
+  public String[] loadJson() {
+		
+		ArrayList<String> fileLines = new ArrayList<String>();
+		String[] lines = null;
+		 try{
+			    // Open the file that is the first 
+			    // command line parameter
+			    FileInputStream fstream = new FileInputStream("myNavtree.json");
+			    // Get the object of DataInputStream
+			    DataInputStream in = new DataInputStream(fstream);
+			        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+			    String strLine;
+			    //Read File Line By Line
+			    while ((strLine = br.readLine()) != null)   {
+			      // Print the content on the console
+			      fileLines.add(strLine);
+			    }
+			    //Close the input stream
+			    in.close();
+			    lines = fileLines.toArray(new String[1]);
+			    
+			    }catch (Exception e){//Catch exception if any
+			      System.err.println("Error: " + e.getMessage());
+			    }
+			    return lines;
+	}
+  
+  
+  
+  
 }

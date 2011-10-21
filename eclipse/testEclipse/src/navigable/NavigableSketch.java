@@ -16,20 +16,20 @@ import peasy.*;
 public  class NavigableSketch extends PApplet {
 	
 	public ControlGroup consoleGroup, toolsGroup, infoGroup;
-	Textarea console;
+	public Textarea console;
 
 	int minDistance = 300, maxDistance = 4500; //600 is almos real size as indicated in the drawing 2d commands, that means that an ellipse of 100px appears like 100px in screen at 600 of distance
 	int consoleGroupX, consoleGroupY, infoGroupX, infoGroupY;
-	PMatrix3D currCameraMatrix;
-	PGraphics3D g3; 
+	public PMatrix3D currCameraMatrix;
+	public PGraphics3D g3; 
 	public ControlP5 controlP5;
-	PeasyCam cam;
-	PImage bg;
+	public PeasyCam cam;
+	public PImage bg;
 	/*left-drag to rotate 
 	 mouse wheel, or right-drag up and down to zoom 
 	 middle-drag (cmd-left-drag on mac) to pan 
 	 double-click to reset*/
-	int GROUP_BACKGROUND, TEXT_COLOR;
+	public int GROUP_BACKGROUND, TEXT_COLOR;
 	
 	public void myDraw(){
 		fill(255, 0, 0);
@@ -49,7 +49,8 @@ public  class NavigableSketch extends PApplet {
 
 
 	public void setup() {  
-	  size(1000, 400, OPENGL); //This allows us to use PEASY. Just draw like it was regular 2d.   
+		
+		size(1000, 400, OPENGL); //This allows us to use PEASY. Just draw like it was regular 2d.   
 	  setupCam(); 
 	  setupGUI();	  
 	  frameRate(12); //Reduces memory ocnsumtion?

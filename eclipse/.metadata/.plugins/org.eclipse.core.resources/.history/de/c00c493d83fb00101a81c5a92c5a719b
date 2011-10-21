@@ -1,0 +1,46 @@
+package navtree;
+
+import processing.core.*;
+import processing.opengl.*;
+import controlP5.*;
+import peasy.*;
+import org.json.*; 
+
+public class SimpleTree extends navigable.NavigableSketch{
+	
+	@Override
+	public void myDraw() {
+		  noStroke();
+		  Node theRoot;
+		  //Draw the roots and all their subtrees
+		  for (int i=0; i < navtree.roots.size(); i++) {
+		    theRoot = (Node)navtree.roots.get(i);
+		    theRoot.drawNode();
+		  }
+		}
+
+		public void treeWidth(int value) {
+		  maxTreeWidth = value;
+		}
+
+	
+	@Override
+	public void mySetup(){
+		toConsole("Overritten setup talking");
+	}
+	
+	/*
+	* Connecting this sketch with the parent
+	*/
+	
+	@Override
+	public void toConsole(Object msg){	
+		super.toConsole(msg);
+	}
+	
+	@Override
+	public void controlEvent(ControlEvent theEvent) {
+		super.controlEvent(theEvent);		
+	}
+
+}

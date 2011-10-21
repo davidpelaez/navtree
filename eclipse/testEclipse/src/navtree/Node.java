@@ -1,6 +1,10 @@
 package navtree;
-
+import java.util.Date;
+import processing.core.*;
 public class Node {
+	int margin = 25; //The minimun distance fromt the start and the end of the window
+	
+	int yBase; //The line that constains all the roots (trunk)
 
 	  public int id, parent, extra;
 	  public int date;
@@ -19,6 +23,7 @@ public class Node {
 	    extra = nextra;
 	    date = ndate; //This comes as unix time because it's easier to use to create the graph
 	    navtree = ntree;
+	    yBase = navtree.applet.height/2;
 
 	    if (nchildren.length()>0) {
 	      String[] splitted = nchildren.split(",");
@@ -45,7 +50,8 @@ public class Node {
 
 	  //The position that the node should have in the graph in X
 	  public float getX() {
-	    int y2_y1 = (maxTreeWidth-margin)-(margin);
+		  
+	    int y2_y1 = (navtree.applet.maxTreeWidth-margin)-(margin);
 
 	    int x2_x1 = (navtree.dateDelta)-(0); //Only for clarity purposes!
 
@@ -69,7 +75,7 @@ public class Node {
 	      Node parentNode = getParent();
 	      float _angle = parentNode.getAngle(id);
 	      float _x = getX()-parentNode.getX();
-	      float _tan = tan(radians(_angle)); 
+	      float _tan = PApplet.tan(PApplet.radians(_angle)); 
 	      float _y = (_tan*_x); //Use this angle to caclulate the Y in combination with Y
 	      if ( _angle < 0) { 
 	        return yBase-_y;
@@ -82,7 +88,7 @@ public class Node {
 
 	  //Draw the representation of the node
 	  public void drawNode() { 
-	    stroke(0, 255, 0);
+		  navtree.applet.stroke(0, 255, 0);
 	    if (!root) {
 	      drawConnection();
 	    }
@@ -91,13 +97,13 @@ public class Node {
 	    //println(getDelta());
 	    if (root) {
 
-	      fill(0, 0, 255);
+	    	navtree.applet.fill(0, 0, 255);
 	    }
 	    else {
-	      fill(255, 0, 0);
+	    	navtree.applet.fill(255, 0, 0);
 	    }
-	    noStroke();
-	    ellipse(getX(), getY(), 15, 15);
+	    navtree.applet.noStroke();
+	    navtree.applet.ellipse(getX(), getY(), 15, 15);
 	    drawSubtree();
 	  }
 
@@ -123,8 +129,8 @@ public class Node {
 	         //println(navtree.nodes.keySet());
 	         println(this);
 	         println(theParent);*/
-	        line(getX(), getY(), theParent.getX(), theParent.getY());
-	        noStroke();
+	        navtree.applet.line(getX(), getY(), theParent.getX(), theParent.getY());
+	        navtree.applet.noStroke();
 	      }
 	    }
 	    catch(NullPointerException e) {
