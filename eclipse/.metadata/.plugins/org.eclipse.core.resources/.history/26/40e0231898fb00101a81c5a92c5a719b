@@ -14,14 +14,14 @@ public SimpleTree applet;
   int dateDelta = 0;
 
   String[] myJsonStrings;
-  public java.util.HashMap nodes;
+  public java.util.Hashtable nodes;
   public ArrayList<Node> roots;
   public int maxDate, minDate; //This is to find what span of time's being graphed
   public Node oldestNode, youngestNode;
 
   Navtree(SimpleTree _parent) {
 	  applet = _parent;
-    nodes = new HashMap();
+    nodes = new Hashtable();
     roots = new ArrayList<Node>();
     
     //Load the Json file, build in memory the tree.  

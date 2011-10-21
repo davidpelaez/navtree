@@ -38,7 +38,7 @@ public class SimpleTree extends navigable.NavigableSketch {
 																			// y,
 																			// w,h
 																			// .setGroup(toolsGroup);
-		super.toConsole("Added slider");
+		super.toConsole("Added slider);
 	}
 
 	/*
