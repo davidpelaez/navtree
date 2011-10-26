@@ -12,6 +12,13 @@ public class Navtree {
 	public int nodeCount = 0, edgeCount = 0;
 	public PApplet applet;
 
+	// For testing purposes
+	public static void main(String[] args) {
+		System.out.println("Navtree started");
+		Navtree navtree = new Navtree();
+		System.out.println("NodeCount = " + navtree.nodeCount);
+		System.out.println("EdgeCount = " + navtree.edgeCount);
+	}
 
 	Navtree(PApplet _applet) {
 		applet = _applet;
@@ -37,8 +44,6 @@ public class Navtree {
 		for (int i = 0; i < edgeCount; i++) {
 			edges[i].pointToNodes();
 		}
-		System.out.println("NodeCount = " + nodeCount);
-		System.out.println("EdgeCount = " + edgeCount);
 	}// Constructor ends
 	
 	protected void shrinkArrays(){

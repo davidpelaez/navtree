@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;navtree&apos; to &apos;sketch2_edges/src&apos;&#x0A;- Original project: &apos;sketch2_edges&apos;&#x0A;- Destination element: &apos;sketch2_edges/src&apos;&#x0A;- Original element: &apos;sketch2_edges/src/navtree&apos;" description="Copy package" destination="/src" element1="/src&lt;navtree" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1319654347421" version="1.0"/>
+</session>

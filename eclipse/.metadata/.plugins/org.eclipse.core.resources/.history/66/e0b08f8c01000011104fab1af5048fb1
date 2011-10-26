@@ -1,0 +1,11 @@
+package navtree;
+
+public class SimpleTree extends navigable.NavigableSketch {
+	public void myDraw(){
+		
+	}
+	
+	public void mySetup(){
+		
+	}
+}

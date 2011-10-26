@@ -10,11 +10,17 @@ public class Navtree {
 	public Node[] nodes = new Node[100];
 	public Edge[] edges = new Edge[500];
 	public int nodeCount = 0, edgeCount = 0;
-	public PApplet applet;
+	public PApplet sketch;
 
+	// For testing purposes
+	public static void main(String[] args) {
+		System.out.println("Navtree started");
+		Navtree navtree = new Navtree();
+		System.out.println("NodeCount = " + navtree.nodeCount);
+		System.out.println("EdgeCount = " + navtree.edgeCount);
+	}
 
-	Navtree(PApplet _applet) {
-		applet = _applet;
+	Navtree(PApplet sketch) {
 		nodeTable = new java.util.HashMap<Integer, Node>();
 		String[] myJsonStrings = loadFile("data/myNavtree.json");		
 		String jsonLine;
@@ -37,8 +43,6 @@ public class Navtree {
 		for (int i = 0; i < edgeCount; i++) {
 			edges[i].pointToNodes();
 		}
-		System.out.println("NodeCount = " + nodeCount);
-		System.out.println("EdgeCount = " + edgeCount);
 	}// Constructor ends
 	
 	protected void shrinkArrays(){

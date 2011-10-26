@@ -12,7 +12,6 @@ public class Navtree {
 	public int nodeCount = 0, edgeCount = 0;
 	public PApplet applet;
 
-
 	Navtree(PApplet _applet) {
 		applet = _applet;
 		nodeTable = new java.util.HashMap<Integer, Node>();
@@ -37,8 +36,6 @@ public class Navtree {
 		for (int i = 0; i < edgeCount; i++) {
 			edges[i].pointToNodes();
 		}
-		System.out.println("NodeCount = " + nodeCount);
-		System.out.println("EdgeCount = " + edgeCount);
 	}// Constructor ends
 	
 	protected void shrinkArrays(){
