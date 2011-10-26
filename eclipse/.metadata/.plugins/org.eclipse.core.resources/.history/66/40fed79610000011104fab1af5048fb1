@@ -117,7 +117,7 @@ public class Navtree {
 			for (int i = 0; i < nodeCount; i++) {
 				nodes[i].update();
 			}
-		}//Update block ends
+		}
 		for (int i = 0; i < edgeCount; i++) {
 			edges[i].draw();
 		}

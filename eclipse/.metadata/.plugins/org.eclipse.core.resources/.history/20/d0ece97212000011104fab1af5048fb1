@@ -19,7 +19,7 @@ public class Node {
 	public PApplet applet;
 	public boolean fixedX=false, fixedY=false;
 	
-	public static int MAX_DELTA = 20;
+	public static int MAX_DELTA = 15;
 
 	Node(Navtree _navtree, JSONObject nodeData) {
 		JSONNodeReader jNode = new JSONNodeReader(nodeData);

@@ -17,9 +17,7 @@ public class Node {
 	public float x, y;
 	public float dx, dy; // Offset added is nodes are too close
 	public PApplet applet;
-	public boolean fixedX=false, fixedY=false;
-	
-	public static int MAX_DELTA = 20;
+	public boolean fixed = false;
 
 	Node(Navtree _navtree, JSONObject nodeData) {
 		JSONNodeReader jNode = new JSONNodeReader(nodeData);
@@ -45,11 +43,7 @@ public class Node {
 				children[i] = Integer.parseInt(splitted[i].trim());
 			}
 		}
-		if(isRoot){
-			y = applet.height/2;
-			fixY();
-			
-		}
+
 	}// Constructor ends
 
 	public void pointToParent() {
@@ -102,12 +96,10 @@ public class Node {
 	}// Relax ends
 
 	void update() {
-		if (!fixedX) {
-			x += PApplet.constrain(dx, -MAX_DELTA, MAX_DELTA);
+		if (!fixed) {
+			x += PApplet.constrain(dx, -5, 5);
+			y += PApplet.constrain(dy, -5, 5);
 			//x = PApplet.constrain(x, 0, applet.width);
-		}
-		if(!fixedY){
-			y += PApplet.constrain(dy, -MAX_DELTA, MAX_DELTA);
 			//y = PApplet.constrain(y, 0, applet.height);
 		}
 		dx /= 2;
@@ -115,25 +107,13 @@ public class Node {
 	}// Update ends
 
 	void draw() {
-		if (isRoot) {
+		if (fixed) {
 			applet.fill(130,0,0);
 		} else {
-			applet.fill(255,255,0);
+			applet.fill(130,130,0);
 		}
 		applet.stroke(0);
 		applet.strokeWeight((float)0.5);
 		applet.ellipse(x, y, 10, 10);
 	}// Draw ends
-	
-	//Lock the Y position of the node
-	public void fixY(){
-		fixedY = true;
-	}
-	
-	//Lock the Y position of the node
-	public void fixX(){
-		fixedX = true;
-	}
-	
-	
 }

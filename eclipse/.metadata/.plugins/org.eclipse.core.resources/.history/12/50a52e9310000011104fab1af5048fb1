@@ -11,8 +11,8 @@ public class Navtree {
 	public Edge[] edges = new Edge[500];
 	public int nodeCount = 0, edgeCount = 0;
 	public PApplet applet;
-	public boolean update = true;// Define if continue updating the tree or only
-									// drawing it.
+	public boolean update=true;//Define if continue updating the tree or only drawing it.
+
 
 	Navtree(PApplet _applet) {
 		applet = _applet;
@@ -42,9 +42,9 @@ public class Navtree {
 		System.out.println("NodeCount = " + nodeCount);
 		System.out.println("EdgeCount = " + edgeCount);
 	}// Constructor ends
-
-	protected void shrinkArrays() {
-
+	
+	protected void shrinkArrays(){
+		
 	}
 
 	protected void addEdge(int fromId, int toParentId) {
@@ -105,25 +105,24 @@ public class Navtree {
 		}
 		return lines;
 	}
-
-	public void draw() {
-		if (update) {
-			for (int i = 0; i < edgeCount; i++) {
-				edges[i].relax();
+	
+	public void draw(){
+		if(update){for (int i = 0 ; i < edgeCount ; i++) {
+			edges[i].relax( );
 			}
 			for (int i = 0; i < nodeCount; i++) {
-				nodes[i].relax();
+			nodes[i].relax( );
 			}
 			for (int i = 0; i < nodeCount; i++) {
-				nodes[i].update();
+			nodes[i].update( );
 			}
-		}//Update block ends
-		for (int i = 0; i < edgeCount; i++) {
-			edges[i].draw();
-		}
-		for (int i = 0; i < nodeCount; i++) {
-			nodes[i].draw();
-		}
+	}
+			for (int i = 0 ; i < edgeCount ; i++) {
+			edges[i].draw( );
+			}
+			for (int i = 0 ; i < nodeCount ; i++) {
+			nodes[i].draw( );
+			}
 	}
 
 }

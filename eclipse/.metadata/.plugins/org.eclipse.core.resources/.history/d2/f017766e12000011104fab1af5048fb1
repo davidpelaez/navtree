@@ -19,7 +19,7 @@ public class Node {
 	public PApplet applet;
 	public boolean fixedX=false, fixedY=false;
 	
-	public static int MAX_DELTA = 20;
+	public static int MAX_DELTA = 15;
 
 	Node(Navtree _navtree, JSONObject nodeData) {
 		JSONNodeReader jNode = new JSONNodeReader(nodeData);
@@ -103,11 +103,11 @@ public class Node {
 
 	void update() {
 		if (!fixedX) {
-			x += PApplet.constrain(dx, -MAX_DELTA, MAX_DELTA);
+			x += PApplet.constrain(dx, -5, 5);
 			//x = PApplet.constrain(x, 0, applet.width);
 		}
 		if(!fixedY){
-			y += PApplet.constrain(dy, -MAX_DELTA, MAX_DELTA);
+			y += PApplet.constrain(dy, -5, 5);
 			//y = PApplet.constrain(y, 0, applet.height);
 		}
 		dx /= 2;
