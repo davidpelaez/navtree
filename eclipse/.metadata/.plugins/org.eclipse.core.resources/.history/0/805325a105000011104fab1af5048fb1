@@ -1,0 +1,21 @@
+package navtree;
+import processing.core.*;
+
+public class SimpleTree extends PApplet{
+	
+	Navtree navtree;
+	
+	public void myDraw(){
+		navtree.draw();
+	}
+	
+	public void mySetup(){
+		navtree = new Navtree(this);		
+	}
+	
+	
+	@Override
+	public void controlEvent(ControlEvent theEvent) {
+		super.controlEvent(theEvent);
+	}
+}

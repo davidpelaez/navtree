@@ -1,0 +1,22 @@
+package navtree;
+
+import processing.core.*;
+
+public class SimpleTree extends PApplet {
+
+	Navtree navtree;
+
+	public void Setup() {
+		size(1000, 400);
+		setupCam();
+		setupGUI();
+		frameRate(12); // Reduces memory ocnsumtion?
+		mySetup();
+		navtree = new Navtree(this);
+
+	}
+
+	public void Draw() {
+		navtree.draw();
+	}
+}

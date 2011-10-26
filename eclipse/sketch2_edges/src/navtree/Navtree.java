@@ -16,7 +16,8 @@ public class Navtree {
 	Navtree(PApplet _applet) {
 		applet = _applet;
 		nodeTable = new java.util.HashMap<Integer, Node>();
-		String[] myJsonStrings = loadFile("data/myNavtree.json");		
+		String[] myJsonStrings = loadFile("myNavtree.json");
+		System.out.println("JSon lines loaded = " + myJsonStrings.length);
 		String jsonLine;
 		JSONObject jsonData;
 		for (int i = 0; i < myJsonStrings.length; i++) {
@@ -102,6 +103,24 @@ public class Navtree {
 			System.err.println("Error: " + e.getMessage());
 		}
 		return lines;
+	}
+	
+	public void draw(){
+		for (int i = 0 ; i < edgeCount ; i++) {
+			edges[i].relax( );
+			}
+			for (int i = 0; i < nodeCount; i++) {
+			nodes[i].relax( );
+			}
+			for (int i = 0; i < nodeCount; i++) {
+			nodes[i].update( );
+			}
+			for (int i = 0 ; i < edgeCount ; i++) {
+			edges[i].draw( );
+			}
+			for (int i = 0 ; i < nodeCount ; i++) {
+			nodes[i].draw( );
+			}
 	}
 
 }

@@ -1,0 +1,16 @@
+package navtree;
+
+import processing.core.*;
+
+public class SimpleTree extends PApplet{
+	
+	Navtree navtree;
+	
+	public void Setup(){
+		navtree = new Navtree(this);		
+	}
+
+	public void Draw(){
+		navtree.draw();
+	}
+}

@@ -1,0 +1,45 @@
+package navtree;
+
+public class Edge {
+
+	public Node from, to;
+	public float length;
+	public int fromId, toId;
+	private Navtree navtree;
+
+	Edge(Navtree _navtree, int _fromId, int _toId) {
+		navtree = _navtree;
+		fromId = _fromId;
+		toId = _toId;
+	}
+
+	public void pointToNodes() {
+		from = navtree.findNode(fromId);
+		to = navtree.findNode(toId);
+		length = 50; // This will be changed dinamically according to the date
+						// distance of the nodes
+
+	}
+
+	public void draw() {
+		navtree.applet.stroke(edgeColor);
+		navtree.applet.strokeWeight(0.35);
+		navtree.applet.line(from.x, from.y, to.x, to.y);
+	}
+
+	public void relax() {
+		float vx = to.x - from.x;
+		float vy = to.y - from.y;
+		float d = mag(vx, vy);
+		if (d > 0) {
+			float f = (len - d) / (d * 3);
+			float dx = f * vx;
+			float dy = f * vy;
+			to.dx += dx;
+			to.dy += dy;
+			from.dx -= dx;
+			from.dy -= dy;
+		}
+	}
+
+}
