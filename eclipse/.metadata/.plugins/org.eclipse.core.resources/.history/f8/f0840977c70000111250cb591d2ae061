@@ -1,0 +1,19 @@
+package myCam2D;
+
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+
+public class MyWheelListener implements MouseWheelListener  {
+	
+	public MyCam cam;
+	
+	public MyWheelListener(MyCam _cam){
+		cam = _cam;
+		System.out.println("Listener created");
+	}
+	
+	public void mouseWheelMoved(final MouseWheelEvent e) {
+		System.out.println("The wheel scrolled");
+	}
+	
+}

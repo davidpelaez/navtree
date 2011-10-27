@@ -1,0 +1,21 @@
+package myCam2D;
+
+import processing.core.*;
+
+public class myCam {
+	
+	public PApplet applet;
+	public MyMouseListener mouseListener;
+	public MyWheelListener mouseWheelListener;
+	
+	public myCam(PApplet p){
+		applet = p;
+	}
+	
+	public void linkListeners(){
+		applet.registerMouseEvent(mouseListener);
+		applet.registerKeyEvent(mouseListener);
+		applet.addMouseWheelListener(mouseWheelListener);
+	}
+
+}

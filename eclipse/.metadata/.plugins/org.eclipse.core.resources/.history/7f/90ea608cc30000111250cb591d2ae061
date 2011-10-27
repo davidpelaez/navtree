@@ -1,0 +1,52 @@
+package myCam2D;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+
+import processing.core.PConstants;
+
+public class myMouseListener {
+	
+
+	
+	public void keyEvent(final KeyEvent e) {
+		if (e.getID() == KeyEvent.KEY_RELEASED && e.getKeyCode() == KeyEvent.VK_SHIFT) {
+			dragConstraint = null; //REMOVE THE CONSTRAINT THAT WAS APPLIED WHILE THE DRAG KEY WAS PRESSED
+		}
+	}
+
+	public void mouseEvent(final MouseEvent e) {
+		if (resetOnDoubleClick && e.getID() == MouseEvent.MOUSE_CLICKED
+				&& e.getClickCount() == 2) {
+			reset();
+		} else if (e.getID() == MouseEvent.MOUSE_RELEASED) {
+			dragConstraint = null;
+		} else if (e.getID() == MouseEvent.MOUSE_DRAGGED) {
+			final double dx = p.mouseX - p.pmouseX;
+			final double dy = p.mouseY - p.pmouseY;
+
+			if (e.isShiftDown()) {
+				if (dragConstraint == null && Math.abs(dx - dy) > 1) {
+					dragConstraint = Math.abs(dx) > Math.abs(dy) ? Constraint.X
+							: Constraint.Y;
+				}
+			} else {
+				dragConstraint = null;
+			}
+
+			final int b = p.mouseButton;
+			if (centerDragHandler != null
+					&& (b == PConstants.CENTER || (b == PConstants.LEFT && e
+							.isMetaDown()))) {
+				centerDragHandler.handleDrag(dx, dy);
+			} else if (leftDragHandler != null && b == PConstants.LEFT) {
+				leftDragHandler.handleDrag(dx, dy);
+			} else if (rightDraghandler != null && b == PConstants.RIGHT) {
+				rightDraghandler.handleDrag(dx, dy);
+			}
+		}
+	}
+
+}

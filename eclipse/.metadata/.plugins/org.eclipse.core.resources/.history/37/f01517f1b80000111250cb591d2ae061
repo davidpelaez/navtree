@@ -1,0 +1,28 @@
+package peasy2d;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+import processing.core.*;
+
+
+public class PeasyCam2D {
+	
+	private PApplet parent;
+	private float zoom = 1;
+	private float tx = 0;
+	private float ty = 0;
+	
+	public PeasyCam2D(PApplet _parent){
+		parent = _parent;
+	}
+	
+	public void feed(){
+		parent.scale(zoom);
+		parent.translate(tx, ty);
+	}
+
+
+	
+}

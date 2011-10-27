@@ -1,40 +1,33 @@
 package navtree;
 
 import processing.core.*;
-import peasy2d.*;
+import myCam2D.*;
 
 public class SimpleTree2D extends PApplet {
 
 	Navtree navtree;
+	MyCam cam;
 	float zoom = 1, tx = 0, ty = 0;
 
 	public void setup() {
+		
 		size(1250, 550);
 		frameRate(12);
 		navtree = new Navtree(this);
 		smooth();
-		// Mouse for zoom management
-		addMouseWheelListener(new java.awt.event.MouseWheelListener() {
-			public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
-				mouseWheel(evt.getWheelRotation());
-			}
-		});
+		cam = new MyCam(this);
 
 	}
 
 	public void draw() {
 		background(255);
 		pushMatrix();
+		cam.feed();
 		scale(zoom);
 		translate(tx, ty);
 		navtree.draw();
 		popMatrix();
 	}
 
-	public void mouseWheel(int delta) {
-		// your zoom code goes here
-		System.out.println(delta);
-		zoom += delta/10;
-	}
 
 }

@@ -1,0 +1,34 @@
+package peasy2d;
+
+abstract public class AbstractInterp {
+	double startTime;
+	final double timeInMillis;
+
+	protected AbstractInterp(final long timeInMillis) {
+		this.timeInMillis = timeInMillis;
+	}
+
+	void start() {
+		startTime = p.millis();
+		p.registerDraw(this);
+	}
+
+	void cancel() {
+		p.unregisterDraw(this);
+	}
+
+	public void draw() {
+		final double t = (p.millis() - startTime) / timeInMillis;
+		if (t > .99) {
+			cancel();
+			setEndState();
+		} else {
+			interp(t);
+		}
+		feed();
+	}
+
+	protected abstract void interp(double t);
+
+	protected abstract void setEndState();
+}

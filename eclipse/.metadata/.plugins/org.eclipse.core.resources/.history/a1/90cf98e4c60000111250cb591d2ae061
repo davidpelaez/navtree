@@ -1,0 +1,33 @@
+package myCam2D;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+
+import processing.core.PConstants;
+
+public class MyMouseListener {
+	
+	public boolean panning=false; //This is set to true when CMD is down
+	
+	public MyMouseListener(){
+		System.out.println("Listener created");
+	}
+
+	
+	public void keyEvent(final KeyEvent e) {
+		//Track when cmd is pressed or released
+		if (e.getID() == KeyEvent.KEY_RELEASED && e.getKeyCode() == KeyEvent.VK_META) {
+			System.out.println("CMD released");
+			panning = false;
+		}else if(e.getID() == KeyEvent.KEY_PRESSED && e.getKeyCode() == KeyEvent.VK_META) {
+			System.out.println("CMD PRESSED");
+		}
+	}
+
+	public void mouseEvent(final MouseEvent e) {
+		System.out.println("There was a mouse event");
+	}
+
+}

@@ -1,0 +1,11 @@
+package myCam2D;
+
+import java.awt.event.MouseWheelEvent;
+
+public class myWheelListener {
+	public void mouseWheelMoved(final MouseWheelEvent e) {
+		if (wheelHandler != null) {
+			wheelHandler.handleWheel(e.getWheelRotation());
+		}
+	}
+}

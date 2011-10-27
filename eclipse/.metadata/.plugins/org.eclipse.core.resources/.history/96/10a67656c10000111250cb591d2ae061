@@ -1,0 +1,27 @@
+package peasy2d;
+
+import peasy.InterpolationUtil;
+
+public class PanInterp extends AbstractInterp{
+	
+	private final double startDistance = distance;
+	private final double endDistance;
+
+	public DistanceInterp(final double endDistance, final long timeInMillis) {
+		super(timeInMillis);
+		this.endDistance = Math.min(maximumDistance, Math.max(minimumDistance,
+				endDistance));
+	}
+
+	@Override
+	protected void interp(final double t) {
+		//Proportionally set the value according to the time
+		distance = InterpolationUtil.smooth(startDistance, endDistance, t);
+	}
+
+	@Override
+	protected void setEndState() {
+		distance = endDistance;
+	}
+
+}

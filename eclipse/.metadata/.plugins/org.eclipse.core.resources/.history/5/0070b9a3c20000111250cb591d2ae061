@@ -1,0 +1,13 @@
+package navtree;
+
+import processing.core.*;
+
+public class myCam {
+	
+	public PApplet applet;
+	
+	public myCam(PApplet p){
+		applet = p;
+	}
+
+}

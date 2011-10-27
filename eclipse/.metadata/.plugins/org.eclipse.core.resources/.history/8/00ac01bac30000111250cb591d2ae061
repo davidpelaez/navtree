@@ -1,0 +1,22 @@
+package myCam2D;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+
+import processing.core.PConstants;
+
+public class MyMouseListener {
+	
+
+	
+	public void keyEvent(final KeyEvent e) {
+		System.out.println("There was a key event");		
+	}
+
+	public void mouseEvent(final MouseEvent e) {
+		
+	}
+
+}

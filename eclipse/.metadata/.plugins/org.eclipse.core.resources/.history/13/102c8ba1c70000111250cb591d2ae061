@@ -1,0 +1,39 @@
+package myCam2D;
+
+import processing.core.*;
+
+public class MyCam {
+	
+	public PApplet applet;
+	public MyMouseListener mouseListener;
+	public MyWheelListener mouseWheelListener;
+	public float zoom=1, tx=0,ty=0, maxZoom=2, minZoom=(float)0.1;
+	
+	public MyCam(PApplet p){
+		applet = p;
+		linkListeners();
+	}
+	
+	public void linkListeners(){
+		mouseListener = new MyMouseListener(this);
+		mouseWheelListener = new MyWheelListener(this); 
+		applet.registerMouseEvent(mouseListener);
+		applet.registerKeyEvent(mouseListener);
+		applet.addMouseWheelListener(mouseWheelListener);
+	}
+	
+	public void pan(px,py){
+		tx = px;
+		ty = py;
+	}
+	
+	public void zoom(zo){
+		zoom = zo;
+	}
+	
+	public void feed(){
+		applet.translate(tx,ty);
+		applet.scale(zoom);		
+	}
+
+}

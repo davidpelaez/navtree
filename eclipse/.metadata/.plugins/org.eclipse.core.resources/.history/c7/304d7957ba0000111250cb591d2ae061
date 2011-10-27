@@ -1,0 +1,164 @@
+package peasy2d;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+
+import peasy.org.apache.commons.math.geometry.Vector3D;
+import peasy2d.PeasyCam.Constraint;
+import peasy2d.PeasyCam.PeasyMouseListener;
+import peasy2d.PeasyCam.PeasyMousewheelListener;
+import processing.core.*;
+
+
+public class PeasyCam2D {
+	
+	private static enum Constraint {
+		X, Y
+	}
+	
+	private PApplet parent;
+	private float zoom = 1;
+	private float tx = 0;
+	private float ty = 0;
+	
+	private Constraint dragConstraint = null;
+	
+	private final InterpolationManager zoomInterps = new InterpolationManager();
+	
+	private final PeasyDragHandler panHandler /* ha ha ha */= new PeasyDragHandler() {
+		public void handleDrag(final double dx, final double dy) {
+			dampedPanX.impulse(dx / 8.);
+			dampedPanY.impulse(dy / 8.);
+		}
+	};
+	
+	private final PeasyWheelHandler zoomWheelHandler = new PeasyWheelHandler() {
+		public void handleWheel(final int delta) {
+			dampedZoom.impulse(wheelScale * delta);
+		}
+	};
+	private PeasyWheelHandler wheelHandler = zoomWheelHandler;
+	private double wheelScale = 1.0;
+	
+	private final PeasyMouseListener mouseListener = new PeasyMouseListener();
+	private final PeasyMousewheelListener mouseWheelListener = new PeasyMousewheelListener();
+	
+	/*
+	 * DAMPED ACTIONS
+	 */
+	
+	private final DampedAction dampedZoom, dampedPanX,dampedPanY;
+	
+	dampedZoom = new DampedAction(this) {
+		@Override
+		protected void behave(final double velocity) {
+			mouseZoom(velocity);
+		}
+	};
+
+	dampedPanX = new DampedAction(this) {
+		@Override
+		protected void behave(final double velocity) {
+			mousePan(velocity, 0);
+		}
+	};
+
+	dampedPanY = new DampedAction(this) {
+		@Override
+		protected void behave(final double velocity) {
+			mousePan(0, velocity);
+		}
+	};
+
+
+	
+	public PeasyCam2D(PApplet _parent){
+		parent = _parent;
+	}
+	
+	public void feed(){
+		parent.scale(zoom);
+		parent.translate(tx, ty);
+	}
+	
+	/*
+	 * MOUSE CLASSES
+	 */
+	
+	protected class PeasyMousewheelListener implements MouseWheelListener {
+		public void mouseWheelMoved(final MouseWheelEvent e) {
+			if (wheelHandler != null) {
+				wheelHandler.handleWheel(e.getWheelRotation());
+			}
+		}
+	}
+
+	protected class PeasyMouseListener {
+		public void keyEvent(final KeyEvent e) {
+			if (e.getID() == KeyEvent.KEY_RELEASED && e.getKeyCode() == KeyEvent.VK_SHIFT) {
+				dragConstraint = null; //REMOVE THE CONSTRAINT THAT WAS APPLIED WHILE THE DRAG KEY WAS PRESSED
+			}
+		}
+
+		public void mouseEvent(final MouseEvent e) {
+			if (resetOnDoubleClick && e.getID() == MouseEvent.MOUSE_CLICKED
+					&& e.getClickCount() == 2) {
+				reset();
+			} else if (e.getID() == MouseEvent.MOUSE_RELEASED) {
+				dragConstraint = null;
+			} else if (e.getID() == MouseEvent.MOUSE_DRAGGED) {
+				final double dx = p.mouseX - p.pmouseX;
+				final double dy = p.mouseY - p.pmouseY;
+
+				if (e.isShiftDown()) {
+					if (dragConstraint == null && Math.abs(dx - dy) > 1) {
+						dragConstraint = Math.abs(dx) > Math.abs(dy) ? Constraint.X
+								: Constraint.Y;
+					}
+				} else {
+					dragConstraint = null;
+				}
+
+				final int b = p.mouseButton;
+				if (centerDragHandler != null
+						&& (b == PConstants.CENTER || (b == PConstants.LEFT && e
+								.isMetaDown()))) {
+					centerDragHandler.handleDrag(dx, dy);
+				} else if (leftDragHandler != null && b == PConstants.LEFT) {
+					leftDragHandler.handleDrag(dx, dy);
+				} else if (rightDraghandler != null && b == PConstants.RIGHT) {
+					rightDraghandler.handleDrag(dx, dy);
+				}
+			}
+		}
+
+	}
+	
+	private void mouseZoom(final double delta) {
+		safeSetDistance(distance + delta * Math.log1p(distance));
+	}
+
+	private void mousePan(final double dxMouse, final double dyMouse) {
+		final double panScale = Math.sqrt(distance * .005);
+		pan(dragConstraint == Constraint.Y ? 0 : -dxMouse * panScale,
+				dragConstraint == Constraint.X ? 0 : -dyMouse * panScale);
+	}
+	
+	private void safeSetDistance(final double distance) {
+		this.distance = Math.min(maximumDistance, Math.max(minimumDistance, distance));
+		feed();
+	}
+	
+	/*
+	 * SPACE MANAGAMENT
+	 */
+	public void pan(final double dx, final double dy) {
+		center = center.add(rotation.applyTo(new Vector3D(dx, dy, 0)));
+		feed();
+	}
+	
+
+	
+}

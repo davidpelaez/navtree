@@ -411,3 +411,45 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY org.eclipse.core.net 1 0 2011-10-27 10:30:58.526
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2011-10-27 11:38:16.427
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [PeasyMouseListener [in [Working copy] PeasyCam2D.java [in peasy2d [in myPeasyCam/src/peasy [in sketch2_edges]]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:492)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:526)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:252)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:238)
+	at org.eclipse.jdt.internal.core.SourceRefElement.getSourceRange(SourceRefElement.java:218)
+	at org.eclipse.jdt.internal.core.Member.getJavadocRange(Member.java:266)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:570)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:466)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:609)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:547)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:141)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2011-10-27 11:38:16.429
+!MESSAGE PeasyMouseListener [in [Working copy] PeasyCam2D.java [in peasy2d [in myPeasyCam/src/peasy [in sketch2_edges]]]] does not exist
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2011-10-27 12:40:45.085
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [PeasyMouseListener [in [Working copy] PeasyCam2D.java [in peasy2d [in myPeasyCam/src/peasy [in sketch2_edges]]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:492)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:526)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:252)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:238)
+	at org.eclipse.jdt.internal.core.SourceRefElement.getSourceRange(SourceRefElement.java:218)
+	at org.eclipse.jdt.internal.core.Member.getJavadocRange(Member.java:266)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:570)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:466)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:609)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:547)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:141)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2011-10-27 12:40:45.086
+!MESSAGE PeasyMouseListener [in [Working copy] PeasyCam2D.java [in peasy2d [in myPeasyCam/src/peasy [in sketch2_edges]]]] does not exist

@@ -1,0 +1,43 @@
+package peasy2d;
+
+import processing.core.*;
+
+/*
+ * This abstract class connect to the applet's draw method the update of a variable.
+ * This allows to simply create animations to enhance visually the panning and zooming experience
+ */
+
+abstract public class AbstractInterp {
+	double startTime;
+	final double timeInMillis;
+	private PApplet p;
+
+	protected AbstractInterp(PApplet applet,final long _timeInMillis) {
+		timeInMillis = _timeInMillis;
+		p = applet;
+	}
+
+	void start() {
+		startTime = p.millis();
+		p.registerDraw(this);
+	}
+
+	void cancel() {
+		p.unregisterDraw(this);
+	}
+
+	public void draw() {
+		final double t = (p.millis() - startTime) / timeInMillis;
+		if (t > .99) {
+			cancel();
+			setEndState();
+		} else {
+			interp(t);
+		}
+		feed();
+	}
+
+	protected abstract void interp(double t);
+
+	protected abstract void setEndState();
+}
