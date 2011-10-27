@@ -1,4 +1,7 @@
-class Edge < ActiveRecord::Base 
+class Edge < ActiveRecord::Base         
+  
+  named_scope :range, lambda { |from,to| { :conditions => ["created_at between ? and ?",from, to] } }
+    named_scope :secret, lambda { |secret_id| { :conditions => {:secret_id => secret_id} } }
   #This is a way to link relations to users without providing any direct link 
   #to the user information for privacy issues  
   belongs_to :secret

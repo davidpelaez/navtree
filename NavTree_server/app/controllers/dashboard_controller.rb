@@ -16,7 +16,13 @@ class DashboardController < ApplicationController
   
   #Return the complete navtree of current_user according to the requested format
   def navtree
-    @edges = Edge.all(:conditions => {:secret_id => current_user.secret.id} )
+    if params[:span].nil? #If there's no time span
+      @edges = Edge.secret(current_user.secret.id)
+    else #Otherwise get the indicated amount of days before today  
+      @days = params[:span].to_i.days
+      @edges = Edge.secret(current_user.secret.id).range(Date.today-@days,Date.today)
+      
+    end
     #target = Tempfile.new("navtree_#{current_user.secret.id}_") 
     target_path =    "#{RAILS_ROOT}/tmp/navtree_#{current_user.secret.id}_#{Process.pid}"
     target = File.open(target_path, 'w') 
