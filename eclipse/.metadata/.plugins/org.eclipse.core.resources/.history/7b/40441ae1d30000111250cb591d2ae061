@@ -17,11 +17,10 @@ public class SimpleTree2D extends PApplet {
 		navtree = new Navtree(this);
 		smooth();
 		cam = new MyCam(this);
-		int times = 1000;
-		System.out.println("Updating tree " + times +  " times before initial draw");		
-		for(int i=0; i<times;i++){
+		System.out.println("Updating tree 5k times before initial draw");
+		for(int i=0; i<5000;i++){
 				navtree.update();
-				System.out.println(100*i/times + "%");
+				System.out.println(100*i/5000 + "%");
 		}
 		System.out.println("Drawing begins");
 	}

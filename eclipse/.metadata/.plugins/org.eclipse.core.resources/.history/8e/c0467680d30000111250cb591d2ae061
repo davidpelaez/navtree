@@ -164,17 +164,15 @@ public class Navtree {
 		}
 		return lines;
 	}
-	public void update(){
-		for (Edge e : edges)
-			e.relax();
-		for (Node n : nodes)
-			n.relax();
-		for (Node n : nodes)
-			n.update();		
-	}
+
 	public void draw() {
 		if (update) {
-			update();
+			for (Edge e : edges)
+				e.relax();
+			for (Node n : nodes)
+				n.relax();
+			for (Node n : nodes)
+				n.update();
 		}// Update block ends
 		for (Edge e : edges)
 			e.draw();
