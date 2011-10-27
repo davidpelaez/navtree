@@ -3,7 +3,7 @@ package navtree;
 import processing.core.*;
 import myCam2D.*;
 
-public class SimpleTree2D extends PApplet {
+public class SimpleTreeHierarchy extends PApplet {
 	
 	public PImage bg;
 	Navtree navtree;
