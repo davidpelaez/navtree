@@ -21,7 +21,6 @@ public class Edge {
 			from = navtree.findNode(fromId);
 			to = navtree.findNode(toId);
 		} catch (Exception e) {
-			System.out.println("Deleting an Edge because there are wholes in the dataset");
 			removed=true;
 			navtree.removeEdge(this);
 		}
@@ -40,7 +39,6 @@ public class Edge {
 	}
 
 	public void relax() {
-		System.out.println("Removed = " + removed);
 		float vx = to.x - from.x;
 		float vy = to.y - from.y;
 		float d = PApplet.mag(vx, vy);

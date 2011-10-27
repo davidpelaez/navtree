@@ -1,0 +1,24 @@
+package navtree;
+
+import processing.core.*;
+
+public class SimpleTree2D extends PApplet {
+	
+	Navtree navtree;
+	 
+
+	public void setup() {
+		size(1000, 400);
+		frameRate(12);
+		navtree = new Navtree(this);
+		smooth();
+	}
+
+	public void draw() {
+		background(255);
+		navtree.draw();
+	}
+
+	
+
+}

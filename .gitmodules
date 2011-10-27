@@ -1,0 +1,3 @@
+[submodule "eclipse/sketch2_edges/myPeasyCam"]
+	path = eclipse/sketch2_edges/myPeasyCam
+	url = git@github.com:davidpelaez/peasycam.git

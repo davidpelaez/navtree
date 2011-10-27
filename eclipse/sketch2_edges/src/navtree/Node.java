@@ -56,7 +56,6 @@ public class Node  implements Comparable{
 			try{
 			parent = navtree.findNode(parentId);
 			}catch(Exception e){
-				System.out.println("Deleting a Node because there are wholes in the dataset");
 				navtree.removeNode(this);	
 			}
 		}

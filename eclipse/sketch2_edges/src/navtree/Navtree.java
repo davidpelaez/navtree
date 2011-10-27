@@ -188,8 +188,7 @@ public class Navtree {
 			}
 		}
 		
-		System.out.println("---Rnode----");
-		System.out.println(nodes.length);
+		
 		Node[] result = new Node[nodes.length - 1];
 		if (i == 0) { // The obj is the first of the array
 			result = Arrays.copyOfRange(nodes, 1, nodes.length);
@@ -202,7 +201,7 @@ public class Navtree {
 		}
 		nodes = result;
 		nodeCount--;
-		System.out.println(nodes.length);
+		
 	}
 
 	public Node[] mergeNodesArrays(Node[] a, Node[] b) {
@@ -223,9 +222,7 @@ public class Navtree {
 				break;				
 			}
 		}
-		System.out.println("----Redge---");
-		System.out.println(edges[i].removed);
-		System.out.println(edges.length);
+
 		Edge[] result = new Edge[edges.length - 1];
 		if (i == 0) { // The obj is the first of the array
 			result = Arrays.copyOfRange(edges, 1, edges.length);
@@ -238,8 +235,7 @@ public class Navtree {
 		}
 		edges = result;
 		edgeCount--;
-		System.out.println(edges[i].removed);
-		System.out.println(edges.length);
+
 	}
 
 	public Edge[] mergeEdgesArrays(Edge[] a, Edge[] b) {
