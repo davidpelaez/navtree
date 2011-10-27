@@ -1,6 +1,7 @@
 package navtree;
 
 import processing.core.*;
+import peasy2d.*;
 
 public class SimpleTree2D extends PApplet {
 

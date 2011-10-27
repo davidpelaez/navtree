@@ -2,29 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="263" key="DIALOG_WIDTH"/>
-		<item value="108" key="DIALOG_Y_ORIGIN"/>
+		<item value="102" key="DIALOG_Y_ORIGIN"/>
+		<item value="956" key="DIALOG_X_ORIGIN"/>
 		<item value="395" key="DIALOG_HEIGHT"/>
-		<item value="549" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value=" " key="selection"/>
+		<item value="out.prin" key="selection"/>
 		<list key="findhistory">
-			<item value=" get"/>
-			<item value="jsonData"/>
-			<item value="JSONObject nodeData"/>
-			<item value="static"/>
-			<item value="new Node"/>
-			<item value="Navtree"/>
-			<item value="controlEve"/>
-			<item value="control"/>
+			<item value="out.prin"/>
+			<item value="setInd"/>
+			<item value="index"/>
+			<item value="setInde"/>
+			<item value="setIndex"/>
+			<item value="thro"/>
+			<item value="oprhan"/>
+			<item value="`"/>
 		</list>
 		<list key="replacehistory">
+			<item value="single"/>
 			<item value=" "/>
 			<item value="nodeData"/>
 			<item value=""/>
