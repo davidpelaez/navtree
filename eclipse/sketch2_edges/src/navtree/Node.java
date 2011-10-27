@@ -7,11 +7,11 @@ import processing.core.PApplet;
 
 public class Node  implements Comparable{
 	public static final int NULL_PARENT = -1;
-	public int id, parentId, extra;
+	public int id, parentId, extra, depth;
 	public int unixDate, index;
 	public String url;
 	public int[] children = null; // Array with the ids of the children
-	public boolean isRoot, hasChildren;
+	public boolean isRoot, hasChildren, draw=true;
 	public Navtree navtree;
 	public Node parent;
 	public float x, y;
@@ -26,11 +26,12 @@ public class Node  implements Comparable{
 		applet = navtree.applet;
 		x = applet.random(applet.width);
 		y = applet.random(applet.height);
-		build(jNode.id, jNode.url, jNode.parentId, jNode.isRoot, jNode.extra, jNode.unixDate, jNode.hasChildren, jNode.childrenIds);
+		build(jNode.id, jNode.url, jNode.parentId, jNode.isRoot, jNode.extra, jNode.unixDate, jNode.hasChildren, jNode.childrenIds, jNode.depth);
 	}
 
-	public void build(int _id, String _url, int _parentId, boolean _isRoot, int _extra, int _unixDate, boolean _hasChildren, String _childrenIds) {
+	public void build(int _id, String _url, int _parentId, boolean _isRoot, int _extra, int _unixDate, boolean _hasChildren, String _childrenIds, int _depth) {
 		id = _id;
+		depth = _depth;
 		parentId = _parentId;
 		isRoot = _isRoot;
 		extra = _extra;
@@ -52,7 +53,12 @@ public class Node  implements Comparable{
 
 	public void pointToParent() {
 		if (!isRoot) {
+			try{
 			parent = navtree.findNode(parentId);
+			}catch(Exception e){
+				System.out.println("Deleting a Node because there are wholes in the dataset");
+				navtree.removeNode(this);	
+			}
 		}
 	}
 	
@@ -68,6 +74,7 @@ public class Node  implements Comparable{
 	public boolean hasChildren() {
 		return hasChildren;
 	}
+	
 
 	public Date getDate() {
 		Date time = new Date();
@@ -118,7 +125,6 @@ public class Node  implements Comparable{
 	}// Update ends
 
 	void draw() {
-		boolean draw = true;
 		if (isRoot) {
 			applet.fill(130, 0, 0);
 			if(!hasChildren){

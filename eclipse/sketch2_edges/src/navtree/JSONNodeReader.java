@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public class JSONNodeReader {
 
 	JSONObject nodeData;
-	public int id, parentId, extra;
+	public int id, parentId, extra, depth;
 	public int unixDate;
 	public String url, childrenIds;
 	public boolean isRoot, hasChildren;
@@ -19,6 +19,7 @@ public class JSONNodeReader {
 		nodeData = _nodeData;
 		try {
 			id = (Integer) ((Number) nodeData.get("id")).intValue();
+			depth = (Integer) ((Number) nodeData.get("depth")).intValue();
 			try {
 				parentId = (Integer) ((Number) nodeData.get("parent")).intValue();
 			} catch (ClassCastException e) {

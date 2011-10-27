@@ -1,12 +1,14 @@
 package navtree;
+
 import processing.core.*;
 
 public class Edge {
-
+	public boolean removed=false;
 	public Node from, to;
 	public float length;
-	public int fromId, toId;
+	public int fromId, toId, index;
 	private Navtree navtree;
+	public boolean draw = true;
 
 	Edge(Navtree _navtree, int _fromId, int _toId) {
 		navtree = _navtree;
@@ -15,20 +17,30 @@ public class Edge {
 	}
 
 	public void pointToNodes() {
-		from = navtree.findNode(fromId);
-		to = navtree.findNode(toId);
+		try {
+			from = navtree.findNode(fromId);
+			to = navtree.findNode(toId);
+		} catch (Exception e) {
+			System.out.println("Deleting an Edge because there are wholes in the dataset");
+			removed=true;
+			navtree.removeEdge(this);
+		}
 		length = 15; // This will be changed dinamically according to the date
 						// distance of the nodes
 
 	}
 
+
 	public void draw() {
-		navtree.applet.stroke(0);
-		navtree.applet.strokeWeight((float)0.35);
-		navtree.applet.line(from.x, from.y, to.x, to.y);
+		if (draw) {
+			navtree.applet.stroke(0);
+			navtree.applet.strokeWeight((float) 0.35);
+			navtree.applet.line(from.x, from.y, to.x, to.y);
+		}
 	}
 
 	public void relax() {
+		System.out.println("Removed = " + removed);
 		float vx = to.x - from.x;
 		float vy = to.y - from.y;
 		float d = PApplet.mag(vx, vy);
