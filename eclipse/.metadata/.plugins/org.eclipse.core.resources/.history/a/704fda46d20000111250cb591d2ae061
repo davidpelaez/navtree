@@ -20,7 +20,7 @@ public class SimpleTree2D extends PApplet {
 	}
 
 	public void draw() {
-		background(231,232,233);
+		background(255);
 		image(bg, (width-bg.width)/2, (height-bg.height)/2);
 		pushMatrix();
 		cam.feed();

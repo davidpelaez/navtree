@@ -10,8 +10,7 @@ public class SimpleTree2D extends PApplet {
 	MyCam cam;
 	float zoom = 1, tx = 0, ty = 0;
 
-	public void setup() {	
-		bg = loadImage("bg.png");
+	public void setup() {		
 		size(1250, 550);
 		frameRate(12);
 		navtree = new Navtree(this);
@@ -20,8 +19,8 @@ public class SimpleTree2D extends PApplet {
 	}
 
 	public void draw() {
-		background(231,232,233);
-		image(bg, (width-bg.width)/2, (height-bg.height)/2);
+		background(255);
+		
 		pushMatrix();
 		cam.feed();
 		scale(zoom);

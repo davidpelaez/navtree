@@ -26,7 +26,7 @@ public class SimpleTree2D extends PApplet {
 		cam.feed();
 		scale(zoom);
 		translate(tx, ty);
-		navtree.draw();
+		//navtree.draw();
 		popMatrix();
 	}
 

@@ -124,14 +124,13 @@ public class Node  implements Comparable{
 	}// Update ends
 
 	void draw() {
-		applet.noStroke();
 		if (isRoot) {
-			applet.fill(14,69,100);
+			applet.fill(130, 0, 0);
 			if(!hasChildren){
 				draw = false; //Root withotu children, dont' draw it
 			}
 		} else {
-			applet.fill(27,123,157);
+			applet.fill(255, 255, 0);
 		}
 		applet.stroke(0);
 		applet.strokeWeight((float) 0.5);

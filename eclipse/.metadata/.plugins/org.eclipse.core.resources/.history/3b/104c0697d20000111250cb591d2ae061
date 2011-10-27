@@ -20,13 +20,13 @@ public class SimpleTree2D extends PApplet {
 	}
 
 	public void draw() {
-		background(231,232,233);
+		background(230);
 		image(bg, (width-bg.width)/2, (height-bg.height)/2);
 		pushMatrix();
 		cam.feed();
 		scale(zoom);
 		translate(tx, ty);
-		navtree.draw();
+		//navtree.draw();
 		popMatrix();
 	}
 
