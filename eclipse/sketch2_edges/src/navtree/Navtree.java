@@ -7,12 +7,14 @@ import org.json.*;
 public class Navtree {
 
 	public java.util.HashMap<Integer, Node> nodeTable;
-	public Node[] nodes = new Node[100];
+	public Node[] nodes = new Node[100], roots = new Node[100], singles = new Node[100];
 	public Edge[] edges = new Edge[500];
-	public int nodeCount = 0, edgeCount = 0;
+	public int nodeCount = 0, edgeCount = 0, rootCount = 0, singleCount = 0;
 	public PApplet applet;
 	public boolean update = true;// Define if continue updating the tree or only
 									// drawing it.
+	
+	public int maxDate, minDate,dateDelta; //This is to find what span of time's being graphed
 
 	Navtree(PApplet _applet) {
 		applet = _applet;
@@ -21,30 +23,46 @@ public class Navtree {
 		System.out.println("JSon lines loaded = " + myJsonStrings.length);
 		String jsonLine;
 		JSONObject jsonData;
+		JSONNodeReader jNode;
 		for (int i = 0; i < myJsonStrings.length; i++) {
 			jsonLine = myJsonStrings[i];
 			try {
 				jsonData = new JSONObject(jsonLine);
-				addNode(jsonData);
+				jNode = new JSONNodeReader(jsonData);
+				addNode(jNode);
+				if(i == 0){
+					minDate = jNode.unixDate;
+					maxDate = jNode.unixDate;
+				}
 			} catch (JSONException e) {
 				System.out.println("There was an error parsing the JSONObject.");
 				System.out.println(e);
 			}
 		} // Line read ends. All nodes in memory
-			// Point all edges to its nodes and all nodes to its parent node.
+		dateDelta = (maxDate-minDate);
+		// Point all edges to its nodes and all nodes to its parent node.
 		shrinkArrays();
-		for (int i = 0; i < nodeCount; i++) {
-			nodes[i].pointToParent();
-		}
-		for (int i = 0; i < edgeCount; i++) {
-			edges[i].pointToNodes();
-		}
+		java.util.Arrays.sort(nodes, 0, nodeCount);
+		java.util.Arrays.sort(roots, 0, rootCount);
+		for(Node n : nodes) n.pointToParent();
+		for(int i=0; i< nodes.length; i++){ //In a different for to avoid nullPointers
+			nodes[i].setIndex(i);
+		}			
+		for (Edge e : edges) e.pointToNodes();
+				
 		System.out.println("NodeCount = " + nodeCount);
 		System.out.println("EdgeCount = " + edgeCount);
+		System.out.println("RootCount = " + rootCount);
+		System.out.println("SingleCount = " + singleCount);
+		System.out.println("maxDate = " + maxDate);
+		System.out.println("minDate = " + minDate);
 	}// Constructor ends
 
 	protected void shrinkArrays() {
-
+		roots = java.util.Arrays.copyOfRange(roots,0,rootCount);
+		nodes = java.util.Arrays.copyOfRange(nodes,0,nodeCount);
+		edges = java.util.Arrays.copyOfRange(edges,0,edgeCount);
+		singles = java.util.Arrays.copyOfRange(singles,0,singleCount);
 	}
 
 	protected void addEdge(int fromId, int toParentId) {
@@ -54,15 +72,42 @@ public class Navtree {
 		}
 		edges[edgeCount++] = e;
 	}
+	
+	public void addRoot(Node n){
+		if (rootCount == roots.length) {
+			roots = (Node[]) PApplet.expand(roots);
+		}
+		roots[rootCount++] = n;
+		if(!n.hasChildren){
+			addSingle(n);
+		}
+	}
 
-	protected void addNode(JSONObject nodeData) {
-		Node node = new Node(this, nodeData);
+	public void addSingle(Node n){
+		if (singleCount == singles.length) {
+			singles = (Node[]) PApplet.expand(singles);
+		}
+		singles[singleCount++] = n;
+	}
+	
+	protected void addNode(JSONNodeReader jNode) {		
+		//Manage dates
+		if(minDate > jNode.unixDate){
+			minDate = jNode.unixDate;
+		}
+		if(minDate < jNode.unixDate){
+			maxDate = jNode.unixDate;			
+		}
+		//Add node
+		Node node = new Node(this, jNode);
 		if (nodeCount == nodes.length) {
 			nodes = (Node[]) PApplet.expand(nodes);
 		}
 		nodeTable.put(node.id, node);
 		if (!node.isRoot()) {
 			addEdge(node.id, node.parentId);
+		}else{
+			addRoot(node);
 		}
 		nodes[nodeCount++] = node;
 	}

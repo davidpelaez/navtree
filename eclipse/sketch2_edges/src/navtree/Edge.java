@@ -17,7 +17,7 @@ public class Edge {
 	public void pointToNodes() {
 		from = navtree.findNode(fromId);
 		to = navtree.findNode(toId);
-		length = 50; // This will be changed dinamically according to the date
+		length = 15; // This will be changed dinamically according to the date
 						// distance of the nodes
 
 	}

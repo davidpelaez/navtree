@@ -1,0 +1,26 @@
+package navtree;
+
+import controlP5.ControlEvent;
+import processing.core.*;
+
+public class SimpleTree extends navigable.NavigableSketch {
+
+	Navtree navtree;
+
+	public void mySetup() {
+		/*size(1000, 400);		
+		smooth();		
+		frameRate(12); // Reduces memory ocnsumtion?*/		
+		navtree = new Navtree(this);
+	}
+
+	public void myDraw() {
+		background(255);
+		navtree.draw();
+	}
+	
+	@Override
+	public void controlEvent(ControlEvent theEvent) {
+		super.controlEvent(theEvent);
+	}
+}
