@@ -61,9 +61,7 @@ public class Navtree {
 		
 		for (Node n : nodes)
 			n.pointToParent();
-		//for (Node n : nodes)
-			//n.setFixedY();
-		//	for (Node n : nodes) BUG
+	//	for (Node n : nodes) BUG
 		//	n.checkFamily();
 		for (Edge e : edges)
 			e.pointToNodes();
@@ -176,7 +174,7 @@ public class Navtree {
 	}
 	public void update(){
 		for (Edge e : edges)
-			e.relax(); //This produces tension between nodes bringing them together
+			e.relax();
 		for (Node n : nodes)
 			n.relax();
 		for (Node n : nodes)

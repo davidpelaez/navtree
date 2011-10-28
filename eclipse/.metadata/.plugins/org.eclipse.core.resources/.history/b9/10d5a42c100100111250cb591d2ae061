@@ -193,16 +193,6 @@ public class Node implements Comparable {
 				if (x < parent.x) {
 					x = parent.x + MAX_DELTA;
 				}
-				if(y > applet.height/2){ //Is under the center
-					if (y < parent.y) {
-						y = parent.y + MAX_DELTA;
-					}
-				}else{//is over the center
-					if (y > parent.y) {
-						y = parent.y - MAX_DELTA;
-					}
-				}
-				
 			}
 		}
 		if (!fixedY) {

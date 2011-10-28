@@ -24,7 +24,7 @@ public class Edge {
 			removed=true;
 			navtree.removeEdge(this);
 		}
-		length = 8; // This will be changed dinamically according to the date
+		length = 15; // This will be changed dinamically according to the date
 						// distance of the nodes
 
 	}
@@ -35,8 +35,6 @@ public class Edge {
 			navtree.applet.stroke(52);
 			navtree.applet.strokeWeight((float) 0.35);
 			navtree.applet.line(from.x, from.y, to.x, to.y);
-		}else{
-			navtree.removeEdge(this);
 		}
 	}
 

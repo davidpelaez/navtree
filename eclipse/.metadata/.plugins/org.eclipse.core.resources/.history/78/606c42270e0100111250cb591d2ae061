@@ -48,6 +48,7 @@ public class Node implements Comparable {
 				children[i] = Integer.parseInt(splitted[i].trim());
 			}
 		}
+		setFixedY();
 		switch (depth) {
 		case 0:
 			level = ROOT_LEVEL;
@@ -75,39 +76,24 @@ public class Node implements Comparable {
 				r = -1;
 			}
 		}
-		if(isRoot){
-			y = (applet.height / 2);
-			fixY();
-		}
 	}// Constructor ends
 	
 	//Set the height of the node depending on its depth
 	public void setFixedY(){
-		int delta = depth*20; 
+
+		int delta = depth*40; 
 		float r = applet.random(-50, 50);
-		fixY();
+		isRoot -> Usar R, else usar parent.R
 		if(isRoot){
-			y = (applet.height / 2); 
+			y = (applet.height / 2) 
 		}else if(depth == 1){
 			y = (applet.height / 2) + (delta*r);
-		}else if(depth < 10){
-			y = (applet.height / 2) + (delta*parent.getR());
-		}else{
-			y = (applet.height / 2) + (200*parent.getR());
 		}
-	}
-	
-	public int getR(){ //Recursion until second levend
-		if(depth == 1){
-			return r;
-		}else{
-			try{
-				return parent.r;
-			}catch(java.lang.NullPointerException e){
-				navtree.removeNode(this);
-				return 1;
-			}
-		}
+			
+		
+		fixY();
+		
+		
 	}
 
 	public void pointToParent() {
@@ -164,9 +150,9 @@ public class Node implements Comparable {
 	public void relax() {
 		float ddx = 0;
 		float ddy = 0;
-		for (int j = 0; j < navtree.nodes.length; j++) {
+		for (int j = 0; j < navtree.nodeCount; j++) {
 			Node n = navtree.nodes[j];
-			if (n != this && n.depth == depth) { //Only compare to nodes at the same leve
+			if (n != this) {
 				float vx = x - n.x;
 				float vy = y - n.y;
 				float lensq = vx * vx + vy * vy;
@@ -193,16 +179,6 @@ public class Node implements Comparable {
 				if (x < parent.x) {
 					x = parent.x + MAX_DELTA;
 				}
-				if(y > applet.height/2){ //Is under the center
-					if (y < parent.y) {
-						y = parent.y + MAX_DELTA;
-					}
-				}else{//is over the center
-					if (y > parent.y) {
-						y = parent.y - MAX_DELTA;
-					}
-				}
-				
 			}
 		}
 		if (!fixedY) {

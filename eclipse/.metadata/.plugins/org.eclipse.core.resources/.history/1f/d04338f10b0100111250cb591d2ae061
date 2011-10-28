@@ -6,7 +6,7 @@ import controlP5.*;
 
 public class SimpleTreeHierarchy extends PApplet {
 	int verticalCenter;
-	public boolean showGuides = false;
+	public boolean showGuides = true;
 	public PImage bg;
 	Navtree navtree;
 	MyCam cam;
@@ -18,10 +18,9 @@ public class SimpleTreeHierarchy extends PApplet {
 		bg = loadImage("bg.png");
 		
 		size(1000, 550);
-		verticalCenter = height/2;
 		navtree = new Navtree(this);
 		setupGui();
-		
+		verticalCenter = height/2;
 		frameRate(12);
 		
 		smooth();

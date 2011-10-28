@@ -24,7 +24,7 @@ public class Edge {
 			removed=true;
 			navtree.removeEdge(this);
 		}
-		length = 8; // This will be changed dinamically according to the date
+		length = 15; // This will be changed dinamically according to the date
 						// distance of the nodes
 
 	}

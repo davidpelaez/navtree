@@ -175,8 +175,8 @@ public class Navtree {
 		return lines;
 	}
 	public void update(){
-		for (Edge e : edges)
-			e.relax(); //This produces tension between nodes bringing them together
+		//for (Edge e : edges)
+			//e.relax(); //This produces tension between nodes bringing them together
 		for (Node n : nodes)
 			n.relax();
 		for (Node n : nodes)

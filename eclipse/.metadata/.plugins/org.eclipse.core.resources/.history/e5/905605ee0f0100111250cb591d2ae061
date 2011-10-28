@@ -164,9 +164,9 @@ public class Node implements Comparable {
 	public void relax() {
 		float ddx = 0;
 		float ddy = 0;
-		for (int j = 0; j < navtree.nodes.length; j++) {
+		for (int j = 0; j < nodes.length; j++) {
 			Node n = navtree.nodes[j];
-			if (n != this && n.depth == depth) { //Only compare to nodes at the same leve
+			if (n != this && n.depth == depth) {
 				float vx = x - n.x;
 				float vy = y - n.y;
 				float lensq = vx * vx + vy * vy;
@@ -193,16 +193,6 @@ public class Node implements Comparable {
 				if (x < parent.x) {
 					x = parent.x + MAX_DELTA;
 				}
-				if(y > applet.height/2){ //Is under the center
-					if (y < parent.y) {
-						y = parent.y + MAX_DELTA;
-					}
-				}else{//is over the center
-					if (y > parent.y) {
-						y = parent.y - MAX_DELTA;
-					}
-				}
-				
 			}
 		}
 		if (!fixedY) {
