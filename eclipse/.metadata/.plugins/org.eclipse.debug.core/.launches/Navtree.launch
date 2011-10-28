@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/sketch2_edges/src/navtree/Navtree.java"/>
+<listEntry value="/sketch2_edges/src/navtreeContrainedXY/Navtree.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="navtree.Navtree"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="navtreeContrainedXY.Navtree"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="sketch2_edges"/>
 </launchConfiguration>

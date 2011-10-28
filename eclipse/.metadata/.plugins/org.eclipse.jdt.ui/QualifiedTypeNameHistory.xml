@@ -4,4 +4,5 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="navigable.NavigableSketch"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="processing.core.PConstants"/>
 </qualifiedTypeNameHistroy>
