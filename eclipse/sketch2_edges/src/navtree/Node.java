@@ -6,8 +6,10 @@ import org.json.JSONObject;
 import processing.core.PApplet;
 
 public class Node  implements Comparable{
+	
+	public static final int ROOT_LEVEL = 1, SECOND_LEVEL = 2, THIRD_LEVEL = 3;
 	public static final int NULL_PARENT = -1;
-	public int id, parentId, extra, depth;
+	public int id, parentId, extra, depth, level;
 	public int unixDate, index;
 	public String url;
 	public int[] children = null; // Array with the ids of the children
@@ -48,6 +50,18 @@ public class Node  implements Comparable{
 		if (isRoot) {
 			y = applet.height / 2;
 			fixY();
+		}
+		switch (depth) {
+		case 0:
+			level = ROOT_LEVEL;
+			break;
+		case 1:
+		case 2:
+			level = SECOND_LEVEL;
+			break;
+		default:
+			level = THIRD_LEVEL;
+			break;
 		}
 	}// Constructor ends
 
@@ -124,21 +138,45 @@ public class Node  implements Comparable{
 	}// Update ends
 
 	void draw() {
-		applet.noStroke();
-		if (isRoot) {
-			applet.fill(14,69,100);
-			if(!hasChildren){
-				draw = false; //Root withotu children, dont' draw it
-			}
-		} else {
-			applet.fill(27,123,157);
-		}
-		applet.stroke(0);
+		
+		setFill();
+		applet.stroke(180);
 		applet.strokeWeight((float) 0.5);
 		if(draw=true){
 		applet.ellipse(x, y, 3, 3);
 		}
 	}// Draw ends
+	
+	public void setFill() {
+		switch (depth) {
+		case 0:
+			applet.fill(26);
+			break;
+		case 1:
+			applet.fill(245, 217, 0);
+			break;
+		case 2:
+			applet.fill(27, 123, 157);
+			break;
+		case 3:
+			applet.fill(131, 217, 167);
+			break;
+		case 4:
+			applet.fill(63, 169, 245);
+			break;
+		case 5:
+			applet.fill(122, 201, 67);
+			break;
+		default:
+			applet.fill(34, 181, 115);
+			break;
+		}
+		if (isRoot) {
+			if (!hasChildren) {
+				draw = false; // Root withotu children, dont' draw it
+			}
+		}
+	}
 
 	// Lock the Y position of the node
 	public void fixY() {

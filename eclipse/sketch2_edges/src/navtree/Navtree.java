@@ -6,6 +6,8 @@ import org.json.*;
 import java.util.Arrays;
 
 public class Navtree {
+	
+	public int maxRootY=100, minRootY=50, maxSecondY=250, minSecondY=150, maxThirdY=450, minThirdY=300;
 
 	public java.util.HashMap<Integer, Node> nodeTable;
 	public Node[] nodes = new Node[100], roots = new Node[100], singles = new Node[100];
@@ -70,6 +72,10 @@ public class Navtree {
 		System.out.println("maxDate = " + maxDate);
 		System.out.println("minDate = " + minDate);
 	}// Constructor ends
+	
+	public void generateCoords(){
+		
+	}
 
 	protected void shrinkArrays() {
 		roots = java.util.Arrays.copyOfRange(roots, 0, rootCount);

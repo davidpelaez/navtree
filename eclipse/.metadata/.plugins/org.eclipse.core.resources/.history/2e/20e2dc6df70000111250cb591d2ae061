@@ -1,0 +1,17 @@
+package navtree;
+
+import controlP5.*;
+import processing.core.*;
+
+public class MyControlWindow {
+	
+	ControlWindow controlWindow;
+	ControlP5 controlP5;
+	PApplet applet;
+	
+	public MyControlWindow(PApplet p, ControlP5 _p5){
+		controlP5 = _p5;
+		applet = p;
+	}
+
+}

@@ -1,0 +1,12 @@
+package navtree;
+
+import controlP5.*;
+public class MyControlWindow {
+	
+	ControlWindow controlWindow;
+	
+	public MyControlWindow(){
+		
+	}
+
+}

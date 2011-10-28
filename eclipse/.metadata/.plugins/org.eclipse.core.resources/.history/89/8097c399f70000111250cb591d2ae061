@@ -1,0 +1,23 @@
+package navtree;
+
+import controlP5.*;
+import processing.core.*;
+
+/*
+ * This class has everything related to controlling variables inside NAVTREE without mixing the code with the main sketch class
+ */
+
+public class MyControlWindow {
+	
+	ControlWindow controlWindow;
+	ControlP5 controlP5;
+	PApplet applet;
+	
+	public MyControlWindow(PApplet p, ControlP5 _p5){
+		controlP5 = _p5;
+		applet = p;
+		controlWindow = controlP5.addControlWindow("controlP5window",100,100,400,200);
+		controlP5 = new ControlP5(this);
+	}
+
+}
