@@ -7,7 +7,7 @@ public class MyCam {
 	public PApplet applet;
 	public MyMouseListener mouseListener;
 	public MyWheelListener mouseWheelListener;
-	public float zoom=1, tx=0,ty=0, maxZoom=2, minZoom=(float)0.35;
+	public float zoom=1, tx=0,ty=0, maxZoom=(float)3.5, minZoom=(float)0.35;
 	
 	public MyCam(PApplet p){
 		applet = p;

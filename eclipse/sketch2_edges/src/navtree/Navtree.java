@@ -61,6 +61,8 @@ public class Navtree {
 		
 		for (Node n : nodes)
 			n.pointToParent();
+	//	for (Node n : nodes) BUG
+		//	n.checkFamily();
 		for (Edge e : edges)
 			e.pointToNodes();
 		System.out.println("EdgeCount = " + edgeCount);	
@@ -192,6 +194,7 @@ public class Navtree {
 		int i;
 		for(i=0;i<nodes.length;i++){
 			if(nodes[i] == n){
+				nodeTable.remove(nodes[i]); //Remove from node table
 				break;				
 			}
 		}
@@ -208,8 +211,7 @@ public class Navtree {
 			result = mergeNodesArrays(part1, part2);
 		}
 		nodes = result;
-		nodeCount--;
-		
+		nodeCount--;		
 	}
 
 	public Node[] mergeNodesArrays(Node[] a, Node[] b) {

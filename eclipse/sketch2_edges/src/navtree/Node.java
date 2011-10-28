@@ -63,6 +63,13 @@ public class Node implements Comparable {
 			level = THIRD_LEVEL;
 			break;
 		}
+		// Discard this node if is childless
+		if (isRoot) {
+			if (!hasChildren) {
+				draw = false; // Root withotu children, dont' draw it
+				// navtree.removeNode(this);
+			}
+		}
 	}// Constructor ends
 
 	public void pointToParent() {
@@ -73,6 +80,23 @@ public class Node implements Comparable {
 				navtree.removeNode(this);
 			}
 		}
+	}
+
+	// Check that the node has is parent and all its children
+	public void checkFamily() {
+		float px;
+		try {
+			px =  parent.x;
+		} catch (java.lang.NullPointerException e) {
+			navtree.removeNode(this);
+		}
+		try{
+			for(int i : children)
+				px = navtree.findNode(i).x;
+		}catch(Exception e){
+			navtree.removeNode(this);
+		}
+
 	}
 
 	// The index is the position in the array, this is used to position the obj
@@ -127,18 +151,11 @@ public class Node implements Comparable {
 	void update() {
 		if (!fixedX) {
 			x += PApplet.constrain(dx, -MAX_DELTA, MAX_DELTA);
-			if (!isRoot) { //All children must be to the right of its parent
-				try {
-
-					if (x < parent.x) {
-						x = parent.x + MAX_DELTA;
-					}
-
-				} catch (java.lang.NullPointerException e) {
-					navtree.removeNode(this);
+			if (!isRoot) { // All children must be to the right of its parent
+				if (x < parent.x) {
+					x = parent.x + MAX_DELTA;
 				}
 			}
-
 		}
 		if (!fixedY) {
 			y += PApplet.constrain(dy, -MAX_DELTA, MAX_DELTA);
@@ -153,7 +170,7 @@ public class Node implements Comparable {
 		setFill();
 		applet.stroke(180);
 		applet.strokeWeight((float) 0.5);
-		if (draw = true) {
+		if (draw) {
 			applet.ellipse(x, y, 3, 3);
 		}
 	}// Draw ends
@@ -181,11 +198,6 @@ public class Node implements Comparable {
 		default:
 			applet.fill(34, 181, 115);
 			break;
-		}
-		if (isRoot) {
-			if (!hasChildren) {
-				draw = false; // Root withotu children, dont' draw it
-			}
 		}
 	}
 

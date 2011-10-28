@@ -1,4 +1,4 @@
-package navtree;
+package navtreeConst;
 
 import java.io.*;
 import processing.core.*;
@@ -7,16 +7,7 @@ import java.util.Arrays;
 
 public class Navtree {
 	
-	/*
-	 * Variables Controlled by Sliders
-	 * This creates stripes where only certain nodes can be according to their depth
-	 */
-	//Values are loaded only for the initial parts of the program before the sliders work
 	public int maxRootY=100, minRootY=50, maxSecondY=250, minSecondY=150, maxThirdY=450, minThirdY=300;
-	
-	/*
-	 * Class Attrs
-	 */
 
 	public java.util.HashMap<Integer, Node> nodeTable;
 	public Node[] nodes = new Node[100], roots = new Node[100], singles = new Node[100];
@@ -60,7 +51,6 @@ public class Navtree {
 		dateDelta = (maxDate - minDate);
 		// Point all edges to its nodes and all nodes to its parent node.
 		shrinkArrays();
-		
 		java.util.Arrays.sort(nodes, 0, nodes.length);
 		java.util.Arrays.sort(roots, 0, roots.length);
 		// Set indexes so that each node or edge can request navtree to remove
@@ -71,9 +61,6 @@ public class Navtree {
 		
 		for (Node n : nodes)
 			n.pointToParent();
-		testParents(); //Check that all nodes have their parents
-
-		generateCoords();
 		for (Edge e : edges)
 			e.pointToNodes();
 		System.out.println("EdgeCount = " + edgeCount);	
@@ -85,28 +72,16 @@ public class Navtree {
 		System.out.println("maxDate = " + maxDate);
 		System.out.println("minDate = " + minDate);
 	}// Constructor ends
-
 	
 	public void generateCoords(){
-		for (Node n : nodes) //Here the nodes are given positions according to their level
-			n.generateCoords();
+		
 	}
+
 	protected void shrinkArrays() {
 		roots = java.util.Arrays.copyOfRange(roots, 0, rootCount);
 		nodes = java.util.Arrays.copyOfRange(nodes, 0, nodeCount);
 		edges = java.util.Arrays.copyOfRange(edges, 0, edgeCount);
 		singles = java.util.Arrays.copyOfRange(singles, 0, singleCount);
-	}
-	
-	public void testParents(){
-		float parentX;
-		for(Node n: nodes)
-			try{
-				parentX = n.parent.x;
-			}catch(java.lang.NullPointerException e){
-				removeNode(n);
-			}
-			
 	}
 
 	protected void addEdge(int fromId, int toParentId) {
@@ -196,12 +171,12 @@ public class Navtree {
 		return lines;
 	}
 	public void update(){
+		for (Edge e : edges)
+			e.relax();
 		for (Node n : nodes)
 			n.relax();
 		for (Node n : nodes)
-			n.update();
-		for (Edge e : edges)
-			e.relax();
+			n.update();		
 	}
 	public void draw() {
 		if (update) {

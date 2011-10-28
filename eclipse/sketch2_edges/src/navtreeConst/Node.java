@@ -1,4 +1,4 @@
-package navtree;
+package navtreeConst;
 
 import java.util.Date;
 
@@ -8,9 +8,8 @@ import processing.core.PApplet;
 public class Node implements Comparable {
 
 	public static final int ROOT_LEVEL = 1, SECOND_LEVEL = 2, THIRD_LEVEL = 3;
-	public int minY, maxY; //There's no MAX X
 	public static final int NULL_PARENT = -1;
-	public int id, parentId, extra, depth, level = 0;
+	public int id, parentId, extra, depth, level;
 	public int unixDate, index;
 	public String url;
 	public int[] children = null; // Array with the ids of the children
@@ -27,7 +26,8 @@ public class Node implements Comparable {
 	Node(Navtree _navtree, JSONNodeReader jNode) {
 		navtree = _navtree;
 		applet = navtree.applet;
-
+		x = applet.random(applet.width);
+		y = applet.random(applet.height);
 		build(jNode.id, jNode.url, jNode.parentId, jNode.isRoot, jNode.extra, jNode.unixDate, jNode.hasChildren, jNode.childrenIds, jNode.depth);
 	}
 
@@ -47,6 +47,10 @@ public class Node implements Comparable {
 				children[i] = Integer.parseInt(splitted[i].trim());
 			}
 		}
+		if (isRoot) {
+			y = applet.height / 2;
+			fixY();
+		}
 		switch (depth) {
 		case 0:
 			level = ROOT_LEVEL;
@@ -59,8 +63,6 @@ public class Node implements Comparable {
 			level = THIRD_LEVEL;
 			break;
 		}
-		setConstrainValues();
-		generateCoords();
 	}// Constructor ends
 
 	public void pointToParent() {
@@ -125,65 +127,34 @@ public class Node implements Comparable {
 	void update() {
 		if (!fixedX) {
 			x += PApplet.constrain(dx, -MAX_DELTA, MAX_DELTA);
-			// x = PApplet.constrain(x, 0, applet.width);
+			if (!isRoot) { //All children must be to the right of its parent
+				try {
+
+					if (x < parent.x) {
+						x = parent.x + MAX_DELTA;
+					}
+
+				} catch (java.lang.NullPointerException e) {
+					navtree.removeNode(this);
+				}
+			}
+
 		}
 		if (!fixedY) {
 			y += PApplet.constrain(dy, -MAX_DELTA, MAX_DELTA);
 			// y = PApplet.constrain(y, 0, applet.height);
 		}
-		//BUG
-		//constrain(); //Once the values are updated constrain again on stripe
 		dx /= 2;
 		dy /= 2;
 	}// Update ends
 
-	// This is donde after the parents have been pointed
-	// This way and through update more rules are added to the nature of the
-	// tree
-	public void generateCoords() {
-		x = applet.random(applet.width);
-		y = applet.random(applet.height);
-		if (isRoot) {
-			y = applet.height / 2;
-			fixY();
-		}
-	}
-	
-	//Keep the node inside its stripe
-	public void constrain(){
-		setConstrainValues();
-		y = PApplet.constrain(x, minY, maxY);
-		if(x<parent.x){ //The child is more to the left
-			x = parent.x;
-		}
-	}
-	
-	//Read the values from the Sketch sliders according to the level of the node
-	public void setConstrainValues(){
-		switch (level) {
-		case ROOT_LEVEL:
-			minY = navtree.minRootY;
-			maxY = navtree.maxRootY;
-			break;
-		case SECOND_LEVEL:
-			minY = navtree.minSecondY;
-			maxY = navtree.maxSecondY;
-			break;
-		case THIRD_LEVEL:
-			minY = navtree.minThirdY;
-			maxY = navtree.maxThirdY;
-			break;
-		
-		}
-	}
-
 	void draw() {
-		applet.stroke(180);
-		setFill();
 
+		setFill();
+		applet.stroke(180);
 		applet.strokeWeight((float) 0.5);
 		if (draw = true) {
-			applet.ellipse(x, y, 5, 5);
+			applet.ellipse(x, y, 3, 3);
 		}
 	}// Draw ends
 
