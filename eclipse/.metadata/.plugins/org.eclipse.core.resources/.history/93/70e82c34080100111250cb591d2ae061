@@ -127,16 +127,13 @@ public class Node implements Comparable {
 	void update() {
 		if (!fixedX) {
 			x += PApplet.constrain(dx, -MAX_DELTA, MAX_DELTA);
-			if (!isRoot) { //All children must be to the right of its parent
-				try {
 
-					if (x < parent.x) {
-						x = parent.x + MAX_DELTA;
-					}
-
-				} catch (java.lang.NullPointerException e) {
-					navtree.removeNode(this);
+			try {
+				if (x < parent.x) {
+					x = parent.x + MAX_DELTA;
 				}
+			} catch (java.lang.NullPointerException e) {
+				navtree.removeNode(this);
 			}
 
 		}

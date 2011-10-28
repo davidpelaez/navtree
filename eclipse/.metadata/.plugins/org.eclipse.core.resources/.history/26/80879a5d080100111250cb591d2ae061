@@ -6,7 +6,6 @@ import controlP5.*;
 
 public class SimpleTreeHierarchy extends PApplet {
 	int verticalCenter;
-	public boolean showGuides = true;
 	public PImage bg;
 	Navtree navtree;
 	MyCam cam;
@@ -47,7 +46,6 @@ public class SimpleTreeHierarchy extends PApplet {
 		Controller secondWidth = controlP5.addSlider("secondWidth", navtree.minSecondY, 500, 40, 70, 100, 10);
 		Controller thirdWidth = controlP5.addSlider("thirdWidth", navtree.minThirdY, 500, 40, 100, 100, 10);
 		controlP5.addButton("pause",0,40,130,80,19).moveTo(controlWindow);
-		controlP5.addButton("showGuides",0,40,160,80,19).moveTo(controlWindow);
 		rootsWidth.moveTo(controlWindow);
 		secondWidth.moveTo(controlWindow);
 		thirdWidth.moveTo(controlWindow);
@@ -56,10 +54,6 @@ public class SimpleTreeHierarchy extends PApplet {
 	
 	public void pause(){
 		navtree.update = !navtree.update ;
-	}
-	
-	public void showGuides(){
-		showGuides = !showGuides ;
 	}
 
 	public void draw() {
@@ -72,9 +66,7 @@ public class SimpleTreeHierarchy extends PApplet {
 		translate(tx, ty);
 		navtree.draw();
 		popMatrix();
-		if(showGuides){
-			drawGuides();
-		}
+		drawGuides();
 		controlP5.draw();
 	}
 	

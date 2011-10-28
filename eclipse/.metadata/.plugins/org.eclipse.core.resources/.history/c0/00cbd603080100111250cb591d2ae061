@@ -5,15 +5,15 @@ import java.util.Date;
 import org.json.JSONObject;
 import processing.core.PApplet;
 
-public class Node implements Comparable {
-
+public class Node  implements Comparable{
+	
 	public static final int ROOT_LEVEL = 1, SECOND_LEVEL = 2, THIRD_LEVEL = 3;
 	public static final int NULL_PARENT = -1;
 	public int id, parentId, extra, depth, level;
 	public int unixDate, index;
 	public String url;
 	public int[] children = null; // Array with the ids of the children
-	public boolean isRoot, hasChildren, draw = true;
+	public boolean isRoot, hasChildren, draw=true;
 	public Navtree navtree;
 	public Node parent;
 	public float x, y;
@@ -21,7 +21,7 @@ public class Node implements Comparable {
 	public PApplet applet;
 	public boolean fixedX = false, fixedY = false;
 
-	public static int MAX_DELTA = 20, MAX_TREE_WIDTH = 3000;
+	public static int MAX_DELTA = 20, MAX_TREE_WIDTH=3000;
 
 	Node(Navtree _navtree, JSONNodeReader jNode) {
 		navtree = _navtree;
@@ -67,18 +67,17 @@ public class Node implements Comparable {
 
 	public void pointToParent() {
 		if (!isRoot) {
-			try {
-				parent = navtree.findNode(parentId);
-			} catch (Exception e) {
-				navtree.removeNode(this);
+			try{
+			parent = navtree.findNode(parentId);
+			}catch(Exception e){
+				navtree.removeNode(this);	
 			}
 		}
 	}
-
-	// The index is the position in the array, this is used to position the obj
-	// according to its date to improve the tree alg.
-	public void setIndex(int i) {
-		index = i;
+	
+	//The index is the position in the array, this is used to position the obj according to its date to improve the tree alg.
+	public void setIndex(int i){
+		index = i;	
 	}
 
 	public boolean isRoot() {
@@ -88,6 +87,7 @@ public class Node implements Comparable {
 	public boolean hasChildren() {
 		return hasChildren;
 	}
+	
 
 	public Date getDate() {
 		Date time = new Date();
@@ -127,18 +127,13 @@ public class Node implements Comparable {
 	void update() {
 		if (!fixedX) {
 			x += PApplet.constrain(dx, -MAX_DELTA, MAX_DELTA);
-			if (!isRoot) { //All children must be to the right of its parent
-				try {
-
-					if (x < parent.x) {
-						x = parent.x + MAX_DELTA;
-					}
-
-				} catch (java.lang.NullPointerException e) {
+			if(x<parent.x){
+				try{
+				x = parent.x + MAX_DELTA;
+				}catch(java.lang.NullPointerException e){
 					navtree.removeNode(this);
 				}
 			}
-
 		}
 		if (!fixedY) {
 			y += PApplet.constrain(dy, -MAX_DELTA, MAX_DELTA);
@@ -149,15 +144,15 @@ public class Node implements Comparable {
 	}// Update ends
 
 	void draw() {
-
+		
 		setFill();
 		applet.stroke(180);
 		applet.strokeWeight((float) 0.5);
-		if (draw = true) {
-			applet.ellipse(x, y, 3, 3);
+		if(draw=true){
+		applet.ellipse(x, y, 3, 3);
 		}
 	}// Draw ends
-
+	
 	public void setFill() {
 		switch (depth) {
 		case 0:
@@ -201,29 +196,28 @@ public class Node implements Comparable {
 
 	public void setInitialX() {
 		// The position that the node should have in the graph in X
-		/*
-		 * int y2_y1 = MAX_TREE_WIDTH; int x2_x1 = (navtree.dateDelta) - (0); //
-		 * Only for clarity purposes! double mx = (unixDate-navtree.minDate) *
-		 * y2_y1 / x2_x1; x = (int)mx;
-		 */
-		if (isRoot) {
-			x = index * 50;// *(applet.width/(navtree.rootCount-navtree.singleCount));
-		} else { // This is recursive, right?
+		/*int y2_y1 = MAX_TREE_WIDTH;
+		int x2_x1 = (navtree.dateDelta) - (0); // Only for clarity purposes!
+		double mx = (unixDate-navtree.minDate) * y2_y1 / x2_x1;
+		x = (int)mx;*/
+		if(isRoot){
+			x = index*50;//*(applet.width/(navtree.rootCount-navtree.singleCount));
+		}else{ //This is recursive, right?
 			parent.setInitialX();
 			x = parent.x;
 		}
 	}
-
-	public int compareTo(Object obj) {
-		Node node = (Node) obj;
+	
+	public int compareTo(Object obj){
+		Node node = (Node)obj;
 		int oDate = node.unixDate;
-		if (unixDate == oDate) {
+		if(unixDate == oDate){
 			return 0;
-		} else if (unixDate > oDate) {
+		}else if(unixDate > oDate){
 			return 1;
-		} else {
+		}else{
 			return -1;
-		}
+		}		
 	}
 
 }

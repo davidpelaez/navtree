@@ -127,7 +127,7 @@ public class Node implements Comparable {
 	void update() {
 		if (!fixedX) {
 			x += PApplet.constrain(dx, -MAX_DELTA, MAX_DELTA);
-			if (!isRoot) { //All children must be to the right of its parent
+			if (!isRoot) {
 				try {
 
 					if (x < parent.x) {
