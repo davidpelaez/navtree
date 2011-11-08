@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="19" version="2.0">
+<workbench progressCount="16" version="2.0">
 <workbenchAdvisor/>
 <window height="742" maximized="true" width="1024" x="0" y="22">
 <fastViewData fastViewLocation="1024"/>
@@ -34,21 +34,31 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleTreeWave.java" partName="SimpleTreeWave.java" path="/Volumes/Rulos/David/Documents/development/navtree/eclipse/sketch2_edges/src/navtreeWave/SimpleTreeWave.java" title="SimpleTreeWave.java" tooltip="sketch2_edges/src/navtreeWave/SimpleTreeWave.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Edge.java" partName="Edge.java" path="/Volumes/Rulos/David/Documents/development/navtree/eclipse/sketch2_edges/src/navtreeContrainedXY/Edge.java" title="Edge.java" tooltip="sketch2_edges/src/navtreeContrainedXY/Edge.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/sketch2_edges/src/navtreeContrainedXY/Edge.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="408"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleTree2D.java" partName="SimpleTree2D.java" path="/Volumes/Rulos/David/Documents/development/navtree/eclipse/sketch2_edges/src/navtreeContrainedXY/SimpleTree2D.java" title="SimpleTree2D.java" tooltip="sketch2_edges/src/navtreeContrainedXY/SimpleTree2D.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/sketch2_edges/src/navtreeContrainedXY/SimpleTree2D.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleTreeHierarchy.java" partName="SimpleTreeHierarchy.java" path="/Volumes/Rulos/David/Documents/development/navtree/eclipse/sketch2_edges/src/navtreeContrainedXY/SimpleTreeHierarchy.java" title="SimpleTreeHierarchy.java" tooltip="sketch2_edges/src/navtreeContrainedXY/SimpleTreeHierarchy.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/sketch2_edges/src/navtreeContrainedXY/SimpleTreeHierarchy.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Node.java" partName="Node.java" path="/Volumes/Rulos/David/Documents/development/navtree/eclipse/sketch2_edges/src/navtreeContrainedXY/Node.java" title="Node.java" tooltip="sketch2_edges/src/navtreeContrainedXY/Node.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/sketch2_edges/src/navtreeContrainedXY/Node.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4840" selectionTopPixel="2598"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleTreeWave.java" partName="SimpleTreeWave.java" path="/Volumes/Rulos/David/Documents/development/navtree/eclipse/sketch2_edges/src/navtreeWave/SimpleTreeWave.java" title="SimpleTreeWave.java" tooltip="sketch2_edges/src/navtreeWave/SimpleTreeWave.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/sketch2_edges/src/navtreeWave/SimpleTreeWave.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="428" selectionTopPixel="146"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Navtree.java" partName="Navtree.java" path="/Volumes/Rulos/David/Documents/development/navtree/eclipse/sketch2_edges/src/navtreeWave/Navtree.java" title="Navtree.java" tooltip="sketch2_edges/src/navtreeWave/Navtree.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/sketch2_edges/src/navtreeWave/Navtree.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4559" selectionTopPixel="2150"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Node.java" partName="Node.java" path="/Volumes/Rulos/David/Documents/development/navtree/eclipse/sketch2_edges/src/navtreeWave/Node.java" title="Node.java" tooltip="sketch2_edges/src/navtreeWave/Node.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/sketch2_edges/src/navtreeWave/Node.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3552" selectionTopPixel="2029"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="238" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -324,7 +334,6 @@
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtree/Navtree.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtree/SimpleTreeHierarchy.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtree/Edge.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtree/Node.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeConst/SimpleTreeHierarchy.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeConst/SimpleTree2D.java"/>
@@ -338,68 +347,19 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeWave/SimpleTreeWave.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeWave/Navtree.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeWave/Node.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeWave/SimpleTreeWave.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeSimplest2D/SimpleTree2D.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeContrainedXY/SimpleTree2D.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeContrainedXY/SimpleTreeHierarchy.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeWave/Navtree.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeContrainedXY/Edge.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeContrainedXY/SimpleTree3D.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeContrainedXY/Node.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeContrainedXY/SimpleTree2D.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeContrainedXY/SimpleTreeHierarchy.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/sketch2_edges/src/navtreeWave/SimpleTreeWave.java"/>
 </editors>
-<item historyLabel="Edge.java" index="2">
-<position info="not_deleted" x="681" y="0"/>
-</item>
-<item historyLabel="Navtree.java" index="0">
-<position info="not_deleted" x="2131" y="0"/>
-</item>
-<item historyLabel="Edge.java" index="2">
-<position info="not_deleted" x="850" y="0"/>
-</item>
-<item historyLabel="Navtree.java" index="0">
-<position info="not_deleted" x="2131" y="0"/>
-</item>
-<item historyLabel="SimpleTreeHierarchy.java" index="1">
-<position info="not_deleted" x="686" y="0"/>
-</item>
-<item historyLabel="Node.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Node.java" index="3">
-<position/>
-</item>
-<item historyLabel="Node.java" index="3">
-<position info="not_deleted" x="2313" y="0"/>
-</item>
-<item historyLabel="Node.java" index="3">
-<position info="not_deleted" x="2303" y="11"/>
-</item>
-<item historyLabel="Navtree.java" index="0">
-<position info="not_deleted" x="2101" y="0"/>
-</item>
-<item historyLabel="Node.java" index="3">
-<position info="not_deleted" x="1879" y="0"/>
-</item>
-<item historyLabel="Navtree.java" index="0">
-<position info="not_deleted" x="2087" y="0"/>
-</item>
-<item historyLabel="Node.java" index="3">
-<position info="not_deleted" x="1879" y="0"/>
-</item>
-<item historyLabel="Node.java" index="3">
-<position info="not_deleted" x="2610" y="0"/>
-</item>
-<item historyLabel="Edge.java" index="2">
-<position info="not_deleted" x="850" y="0"/>
-</item>
-<item historyLabel="Navtree.java" index="0">
-<position info="not_deleted" x="2087" y="0"/>
-</item>
-<item historyLabel="Node.java" index="3">
-<position info="not_deleted" x="2610" y="0"/>
-</item>
-<item historyLabel="Node.java" index="3">
-<position info="not_deleted" x="2208" y="0"/>
-</item>
-<item historyLabel="Navtree.java" index="0">
-<position info="not_deleted" x="5180" y="0"/>
-</item>
-<item historyLabel="Edge.java" index="2">
-<position info="not_deleted" x="536" y="0"/>
-</item>
-<item historyLabel="Node.java" index="3">
+<item historyLabel="Node.java" index="2">
 <position info="not_deleted" x="4639" y="0"/>
 </item>
 <item historyLabel="Navtree.java" index="0">
@@ -408,86 +368,146 @@
 <item historyLabel="SimpleTreeHierarchy.java" index="1">
 <position info="not_deleted" x="427" y="0"/>
 </item>
-<item historyLabel="Node.java" index="3">
+<item historyLabel="Node.java" index="2">
 <position info="not_deleted" x="4804" y="0"/>
 </item>
-<item historyLabel="SimpleTreeHierarchy.java" index="4">
+<item historyLabel="SimpleTreeHierarchy.java" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTree2D.java" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="SimpleTree2D.java" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="SimpleTree2D.java" index="6">
 <position info="not_deleted" x="368" y="0"/>
 </item>
+<item historyLabel="SimpleTree2D.java" index="5">
+<position info="not_deleted" x="372" y="0"/>
+</item>
 <item historyLabel="SimpleTree2D.java" index="6">
 <position info="not_deleted" x="372" y="0"/>
 </item>
-<item historyLabel="SimpleTree2D.java" index="7">
-<position info="not_deleted" x="372" y="0"/>
-</item>
-<item historyLabel="SimpleTree2D.java" index="7">
+<item historyLabel="SimpleTree2D.java" index="6">
 <position info="not_deleted" x="373" y="0"/>
 </item>
-<item historyLabel="SimpleTreeHierarchy.java" index="8">
+<item historyLabel="SimpleTreeHierarchy.java" index="7">
 <position info="not_deleted" x="427" y="0"/>
 </item>
-<item historyLabel="SimpleTreeHierarchy.java" index="8">
+<item historyLabel="SimpleTreeHierarchy.java" index="7">
 <position info="not_deleted" x="439" y="0"/>
 </item>
-<item historyLabel="Navtree.java" index="9">
+<item historyLabel="Navtree.java" index="8">
 <position info="not_deleted" x="5180" y="0"/>
 </item>
-<item historyLabel="Navtree.java" index="9">
+<item historyLabel="Navtree.java" index="8">
 <position info="not_deleted" x="5192" y="0"/>
 </item>
-<item historyLabel="Edge.java" index="10">
+<item historyLabel="Edge.java" index="9">
 <position info="not_deleted" x="536" y="0"/>
 </item>
-<item historyLabel="Edge.java" index="10">
+<item historyLabel="Edge.java" index="9">
 <position info="not_deleted" x="548" y="0"/>
 </item>
-<item historyLabel="Node.java" index="11">
+<item historyLabel="Node.java" index="10">
 <position info="not_deleted" x="4804" y="0"/>
 </item>
-<item historyLabel="Node.java" index="11">
+<item historyLabel="Node.java" index="10">
 <position info="not_deleted" x="4816" y="0"/>
 </item>
-<item historyLabel="SimpleTreeHierarchy.java" index="8">
+<item historyLabel="SimpleTreeHierarchy.java" index="7">
 <position info="not_deleted" x="439" y="0"/>
 </item>
-<item historyLabel="Navtree.java" index="9">
+<item historyLabel="Navtree.java" index="8">
 <position info="not_deleted" x="5192" y="0"/>
 </item>
-<item historyLabel="Edge.java" index="10">
+<item historyLabel="Edge.java" index="9">
 <position info="not_deleted" x="548" y="0"/>
 </item>
-<item historyLabel="SimpleTreeHierarchy.java" index="12">
+<item historyLabel="SimpleTreeHierarchy.java" index="11">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="SimpleTreeWave.java" index="13">
+<item historyLabel="SimpleTreeWave.java" index="12">
 <position info="not_deleted" x="403" y="0"/>
 </item>
-<item historyLabel="Navtree.java" index="14">
+<item historyLabel="Navtree.java" index="13">
 <position info="not_deleted" x="4559" y="0"/>
 </item>
-<item historyLabel="SimpleTreeWave.java" index="13">
+<item historyLabel="SimpleTreeWave.java" index="12">
 <position info="not_deleted" x="428" y="0"/>
 </item>
-<item historyLabel="Node.java" index="15">
+<item historyLabel="Node.java" index="14">
 <position/>
 </item>
-<item historyLabel="SimpleTreeWave.java" index="13">
+<item historyLabel="SimpleTreeWave.java" index="12">
 <position info="not_deleted" x="428" y="0"/>
 </item>
-<item historyLabel="Navtree.java" index="14">
+<item historyLabel="Navtree.java" index="13">
 <position info="not_deleted" x="4559" y="0"/>
 </item>
-<item historyLabel="Node.java" index="15">
+<item historyLabel="Node.java" index="14">
 <position/>
 </item>
-<item active="true" historyLabel="Node.java" index="15">
-<position info="not_deleted" x="4030" y="0"/>
+<item historyLabel="Node.java" index="14">
+<position info="not_deleted" x="3552" y="0"/>
+</item>
+<item historyLabel="SimpleTreeWave.java" index="15">
+<position info="not_deleted" x="428" y="0"/>
+</item>
+<item historyLabel="SimpleTree2D.java" index="16">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTree2D.java" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTreeHierarchy.java" index="18">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTree2D.java" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTree2D.java" index="16">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTreeWave.java" index="15">
+<position info="not_deleted" x="428" y="0"/>
+</item>
+<item historyLabel="Node.java" index="14">
+<position info="not_deleted" x="3552" y="0"/>
+</item>
+<item historyLabel="Navtree.java" index="19">
+<position info="not_deleted" x="4559" y="0"/>
+</item>
+<item historyLabel="Edge.java" index="20">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTree2D.java" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTree3D.java" index="21">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTree2D.java" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTreeHierarchy.java" index="18">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Edge.java" index="20">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTree2D.java" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Node.java" index="22">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTree2D.java" index="23">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SimpleTreeHierarchy.java" index="24">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="SimpleTreeWave.java" index="25">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -495,9 +515,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
 <trimArea IMemento.internal.id="131072">
 <trimItem IMemento.internal.id="bottom"/>
 </trimArea>
@@ -508,11 +525,31 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@57ad38e6"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleTreeWave.java" tooltip="sketch2_edges/src/navtreeWave/SimpleTreeWave.java">
+<persistable path="/sketch2_edges/src/navtreeWave/SimpleTreeWave.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Node.java" tooltip="sketch2_edges/src/navtreeContrainedXY/Node.java">
+<persistable path="/sketch2_edges/src/navtreeContrainedXY/Node.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleTreeHierarchy.java" tooltip="sketch2_edges/src/navtreeContrainedXY/SimpleTreeHierarchy.java">
+<persistable path="/sketch2_edges/src/navtreeContrainedXY/SimpleTreeHierarchy.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleTree3D.java" tooltip="sketch2_edges/src/navtreeContrainedXY/SimpleTree3D.java">
+<persistable path="/sketch2_edges/src/navtreeContrainedXY/SimpleTree3D.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleTree2D.java" tooltip="sketch2_edges/src/navtreeContrainedXY/SimpleTree2D.java">
+<persistable path="/sketch2_edges/src/navtreeContrainedXY/SimpleTree2D.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Edge.java" tooltip="sketch2_edges/src/navtreeContrainedXY/Edge.java">
+<persistable path="/sketch2_edges/src/navtreeContrainedXY/Edge.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleTree2D.java" tooltip="sketch2_edges/src/navtreeSimplest2D/SimpleTree2D.java">
+<persistable path="/sketch2_edges/src/navtreeSimplest2D/SimpleTree2D.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Node.java" tooltip="sketch2_edges/src/navtreeWave/Node.java">
 <persistable path="/sketch2_edges/src/navtreeWave/Node.java"/>
 </file>
@@ -536,27 +573,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Edge.java" tooltip="sketch2_edges/src/navtree/Edge.java">
 <persistable path="/sketch2_edges/src/navtree/Edge.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Navtree.java" tooltip="sketch2_edges/src/navtree/Navtree.java">
-<persistable path="/sketch2_edges/src/navtree/Navtree.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Node.java" tooltip="sketch2_edges/src/navtreeConst/Node.java">
-<persistable path="/sketch2_edges/src/navtreeConst/Node.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SimpleTreeHierarchy.java" tooltip="sketch2_edges/src/navtree/SimpleTreeHierarchy.java">
-<persistable path="/sketch2_edges/src/navtree/SimpleTreeHierarchy.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Navtree.java" tooltip="sketch2_edges/src/navtreeConst/Navtree.java">
-<persistable path="/sketch2_edges/src/navtreeConst/Navtree.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyControlWindow.java" tooltip="sketch2_edges/src/navtree/MyControlWindow.java">
-<persistable path="/sketch2_edges/src/navtree/MyControlWindow.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NavigableSketch.java" tooltip="sketch2_edges/src/navigable/NavigableSketch.java">
-<persistable path="/sketch2_edges/src/navigable/NavigableSketch.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="myWheelListener.java" tooltip="sketch2_edges/src/myCam2D/myWheelListener.java">
-<persistable path="/sketch2_edges/src/myCam2D/myWheelListener.java"/>
 </file>
 </mruList>
 </workbench>
