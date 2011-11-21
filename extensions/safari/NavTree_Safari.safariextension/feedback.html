@@ -2,7 +2,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <html>
 <head>
-<title>David Pelaez T. - Designer</title>
+<title>Navtree</title>
 <meta content='text/html;charset=UTF-8' http-equiv='content-type' />
 <script src="lib/jquery162.js" type="text/javascript" charset="utf-8"></script>	
 <style type='text/css'>
@@ -106,9 +106,27 @@ a:active, a:visited, a{
 
 
 <script type="text/javascript">
+
+/*
+* MESSAGE CONNECTION WITH EXTENSION
+*/
+
+function toConsole(msg){
+	safari.extension.globalPage.contentWindow.console.log(msg);
+}
+
+function changeStatus(theStatus) {
+   safari.extension.toolbarItems[0].setStatus(theStatus);
+}
+
+/*
+* 	EVENT MANAGEMENT
+*/
 $(function(){
 	bindButtons();
 });
+
+
 
 function bindButtons(){
 	jQuery('.clickable').click(function() {
@@ -116,14 +134,33 @@ function bindButtons(){
 	});
 }
 
+NORMAL_STATUS = 0;
+PRIVATE_STATUS = 1;
+ALERT_STATUS = 2;
+
 function swapButtons(button){
 	if($(button).hasClass('clickable')){
-	$('#mode_buttons div').toggleClass('clickable').toggleClass('active');
-	bindButtons();
+		$('#mode_buttons div').toggleClass('clickable').toggleClass('active');
+		bindButtons();		
+		if($(button).attr("id")=="private_mode"){
+			toConsole("pMode clicked");
+			changeStatus(1);
+		}else{
+			toConsole("normal clicked");
+			changeStatus(0);
+		}
 	}
-	
-	
 }
+
+
+/* 
+function getAnswer(theMessageEvent) {
+   if (theMessageEvent.name === "theAnswer") {
+      calculatedVal=theMessageEvent.message;
+      console.log(calculatedVal);
+   }
+}
+safari.self.addEventListener("message", getAnswer, false);*/
 </script>
 </head>
 <body>

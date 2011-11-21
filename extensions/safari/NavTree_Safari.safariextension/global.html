@@ -61,5 +61,24 @@ jQuery.ajaxSetup({
 	data: "test=1",
  });
 
+/*
+ * MESSAGE INTERACTION WITH THE POPOVER
+ */
+
+function respondToMessage(theMessageEvent) {
+	alert("MSG!");
+    if(theMessageEvent.name === "changeStatus")
+    {
+		console.log("Updating status to " + theMessageEvent.message);
+		toolbarButton.setStatus(theMessageEvent.message);
+    }
+    if(theMessageEvent.name === "console")
+    {
+		console.log(theMessageEvent.message);
+    }
+}
+
+safari.application.addEventListener("message",respondToMessage,false);
+
 
 </script>
