@@ -49,7 +49,7 @@ html{
 }
 
 #private_mode, #normal_mode{
-	width: 80px;
+	width: 84px;
 	height: 30px;
 	position: absolute;
 	top: 0;
@@ -89,6 +89,15 @@ html{
 
 a:active, a:visited, a{
 	color: #333;
+	text-decoration: none;
+}
+
+#dashboard_button a{
+	font-weight: bold;
+	margin: 0 auto;
+	width: 150px;
+	padding-right: 17px;
+	background: transparent top right url('images/arrow.png') no-repeat;
 }
 
 
@@ -129,7 +138,7 @@ function swapButtons(button){
 			<div class="edges_label"></div>
 		</div>
 
-		<div id="mode_button">	
+		<div id="dashboard_button">	
 			<a href="#">Navtree dashboard</a>
 		</div>
 	</div>
