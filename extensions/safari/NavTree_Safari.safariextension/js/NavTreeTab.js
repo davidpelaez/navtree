@@ -133,11 +133,13 @@ function NavTreeTab(theSafariTab){
 				//This extension fails silently and retries every 5 sec with the data it has. No amount of max tries's defined
 				//This is triggered by HTTP != 200
 				console.log("The ajax failed. Qeued for re-sync in 5 sec"); 
+				if(jqXHR.status == 0) connectivity = false;
 				toolbarButton.setStatus(ALERT_STATUS);
 				myNavTreeTabParent.beginTimer();                                  
 				},
 			success: function(data, textStatus, jqXHR){ 
 				validSecret = true; 
+				connectivity = true;
 				toolbarButton.setStatus(NORMAL_STATUS);
 				//This is triggered by HTTP == 200 
 				okSyncs++;

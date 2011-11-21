@@ -41,6 +41,7 @@ function ajaxActions(){
 }
 
 var validSecret = true; //Asume there's a valid secret
+var connectivity = true; //Asume there's internet for syncing
 
 function updateEdgesCount(){
 	jQuery.ajax({
@@ -54,12 +55,19 @@ function updateEdgesCount(){
 		success: function(data, textStatus, jqXHR){ 
 			responseEdge = jQuery.parseJSON( jqXHR.responseText).edge;
 			safari.extension.toolbarItems[0].popover.contentWindow.updateCount(responseEdge.edge_count);
+			connectivity = true;
+			validSecret = true;
 		}, 
 		error: function(jqXHR, textStatus, errorThrown){
 			if(jqXHR.status == 403){
 				validSecret = false;
 				invalidSecret();
 				toolbarButton.setStatus(ALERT_STATUS);
+			}else{
+				if(jqXHR.status == 0){ 
+					connectivity = false
+					console.log("NO INTERNET");
+				}
 			}
 		}
 	 });

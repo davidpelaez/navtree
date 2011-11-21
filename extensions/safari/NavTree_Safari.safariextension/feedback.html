@@ -181,15 +181,21 @@ function popoverHandler(event){
 		//This changes the content if the extension is in alert mode.
 		if(safari.extension.globalPage.contentWindow.validSecret){
 			//Hide the error message
-			$('#wrapper').show()
+			$('#wrapper').show();
 			//Show the normal info
-			$('#alert_wrapper').hide()
+			$('#alert_wrapper').hide();
 		}else{
 			//Hide the info
-			$('#wrapper').hide()
+			$('#wrapper').hide();
 			//Show the alert
-			$('#alert_wrapper').show()
-			
+			$('#alert_wrapper').show();
+		}
+		//In case there's no connectivity
+		if(!safari.extension.globalPage.contentWindow.connectivity){
+			//Hide the info
+			$('#wrapper').hide();
+			//Show the alert
+			$('#alert_wrapper').hide();
 		}
 	}else{ 
 		return;
