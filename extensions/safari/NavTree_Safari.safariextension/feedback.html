@@ -1,1 +1,137 @@
-ALOHA
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='utf-8' ?>
+<html>
+<head>
+<title>David Pelaez T. - Designer</title>
+<meta content='text/html;charset=UTF-8' http-equiv='content-type' />
+<script src="lib/jquery162.js" type="text/javascript" charset="utf-8"></script>	
+<style type='text/css'>
+
+html{
+	font-family: Helvetica, Arial, Sans-serif;
+	color: #333;
+} 
+
+#wrapper{
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.edges_label{
+
+}
+
+#edges_stats{
+	line-height: 1.8em;
+	width: 150px;	
+	margin: 10px auto;
+	padding-top: 10px;
+	border-top: dotted thin #333;
+	border-bottom: dotted thin #333;
+}
+
+#edges_count{
+	font-size: 280%;
+	font-weight: bold;
+}
+
+/*
+*	BUTTONS STYLING
+*/
+
+#mode_buttons{
+
+	position: relative;
+	height: 30px;
+	width: 164px;
+	margin: 15px auto 0 auto;
+}
+
+#private_mode, #normal_mode{
+	width: 80px;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	background-color: transparent;
+	background-image: url("images/buttons.png");
+	background-repeat: no-repeat;
+}
+.clickable{
+	cursor: pointer;
+}
+
+#private_mode{
+	right: 0;
+}
+
+#private_mode.clickable{
+	background-position: -100px -5px;	
+}
+
+#private_mode.active{
+	background-position: -100px -50px;		
+}
+
+
+
+#normal_mode{
+	left: 0;
+}
+
+#normal_mode.active{
+	background-position: -10px -5px;	
+}
+
+#normal_mode.clickable{
+	background-position: -10px -50px;		
+}
+
+a:active, a:visited, a{
+	color: #333;
+}
+
+
+
+</style>
+
+
+<script type="text/javascript">
+$(function(){
+	bindButtons();
+});
+
+function bindButtons(){
+	jQuery('.clickable').click(function() {
+	  swapButtons(this);
+	});
+}
+
+function swapButtons(button){
+	if($(button).hasClass('clickable')){
+	$('#mode_buttons div').toggleClass('clickable').toggleClass('active');
+	bindButtons();
+	}
+	
+	
+}
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="mode_buttons">	
+			<div id="normal_mode" class="active"></div>
+			<div id="private_mode" class="clickable"></div>
+		</div>
+		<div id="edges_stats">
+			<div id="edges_count">18545</div>
+			<div class="edges_label">recorded nodes</div>
+			<div class="edges_label"></div>
+		</div>
+
+		<div id="mode_button">	
+			<a href="#">Navtree dashboard</a>
+		</div>
+	</div>
+</body>
+</html>

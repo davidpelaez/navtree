@@ -26,11 +26,11 @@
 				<key>Filename</key>
 				<string>feedback.html</string>
 				<key>Height</key>
-				<real>100</real>
+				<real>160</real>
 				<key>Identifier</key>
 				<string>feedback</string>
 				<key>Width</key>
-				<real>200</real>
+				<real>220</real>
 			</dict>
 		</array>
 		<key>Toolbar Items</key>
