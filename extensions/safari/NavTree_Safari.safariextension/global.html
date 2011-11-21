@@ -24,9 +24,37 @@ safari.application.addEventListener("command", commandHandler, false);
 safari.application.addEventListener("beforeNavigate", navigationHandler, true);  //Record the intention to go somewhere
 safari.extension.toolbarItems[0].__proto__.status = 0; //Make the button in the toolbar have a status
 
-
+function ajaxActions(){
+	//Get the updated count
+	jQuery.ajax({
+		type: 'GET',
+	  	url: NAVTREE_SERVER + "/edges",  
+		datatype: "json",
+		//contentType: "application/json; charset=utf-8",   	
+		beforeSend: function(jqXHR){
+			jqXHR.setRequestHeader("x-secret",safari.extension.secureSettings.secretKey);
+			},
+		success: function(data, textStatus, jqXHR){ 
+			responseEdge = jQuery.parseJSON( jqXHR.responseText).edge;
+			safari.extension.toolbarItems[0].popover.contentWindow.updateCount(responseEdge.edge_count);
+		}
+	 });	
+	//Set default AJAX settings
+	jQuery.ajaxSetup({
+		type: 'POST',
+	  	url: NAVTREE_SERVER + "/edges",  
+		datatype: "json",
+		//contentType: "application/json; charset=utf-8",   	
+		beforeSend: function(jqXHR){
+			jqXHR.setRequestHeader("x-secret",safari.extension.secureSettings.secretKey);
+			},
+		data: "test=1"
+	 });
+}
 
 window.onload = function(){
+	//Get the edges count for the feedback & set the ajax defaults
+	ajaxActions();
 	//Add all tabs. No duplicated are added because add manages that case. This is for simpler testing. 
 	//Navigation happens on reaload but not the events of open, that's why this method is added
 	windows = safari.application.browserWindows;
@@ -48,18 +76,6 @@ function randomString(len, charSet) {
     return randomString;
 };
 
-
-//Set default AJAX settings
-jQuery.ajaxSetup({
-	type: 'POST',
-  	url: NAVTREE_SERVER + "/edges",  
-	datatype: "json",
-	//contentType: "application/json; charset=utf-8",   	
-	beforeSend: function(jqXHR){
-		jqXHR.setRequestHeader("x-secret",safari.extension.secureSettings.secretKey);
-		},
-	data: "test=1",
- });
 
 /*
  * MESSAGE INTERACTION WITH THE POPOVER

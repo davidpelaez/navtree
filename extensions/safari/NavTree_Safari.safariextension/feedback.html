@@ -111,8 +111,20 @@ a:active, a:visited, a{
 * MESSAGE CONNECTION WITH EXTENSION
 */
 
+var edgeCount = 0;
+
+
+
 function toConsole(msg){
 	safari.extension.globalPage.contentWindow.console.log(msg);
+}
+
+function updateCount(newCount){
+	if(newCount > edgeCount){
+		edgeCount = newCount;
+		$('#edges_count').html(edgeCount);
+	}
+	toConsole("NewCount: " + edgeCount);
 }
 
 function changeStatus(theStatus) {
@@ -134,6 +146,7 @@ function bindButtons(){
 	});
 }
 
+
 NORMAL_STATUS = 0;
 PRIVATE_STATUS = 1;
 ALERT_STATUS = 2;
@@ -150,6 +163,17 @@ function swapButtons(button){
 			changeStatus(0);
 		}
 	}
+}
+
+function hidePopover(){
+	safari.extension.toolbarItems[0].popover.hide();
+}
+
+function openDashboard(){
+	var newTab = safari.application.activeBrowserWindow.openTab(); 
+	newTab.url = "http://growanavtree.com/dashboard";
+	newTab.activateTab; 
+	hidePopover();
 }
 
 
@@ -170,13 +194,13 @@ safari.self.addEventListener("message", getAnswer, false);*/
 			<div id="private_mode" class="clickable"></div>
 		</div>
 		<div id="edges_stats">
-			<div id="edges_count">18545</div>
+			<div id="edges_count">?</div>
 			<div class="edges_label">recorded nodes</div>
 			<div class="edges_label"></div>
 		</div>
 
 		<div id="dashboard_button">	
-			<a href="#">Navtree dashboard</a>
+			<a href="#" onclick="javascript:openDashboard();">Navtree dashboard</a>
 		</div>
 	</div>
 </body>

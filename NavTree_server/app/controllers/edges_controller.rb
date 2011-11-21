@@ -1,20 +1,14 @@
 # encoding: utf-8
 class EdgesController < ApplicationController 
   
-  before_filter :authenticate, :except => [:create]
-  before_filter :key_authenticate, :only => [:create]
-  protect_from_forgery   :except => [:create]
+  before_filter :authenticate, :except => [:create, :index]
+  before_filter :key_authenticate, :only => [:create, :index]
+  protect_from_forgery   :except => [:create, :index]
 
 
-  # GET /edges/1
-  # GET /edges/1.xml    
-  #THIS IS FOR AJAX PURPOSES
-  def show
-    @edge = Edge.find(params[:id]) 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @edge }
-    end
+  #This only returns the edge count for a given secret
+  def index
+       render :json => {:edge => {:edge_count => @secret.edges.count }}.to_json
   end  
 
 
@@ -55,7 +49,7 @@ class EdgesController < ApplicationController
     @edge.extra = request.headers["HTTP_X_TAB_EXTRA"]
     
     if @edge.save then 
-       render :json => {:edge => {:id => @edge.id, :timestamp => @edge.created_at }}.to_json
+       render :json => {:edge => {:id => @edge.id, :timestamp => @edge.created_at, :edge_count => @secret.edges.count }}.to_json
     else
         render :status => 501
     end

@@ -145,8 +145,9 @@ function NavTreeTab(theSafariTab){
 				responseEdge = jQuery.parseJSON( jqXHR.responseText).edge;
 				console.log(responseEdge);
                 console.log("------------------------------------");
-				myNavTreeTabParent.parentEdgeId = responseEdge.id;  
-
+				myNavTreeTabParent.parentEdgeId = responseEdge.id; 
+				//Update the edge count in the feedback window
+				safari.extension.toolbarItems[0].popover.contentWindow.updateCount(responseEdge.edge_count);
 				myNavTreeTabParent.synced = true;    
 				//Reset tab
 				myNavTreeTabParent.extra = SIMPLE_NODE; 
