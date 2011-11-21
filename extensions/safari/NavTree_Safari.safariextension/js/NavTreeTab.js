@@ -136,7 +136,8 @@ function NavTreeTab(theSafariTab){
 				toolbarButton.setStatus(ALERT_STATUS);
 				myNavTreeTabParent.beginTimer();                                  
 				},
-			success: function(data, textStatus, jqXHR){  
+			success: function(data, textStatus, jqXHR){ 
+				validSecret = true; 
 				toolbarButton.setStatus(NORMAL_STATUS);
 				//This is triggered by HTTP == 200 
 				okSyncs++;

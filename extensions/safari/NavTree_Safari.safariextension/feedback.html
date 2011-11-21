@@ -12,7 +12,7 @@ html{
 	color: #333;
 } 
 
-#wrapper{
+#wrapper, #alert_wrapper{
 	width: 200px;
 	margin: 0 auto;
 	text-align: center;
@@ -176,6 +176,28 @@ function openDashboard(){
 	hidePopover();
 }
 
+function popoverHandler(event){
+	if (event.target.identifier == "feedback"){
+		//This changes the content if the extension is in alert mode.
+		if(safari.extension.globalPage.contentWindow.validSecret){
+			//Hide the error message
+			$('#wrapper').show()
+			//Show the normal info
+			$('#alert_wrapper').hide()
+		}else{
+			//Hide the info
+			$('#wrapper').hide()
+			//Show the alert
+			$('#alert_wrapper').show()
+			
+		}
+	}else{ 
+		return;
+	}
+}
+
+safari.application.addEventListener("popover", popoverHandler, true);
+
 
 /* 
 function getAnswer(theMessageEvent) {
@@ -196,6 +218,18 @@ safari.self.addEventListener("message", getAnswer, false);*/
 		<div id="edges_stats">
 			<div id="edges_count">?</div>
 			<div class="edges_label">recorded nodes</div>
+			<div class="edges_label"></div>
+		</div>
+
+		<div id="dashboard_button">	
+			<a href="#" onclick="javascript:openDashboard();">Navtree dashboard</a>
+		</div>
+	</div>
+	
+	<div id="alert_wrapper">
+		<div id="edges_stats">
+			<div id="edges_count">?</div>
+			<div class="edges_label">ALEEEERT!!</div>
 			<div class="edges_label"></div>
 		</div>
 

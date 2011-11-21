@@ -26,19 +26,7 @@ safari.extension.toolbarItems[0].__proto__.status = 0; //Make the button in the 
 
 function ajaxActions(){
 	//Get the updated count
-	jQuery.ajax({
-		type: 'GET',
-	  	url: NAVTREE_SERVER + "/edges",  
-		datatype: "json",
-		//contentType: "application/json; charset=utf-8",   	
-		beforeSend: function(jqXHR){
-			jqXHR.setRequestHeader("x-secret",safari.extension.secureSettings.secretKey);
-			},
-		success: function(data, textStatus, jqXHR){ 
-			responseEdge = jQuery.parseJSON( jqXHR.responseText).edge;
-			safari.extension.toolbarItems[0].popover.contentWindow.updateCount(responseEdge.edge_count);
-		}
-	 });	
+	updateEdgesCount();	
 	//Set default AJAX settings
 	jQuery.ajaxSetup({
 		type: 'POST',
@@ -50,6 +38,38 @@ function ajaxActions(){
 			},
 		data: "test=1"
 	 });
+}
+
+var validSecret = true; //Asume there's a valid secret
+
+function updateEdgesCount(){
+	jQuery.ajax({
+		type: 'GET',
+	  	url: NAVTREE_SERVER + "/edges",  
+		datatype: "json",
+		//contentType: "application/json; charset=utf-8",   	
+		beforeSend: function(jqXHR){
+			jqXHR.setRequestHeader("x-secret",safari.extension.secureSettings.secretKey);
+			},
+		success: function(data, textStatus, jqXHR){ 
+			responseEdge = jQuery.parseJSON( jqXHR.responseText).edge;
+			safari.extension.toolbarItems[0].popover.contentWindow.updateCount(responseEdge.edge_count);
+		}, 
+		error: function(jqXHR, textStatus, errorThrown){
+			if(jqXHR.status == 403){
+				validSecret = false;
+				invalidSecret();
+				toolbarButton.setStatus(ALERT_STATUS);
+			}
+		}
+	 });
+}
+
+function invalidSecret(){
+	alert("Navtree cannot record your data because a valid secret isn't set. A window with further instructions will be opened.");
+	var newTab = safari.application.activeBrowserWindow.openTab(); 
+	newTab.url = "http://growanavtree.com/contents/invalid_secret";
+	newTab.activateTab;
 }
 
 window.onload = function(){
@@ -83,15 +103,6 @@ function randomString(len, charSet) {
 
 function respondToMessage(theMessageEvent) {
 	alert("MSG!");
-    if(theMessageEvent.name === "changeStatus")
-    {
-		console.log("Updating status to " + theMessageEvent.message);
-		toolbarButton.setStatus(theMessageEvent.message);
-    }
-    if(theMessageEvent.name === "console")
-    {
-		console.log(theMessageEvent.message);
-    }
 }
 
 safari.application.addEventListener("message",respondToMessage,false);
