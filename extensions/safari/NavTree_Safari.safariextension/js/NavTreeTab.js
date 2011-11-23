@@ -48,9 +48,7 @@ function NavTreeTab(theSafariTab){
 	this.navigateTo = function(newURL){
 		myNavTreeTabParent.url = newURL; //THERE MIGHT BE A BUG HERE, like the URL isn't always the tab URL??
 		myNavTreeTabParent.synced = false; 
-		//console.log(">> " + newURL);
 		myNavTreeTabParent.resetTimer(); 
-		  //  		console.log("------------------------------------"); 
 	}; 
 	
 	this.navigateTo(theSafariTab.url);
@@ -83,8 +81,6 @@ function NavTreeTab(theSafariTab){
 	//Check if the tab is blank or Pointed 
 	//Add this to the EXTRA right before SYNC
 	this.evalTabURL = function(){
-		//TODO Attach the result to the NavTreeTab extra info 
-		console.log(myNavTreeTabParent.evaluedURL);
 		if(!myNavTreeTabParent.evaluedURL){ //This is to avoid adding multiple times the same extra
 			if(myNavTreeTabParent.url != ""){
 				myNavTreeTabParent.extra *= POINTED;
@@ -121,7 +117,6 @@ function NavTreeTab(theSafariTab){
  
 		myNavTreeTabParent.evalTabURL();
 		console.log("SYNCING: " + myNavTreeTabParent.url + "[" + myNavTreeTabParent.extra + "]");  
-		console.log(myNavTreeTabParent);
 
 		var theNode = new Object();
 		theNode.tab = myNavTreeTabParent; //Create the header request.headers["HTTP_TAB"] for rails
@@ -140,18 +135,13 @@ function NavTreeTab(theSafariTab){
 			success: function(data, textStatus, jqXHR){ 
 				validSecret = true; 
 				connectivity = true;
-				toolbarButton.setStatus(NORMAL_STATUS);
-				//This is triggered by HTTP == 200 
-				okSyncs++;
-				console.log("OK: " + okSyncs + "/" + tabsTable.size()); 
-				
+				myNavTreeTabParent.synced = true;    
+				if(extensionMode != PRIVATE_STATUS) setExtensionStatus(NORMAL_STATUS);
+				//This is triggered by HTTP == 200 				
 				responseEdge = jQuery.parseJSON( jqXHR.responseText).edge;
-				console.log(responseEdge);
-                console.log("------------------------------------");
 				myNavTreeTabParent.parentEdgeId = responseEdge.id; 
 				//Update the edge count in the feedback window
-				safari.extension.toolbarItems[0].popover.contentWindow.updateCount(responseEdge.edge_count);
-				myNavTreeTabParent.synced = true;    
+				updateCount(responseEdge.edge_count);
 				//Reset tab
 				myNavTreeTabParent.extra = SIMPLE_NODE; 
 				}

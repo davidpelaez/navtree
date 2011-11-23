@@ -12,7 +12,7 @@ html{
 	color: #333;
 } 
 
-#wrapper, #alert_wrapper{
+#wrapper, #alert_wrapper, #offline_wrapper{
 	width: 200px;
 	margin: 0 auto;
 	text-align: center;
@@ -124,11 +124,11 @@ function updateCount(newCount){
 		edgeCount = newCount;
 		$('#edges_count').html(edgeCount);
 	}
-	toConsole("NewCount: " + edgeCount);
 }
 
 function changeStatus(theStatus) {
-   safari.extension.toolbarItems[0].setStatus(theStatus);
+	toConsole("Changing extension status by user request");
+	safari.extension.globalPage.contentWindow.setExtensionStatus(theStatus);
 }
 
 /*
@@ -156,11 +156,9 @@ function swapButtons(button){
 		$('#mode_buttons div').toggleClass('clickable').toggleClass('active');
 		bindButtons();		
 		if($(button).attr("id")=="private_mode"){
-			toConsole("pMode clicked");
-			changeStatus(1);
+			changeStatus(PRIVATE_STATUS);
 		}else{
-			toConsole("normal clicked");
-			changeStatus(0);
+			changeStatus(NORMAL_STATUS);
 		}
 	}
 }
@@ -179,23 +177,26 @@ function openDashboard(){
 function popoverHandler(event){
 	if (event.target.identifier == "feedback"){
 		//This changes the content if the extension is in alert mode.
-		if(safari.extension.globalPage.contentWindow.validSecret){
+		if(safari.extension.globalPage.contentWindow.validSecret && safari.extension.globalPage.contentWindow.connectivity){
 			//Hide the error message
 			$('#wrapper').show();
 			//Show the normal info
+			$('#offline_wrapper').hide();
 			$('#alert_wrapper').hide();
-		}else{
+		}else if(!safari.extension.globalPage.contentWindow.validSecret){ //There's no valid secret
 			//Hide the info
 			$('#wrapper').hide();
+			$('#offline_wrapper').hide();
 			//Show the alert
 			$('#alert_wrapper').show();
-		}
-		//In case there's no connectivity
-		if(!safari.extension.globalPage.contentWindow.connectivity){
+		}else if(!safari.extension.globalPage.contentWindow.connectivity){ 		//In case there's no connectivity
 			//Hide the info
 			$('#wrapper').hide();
 			//Show the alert
 			$('#alert_wrapper').hide();
+			$('#offline_wrapper').show();
+		}else{
+			alert("THERE's something undefined happenning");
 		}
 	}else{ 
 		return;
@@ -235,7 +236,19 @@ safari.self.addEventListener("message", getAnswer, false);*/
 	<div id="alert_wrapper">
 		<div id="edges_stats">
 			<div id="edges_count">?</div>
-			<div class="edges_label">ALEEEERT!!</div>
+			<div class="edges_label">Your private key is empty or invalid. Visit the dashboard for instructions to set it up.</div>
+			<div class="edges_label"></div>
+		</div>
+
+		<div id="dashboard_button">	
+			<a href="#" onclick="javascript:openDashboard();">Navtree dashboard</a>
+		</div>
+	</div>
+	
+	<div id="offline_wrapper">
+		<div id="edges_stats">
+			<div id="edges_count">?</div>
+			<div class="edges_label">There's no internet connectivity and some nodes are pending synchronization.</div>
 			<div class="edges_label"></div>
 		</div>
 

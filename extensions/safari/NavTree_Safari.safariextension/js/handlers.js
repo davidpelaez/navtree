@@ -4,8 +4,7 @@ navigationHandler = function(event){
 };
 
 
-openHandler = function(event){       
-
+openHandler = function(event){   
 	if (event.target instanceof SafariBrowserTab){  
 		if(tabsTable.findTab(event.target)==false){
 	   		tabsTable.addTab(event.target);	
@@ -19,10 +18,5 @@ closeHandler = function(event){
 	}
 };
 
-//React when the button is clicked according to the current status/mode
-commandHandler = function(event){ 
-	if(event.command == "click_menu_button"){
-		buttonManager(event.target);
-	};
-};
+safari.application.addEventListener("activate", function(){setExtensionStatus(extensionMode);}, true);  //Record the intention to go somewhere
 

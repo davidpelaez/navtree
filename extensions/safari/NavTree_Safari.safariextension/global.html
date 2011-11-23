@@ -11,8 +11,8 @@
 NAVTREE_SERVER = "http://growanavtree.com"; //NEVER ADD Trailing Sladge /  
 
 var date = new Date();  
-var okSyncs = 0;  //Count how many oks have been done                                                       
-var extensionMode = 0; //This is to control to enable/disable the extension or inform that there's a problem
+
+
 
 //Data structure to keep record of the tree and sync with the server
 var tabsTable = new TabsTable();
@@ -20,9 +20,8 @@ var tabsTable = new TabsTable();
 //Event tracking
 safari.application.addEventListener("open", openHandler, true); 
 safari.application.addEventListener("close", closeHandler, true); 
-safari.application.addEventListener("command", commandHandler, false);
+//safari.application.addEventListener("command", commandHandler, false);
 safari.application.addEventListener("beforeNavigate", navigationHandler, true);  //Record the intention to go somewhere
-safari.extension.toolbarItems[0].__proto__.status = 0; //Make the button in the toolbar have a status
 
 function ajaxActions(){
 	//Get the updated count

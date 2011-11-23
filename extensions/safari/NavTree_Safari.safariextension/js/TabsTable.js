@@ -96,7 +96,6 @@ function TabsTable(){
 				//IF the active tab hasn't been added
 				if(tabsTable.findTab(theActiveTab) == false){
 					//ADD the active tab before proceeding   
-					console.log("The active tab of the window was added to keep ancestry organized");
 					myParent.pushIntoTable( new NavTreeTab(theActiveTab) );
 				}
 				
