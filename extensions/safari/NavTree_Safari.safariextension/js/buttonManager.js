@@ -3,12 +3,14 @@
 NORMAL_STATUS = 0;
 PRIVATE_STATUS = 1;
 ALERT_STATUS = 2;
+OFFLINE_STATUS = 3;
 
 var extensionMode = NORMAL_STATUS; //This is to control to enable/disable the extension or inform that there's a problem
 
 ALERT_ICON = safari.extension.baseURI + "icons/alert.png";
 NORMAL_ICON = safari.extension.baseURI + "icons/nodesV.png";
 INVISIBLE_ICON = safari.extension.baseURI + "icons/invisible.png";
+OFFLINE_ICON = safari.extension.baseURI + "icons/disconnect.png";
 
 
 
@@ -33,7 +35,10 @@ setExtensionStatus = function(theStatus){
 			updateButtons(INVISIBLE_ICON,"Invisible browsing, NOT syncing to Navtree",1); 
 			break;
 		case ALERT_STATUS: //ALERT something's wrong
-			tupdateButtons(ALERT_ICON,"Something's wrong! Click for more details",2); 
+			updateButtons(ALERT_ICON,"Something's wrong! Click for more details",2); 
+			break;
+		case OFFLINE_STATUS: //No internet
+			updateButtons(OFFLINE_ICON,"You are not connected to the internet",3); 
 			break;
 	}
 };  
