@@ -28,10 +28,18 @@ html, body{
 	overflow: hidden;
 }
 
-.small_label{
+.small_label, .medium_label{
 	line-height: 1.1em;
 	margin: 5px 0;
 	font-size: 92%;
+}
+
+.small_label{
+	font-size: smaller;
+}
+
+.medium_label{
+	font-weight: bold;
 }
 
 .feedback_box{
@@ -174,11 +182,20 @@ function hidePopover(){
 }
 
 function openDashboard(){
+	http://growanavtree.com/contents/invalid_secret
 	var newTab = safari.application.activeBrowserWindow.openTab(); 
 	newTab.url = "http://growanavtree.com/dashboard";
 	newTab.activateTab; 
 	hidePopover();
 }
+
+function openInstructions(){	
+	var newTab = safari.application.activeBrowserWindow.openTab(); 
+	newTab.url = "http://growanavtree.com/contents/invalid_secret";
+	newTab.activateTab; 
+	hidePopover();
+}
+
 
 function displayRelevantContent(thePopover){
 	//This changes the content if the extension is in alert mode.
@@ -189,8 +206,8 @@ function displayRelevantContent(thePopover){
 		//Show the normal info
 		$('#offline_wrapper').hide();
 		$('#alert_wrapper').hide();
-	}else if(!safari.extension.globalPage.contentWindow.validSecret){ //There's no valid secret
-			thePopover.height = 200;
+	}else if(!safari.extension.globalPage.contentWindow.validSecret && safari.extension.globalPage.contentWindow.connectivity){ //There's no valid secret
+			thePopover.height = 195;
 		//Hide the info
 		$('#wrapper').hide();
 		$('#offline_wrapper').hide();
@@ -246,24 +263,22 @@ safari.application.addEventListener("popover", popoverHandler, true);
 	<div id="alert_wrapper">
 		<div class="feedback_box">
 			<div class="big_label"><img src="icons/big/forbidden.png"/></div>
-			<div class="small_label">Your private key is empty or invalid. Visit the dashboard for instructions.</div>
+			<div class="medium_label">Private key error</div>
+			<div class="small_label">The password to verify your identity on the server is either invalid or empty.</div>
 		</div>
 
 		<div class="dashboard_button">	
-			<a href="#" onclick="javascript:openDashboard();">Navtree dashboard</a>
+			<a href="#" onclick="javascript:openInstructions();">Help me fix it</a>
 		</div>
 	</div>
 	
 	<div id="offline_wrapper">
 		<div class="feedback_box">
 			<div class="big_label"><img src="icons/big/offline.png"/></div>
-			<div class="small_label">There's no internet connectivity and some nodes are pending synchronization.</div>
-			<div class="small_label"></div>
+			<div class="medium_label">You're offline</div>
+			<div class="small_label">Navtree cannot verify your identity and/or sync URLs. Some nodes might be lost without connection to the navtree server.</div>
 		</div>
 
-		<div class="dashboard_button">	
-			<a href="#" onclick="javascript:openDashboard();">Navtree dashboard</a>
-		</div>
 	</div>
 </body>
 </html>
