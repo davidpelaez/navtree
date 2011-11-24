@@ -74,7 +74,7 @@ function updateEdgesCount(){
 }
 
 function invalidSecret(){
-	alert("Navtree cannot record your data because a valid secret isn't set. A window with further instructions will be opened.");
+	alert("Navtree cannot record your data because your private key is either empty or invalid. \n\n A tab with instructions to fix this will be opened.");
 	var newTab = safari.application.activeBrowserWindow.openTab(); 
 	newTab.url = "http://growanavtree.com/contents/invalid_secret";
 	newTab.activateTab;
@@ -105,15 +105,6 @@ function randomString(len, charSet) {
 };
 
 
-/*
- * MESSAGE INTERACTION WITH THE POPOVER
- */
-
-function respondToMessage(theMessageEvent) {
-	alert("MSG!");
-}
-
-safari.application.addEventListener("message",respondToMessage,false);
 
 
 </script>

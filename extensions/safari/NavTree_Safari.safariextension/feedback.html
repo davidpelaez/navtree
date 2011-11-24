@@ -206,8 +206,8 @@ function displayRelevantContent(thePopover){
 		//Show the normal info
 		$('#offline_wrapper').hide();
 		$('#alert_wrapper').hide();
-	}else if(!safari.extension.globalPage.contentWindow.validSecret && safari.extension.globalPage.contentWindow.connectivity){ //There's no valid secret
-			thePopover.height = 195;
+	}else if(!safari.extension.globalPage.contentWindow.validSecret){ //There's no valid secret
+			thePopover.height = 200;
 		//Hide the info
 		$('#wrapper').hide();
 		$('#offline_wrapper').hide();
