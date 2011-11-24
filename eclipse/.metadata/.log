@@ -496,3 +496,6 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY org.eclipse.core.net 1 0 2011-11-22 12:04:55.548
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.epp.usagedata.recording 1 0 2011-11-23 18:28:07.422
+!MESSAGE Usage data uploaded to http://udc.eclipse.org/upload.php in 1195 milliseconds.

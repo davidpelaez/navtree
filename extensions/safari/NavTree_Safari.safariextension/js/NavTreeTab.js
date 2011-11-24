@@ -131,6 +131,8 @@ function NavTreeTab(theSafariTab){
 				if(jqXHR.status == 0){
 					connectivity = false;
 					setExtensionStatus(OFFLINE_STATUS);
+				}else if(jqXHR.status == 403){
+					validSecret = false;
 				}
 				setExtensionStatus(ALERT_STATUS);
 				myNavTreeTabParent.beginTimer();                                  
