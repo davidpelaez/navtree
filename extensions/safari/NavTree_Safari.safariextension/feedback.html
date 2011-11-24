@@ -18,12 +18,13 @@ html, body{
 }
 
 
+#wrapper, #alert_wrapper, #offline_wrapper, .feedback_box{
+	width: 165px;
+}
 
 #wrapper, #alert_wrapper, #offline_wrapper{
-	width: 220px;
 	margin: 0 auto;
 	text-align: center;
-	max-height: 150px;
 	overflow: hidden;
 }
 
@@ -37,7 +38,6 @@ html, body{
 	line-height: 1.8em;
 	margin: 10px auto;
 	padding-top: 10px;
-	width: 180px;
 	border-top: dotted thin #333;
 	border-bottom: dotted thin #333;
 }
@@ -180,21 +180,24 @@ function openDashboard(){
 	hidePopover();
 }
 
-function displayRelevantContent(){
+function displayRelevantContent(thePopover){
 	//This changes the content if the extension is in alert mode.
 	if(safari.extension.globalPage.contentWindow.validSecret && safari.extension.globalPage.contentWindow.connectivity){
+		thePopover.height = 160;
 		//Hide the error message
 		$('#wrapper').show();
 		//Show the normal info
 		$('#offline_wrapper').hide();
 		$('#alert_wrapper').hide();
 	}else if(!safari.extension.globalPage.contentWindow.validSecret){ //There's no valid secret
+			thePopover.height = 200;
 		//Hide the info
 		$('#wrapper').hide();
 		$('#offline_wrapper').hide();
 		//Show the alert
 		$('#alert_wrapper').show();
 	}else if(!safari.extension.globalPage.contentWindow.connectivity){ 		//In case there's no connectivity
+			thePopover.height = 200;
 		//Hide the info
 		$('#wrapper').hide();
 		//Show the alert
@@ -212,7 +215,7 @@ $(function(){
 
 function popoverHandler(event){
 	if (event.target.identifier == "feedback"){
-		displayRelevantContent();
+		displayRelevantContent(event.target);
 	}else{ 
 		return;
 	}
@@ -230,7 +233,7 @@ safari.application.addEventListener("popover", popoverHandler, true);
 			<div id="private_mode" class="clickable"></div>
 		</div>
 		<div  class="feedback_box" >
-			<div class="big_label" id="edge_count">?</div>
+			<div class="big_label" id="edge_count"><img src="icons/loading.gif"/></div>
 			<div class="small_label">recorded nodes</div>
 			<div class="small_label"></div>
 		</div>
@@ -242,7 +245,7 @@ safari.application.addEventListener("popover", popoverHandler, true);
 	
 	<div id="alert_wrapper">
 		<div class="feedback_box">
-			<div class="big_label">?</div>
+			<div class="big_label"><img src="icons/big/forbidden.png"/></div>
 			<div class="small_label">Your private key is empty or invalid. Visit the dashboard for instructions.</div>
 		</div>
 
@@ -253,7 +256,7 @@ safari.application.addEventListener("popover", popoverHandler, true);
 	
 	<div id="offline_wrapper">
 		<div class="feedback_box">
-			<div class="big_label">?</div>
+			<div class="big_label"><img src="icons/big/offline.png"/></div>
 			<div class="small_label">There's no internet connectivity and some nodes are pending synchronization.</div>
 			<div class="small_label"></div>
 		</div>
