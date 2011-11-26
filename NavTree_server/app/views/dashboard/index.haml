@@ -1,11 +1,10 @@
 #logo=image_tag "logo.png"
 
-.dbox
-	Secret:
-	= @secret.private_key
-.dbox
-	Recorder nodes:
-	=@secret.edges.count    
+
+#node_count
+	#count=@secret.edges.count    
+	#count_label recorded nodes
+#secret= @secret.private_key	
 
 #edges.clear
 

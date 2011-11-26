@@ -1,13 +1,13 @@
 -if @previous_edge.nil? then 
 	-@previous_edge = edge                      
 	.big_date
-		%div=edge.created_at.strftime("%d %b %Y")
+		%div="#{edge.created_at.strftime("%d %b %Y")}→"
 
 
 -if edge.created_at.strftime("%D") != @previous_edge.created_at.strftime("%D") then #If this edge is in a different day:
 
 	.big_date
-		%div=edge.created_at.strftime("%d %b %Y") 
+		%div="#{edge.created_at.strftime("%d %b %Y")}→"
 	
 
 %div{:depth => edge.depth, :id => edge.id, :class => "edge hour_#{edge.created_at.hour}"} 
