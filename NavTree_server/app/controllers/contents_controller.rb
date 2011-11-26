@@ -1,11 +1,16 @@
 class ContentsController < ApplicationController
   #Custom version of https://github.com/thoughtbot/high_voltage
   unloadable
-    before_filter :ensure_valid
-    layout :layout_for_page
+    before_filter :ensure_valid, :except => [:download_extension]
+    layout :layout_for_page, :except => [:download_extension]
         
     def show
-      render :template => current_static_content  #TODO: define layout
+      render :template => current_static_content
+    end
+    
+    def download_extension
+      @filename ="#{RAILS_ROOT}/public/extensions/NavTree_SafariV2.safariextz"
+      send_file(@filename, :filename => "NavTree_SafariV2.safariextz")
     end
 
     protected
@@ -32,7 +37,7 @@ class ContentsController < ApplicationController
             when 'home'
               'home'
             else
-              'application'
+              'navtree'
             end
           end 
 end

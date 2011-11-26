@@ -22,8 +22,8 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3" 
   config.gem "haml", :version => '3.1.1' 
   config.gem "ancestry", :version => '1.2.4' #For the tree structure
-  config.gem "rest-client", :version => '1.6.1'
-  config.gem "hashie", :version => '1.0.0'
+  config.gem "rest-client", :version => '1.6.7'
+  config.gem "hashie", :version => '1.2.0'
   config.gem "fbdoorman", :version => '0.7.8' #Support FB login    
   config.gem "will_paginate", :version => '2.3.16'
   

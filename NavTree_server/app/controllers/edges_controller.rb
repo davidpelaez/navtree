@@ -6,6 +6,7 @@ class EdgesController < ApplicationController
   protect_from_forgery   :except => [:create, :index]
 
 
+
   #This only returns the edge count for a given secret
   def index
        render :json => {:edge => {:edge_count => @secret.edges.count }}.to_json

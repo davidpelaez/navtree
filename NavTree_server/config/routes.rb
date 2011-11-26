@@ -9,6 +9,8 @@ ActionController::Routing::Routes.draw do |map|
   #For static contents
   map.resources :contents,    :controller => 'contents',      :only       => [:show]
   map.connect "dashboard", :controller => "dashboard", :action => "index"
+  map.connect "download_extension", :controller => "contents", :action => "download_extension"
+  
   map.connect "navtree.:format", :controller => "dashboard", :action => "navtree"
   map.root :controller => 'contents',   :id => 'home'   , :action     =>:show 
   

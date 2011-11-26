@@ -1,0 +1,213 @@
+/*THIS IS COPIED FROM MANAGAE_BASE*/
+#logo{
+	width: 500px;
+	margin: 20px auto;
+	text-align: center;
+}
+#flash{
+		clear: both;
+	}
+	    
+	a, a:visited, a:active{
+			color:RGB(251,176,59) !important;
+	}
+
+	#error{ 
+		background-color: RGB(255,73,49);
+		
+	}   
+	
+	#notice, #success{
+		background-color: RGB(0,182,206);		
+	}
+	
+	.flash{
+		padding: 3px;
+		color: white;
+		font-size: small;
+		font-family: inconsolata;
+		background-color: RGB(57,181,74);
+		display: inline-block;
+		margin-bottom: 8px;
+	}
+
+/*CLEAR TO AVOID REPATING MYSELF*/
+
+
+h1 { 
+	background-color: RGB(202,202,202);
+	color: #333 !important;
+	font-weight: normal;
+	border-bottom: none !important;
+	font-size: small;
+	padding: 3px;
+	padding-left: 7px;
+
+	margin: 10px 0;
+			font-family: 'Inconsolata','Droid Sans Mono', Helvetica, Arial, sans-serif;
+	} 
+	
+	p, h2, h3, h4{
+		margin-bottom: 15px;
+		margin-top: 15px;
+	}  
+	ul {
+	   list-style-position:inside;
+		padding-left: 10px; 
+	}  
+	
+	#tos{
+		margin-bottom: 60px;
+	} 
+	
+    
+	
+
+h1:after
+{ 
+content:"↓";
+margin-right: 5px;
+float: right;
+}
+
+		
+		label { 
+			font-weight: bold; 
+			display: block; 
+			margin: 5px 0; 
+			font-size: 70%;
+			}
+			
+			input[type="text"], input[type="password"]  { 
+				width: 100%;
+				display: block; 
+				font-size: 90%; 
+				padding: 2px 2px;
+				background-color: #eee !important; 
+				color: black; 
+				
+				border: thin dotted black;
+				}
+				
+				.indent{ margin-left: 20px;}
+				
+				
+	.facebook_login{
+		width: 48%;
+		border-right: solid thin #eee;
+		min-height: 60px;
+		padding-top: 40px;
+		float: left;
+		text-align: center;
+	}
+	
+	.facebook_login, .facebook_signup{
+		width: 45%;
+		border-right: solid thin #eee;
+		min-height: 60px;
+		padding-top: 40px;
+		float: left;
+		text-align: center;
+	}
+	
+	.facebook_signup{
+
+		min-height: 180px;
+		padding-top: 0 !important;
+
+	}
+	
+	.facebook_signup .instruction{
+		margin-bottom: 30px;
+	}
+	
+	.traditional_login{
+		width: 48%;
+		text-align:;
+		margin-right: 6px; /*Constraresta el padding de los campos de texto*/
+		float: right;
+	}
+	
+	.signup_msg{
+		clear: both;
+				text-align: center;
+				padding-top: 20px;
+
+				font-size: 80%;				
+	}
+	
+	
+		.signup_msg a{
+				color:RGB(251,176,59);
+
+
+
+		}
+
+	
+
+#forgot_password{
+
+	font-size: 70%;
+	clear: both;
+	color:RGB(251,176,59);
+	margin-top: 12px;
+	float: left;
+	text-align: right;
+
+}
+
+
+
+/*SUBMIT BUTTON*/
+
+input[type="submit"],input[type="button"], .button{ 
+	text-decoration: none;
+	font-size: 75%;
+	border: none;
+	margin: 5px 0; 
+	margin-top: 10px;
+	margin-bottom: 5px;
+	background-color: RGB(57,181,74) !important;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	color: white;
+	font-family: "lucida grande", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 1;
+	padding: 3px 0 5px 0;
+	text-align: center;
+	width: 95px;
+	float: right;
+}
+
+
+.instruction{
+	font-style: italic;
+	font-size: smaller;
+	text-align: center;
+	padding: 5px;
+}
+      
+
+
+
+form.new_portfolio #portfolio_submit{
+	float: right;
+	display: inline !important;     
+	margin-top: 3px !important;  
+	padding: 6px 3px;
+}    
+
+#shorturl_creator{
+	font-size: 130%;
+}
+
+#portfolio_shorturl{
+	display: inline; 
+	margin: 0 !important;
+	text-align: right;
+	width: 160px;
+}

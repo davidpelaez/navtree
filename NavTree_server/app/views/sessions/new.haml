@@ -1,0 +1,24 @@
+#logo=image_tag "logo.png"
+%h1 Login
+#login_window
+	- form_for :session, :url => session_path do |form|
+
+		.facebook_login
+			:plain
+				<fb:login-button perms='publish_stream,email'>Login with Facebook</fb:login-button>
+	
+
+		.traditional_login
+
+			= form.label :email 
+			= form.text_field :email 
+
+
+			= form.label :password 
+			= form.password_field :password 
+			= link_to "Forgot your password?", new_password_path, :id => "forgot_password"	
+			= form.submit "Sign in", :disable_with => "Please wait..."  
+
+			
+		.signup_msg
+			= link_to "Are you new? Sign up", sign_up_path

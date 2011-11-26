@@ -4,7 +4,7 @@
 	%head
 		%title= "Grow a NavTree"
 		%meta{ "http-equiv" => "content-type", "content" =>"text/html;charset=UTF-8"} 
-		= stylesheet_link_tag 'application'
+		= stylesheet_link_tag 'navtree'
 		= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js'
 		
 		:javascript
@@ -26,10 +26,4 @@
 				-flash.each do |key, msg|
 					= content_tag :span, msg, :id => key, :class => "flash"
 					%br=#Otherwise no line break!
-					
-			#header
-				=image_tag "logo.png" 
-				#big_desc A Safari extension to track your web browsing click by click and understand it visually. 
-				=image_tag "download_button.png" 
-			
 			= yield

@@ -18,7 +18,7 @@
 
 	- @previous_edge = nil
 	= render :partial => "edge", :collection => @edges
-	= will_paginate @edges	
+.clear= will_paginate @edges	
 
 :javascript
 	$(function(){

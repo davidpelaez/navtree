@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController 
-  
+  layout 'navtree'
   #This is used to manage the dashboard of the user and the different functions that might be important for him
   before_filter :authenticate
   # GET /stats

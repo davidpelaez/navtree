@@ -2,11 +2,17 @@
 !!! XML
 %html
 	%head
-		%title= "Grow a NavTree"
 		%meta{ "http-equiv" => "content-type", "content" =>"text/html;charset=UTF-8"} 
-		= stylesheet_link_tag 'application'
+		= stylesheet_link_tag 'login', 'navtree'
+		-if params[:controller] == "clearance/sessions" then 
+			-@title = "Sign In - " 
+		-elsif params[:controller] == "clearance/users" then 
+			-@title = "Sign Up - "
+		-else
+			-@title = ""
+		%title= "#{@title}NavTree"
 		= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js'
-		
+
 		:javascript
 
 			var _gaq = _gaq || [];
@@ -18,15 +24,21 @@
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();   
-		
 
+		:css
+			.wrapper{
+				width: 460px !important;
+				margin: 0 auto;	
+			}
+
+			body{
+				margin-top: 80px;
+			}
 	%body
-		#wrapper
-			#session_button= link_to "logout", "/sign_out"
+		.wrapper
 			#flash
 				-flash.each do |key, msg|
 					= content_tag :span, msg, :id => key, :class => "flash"
 					%br=#Otherwise no line break!
-			
 			= yield
 		=facebook_js

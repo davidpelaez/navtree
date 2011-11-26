@@ -249,3 +249,27 @@ java.vm.name,sysinfo,,,"Java HotSpot(TM) 64-Bit Server VM",1321981510304
 java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1321981510304
 java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1321981510304
 java.vm.specification.version,sysinfo,,,"1.0",1321981510304
+java.vm.vendor,sysinfo,,,"Apple Inc.",1321981510304
+java.vm.version,sysinfo,,,"20.4-b02-402",1321981510304
+started,bundle,org.eclipse.m2e.usagedata,1.0.100.20110804-1717,"org.eclipse.m2e.usagedata",1321981510336
+started,bundle,org.eclipse.team.cvs.ui,3.3.400.I20110510-0800,"org.eclipse.team.cvs.ui",1321981510767
+opened,view,org.eclipse.ui.ide,3.7.0.v20110809-1737,"org.eclipse.ui.views.ProblemView",1321981511045
+started,bundle,org.eclipse.wb.discovery.ui,1.1.0.r37x201109091028,"org.eclipse.wb.discovery.ui",1321981511340
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321981519710
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322014215331
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322014715928
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322090885925
+started,bundle,org.eclipse.epp.usagedata.ui,1.3.1.R201106061540,"org.eclipse.epp.usagedata.ui",1322090886124
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322090889001
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322102666795
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322102668472
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322155269298
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322155273915
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322163918297
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322163919475
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322163920784
+closed,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1322163921096
+started,bundle,org.eclipse.compare,3.5.201.R37x_v20110817-0800,"org.eclipse.compare",1322163922236
+stopped,bundle,org.eclipse.m2e.logback.configuration,1.0.100.20110804-1717,"org.eclipse.m2e.logback.configuration",1322163922903
+stopped,bundle,org.eclipse.m2e.discovery,1.0.100.20110804-1717,"org.eclipse.m2e.discovery",1322163922957
+stopped,bundle,org.eclipse.m2e.refactoring,1.0.100.20110804-1717,"org.eclipse.m2e.refactoring",1322163922977

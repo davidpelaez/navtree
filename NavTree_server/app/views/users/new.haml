@@ -1,0 +1,37 @@
+#logo=image_tag "logo.png"
+%h1 Sign up
+.center
+	- form_for @user do |form|
+
+		.facebook_signup{:style => "margin-top: 20px;"}
+		
+			%p.instruction We suggest using Facebook. It's faster, no email verification is needed and there is no password to forget!
+			:plain
+				<fb:login-button perms='publish_stream,email'>Sign up using Facebook</fb:login-button>
+	
+
+		.traditional_login
+			%p.instruction No way! I'd like to remember yet another password.
+			= form.label :email 
+			= form.text_field :email 
+
+
+			= form.label :password 
+			= form.password_field :password 
+			
+			= form.label :password_confirmation, "Confirm password"
+			= form.password_field :password_confirmation
+
+
+			= form.submit "Sign up", :disable_with => "Please wait..."  
+
+			
+		.signup_msg
+			By signing up you are automatically accepting 
+			%br
+			= link_to "Navtree Terms and Conditions of Use for Registered Users", content_path("TOS")
+
+
+
+
+

@@ -1,22 +1,29 @@
 -if @previous_edge.nil? then 
 	-@previous_edge = edge                      
-	.big_date=edge.created_at.strftime("%d %b %Y") 
+	.big_date
+		%div=edge.created_at.strftime("%d %b %Y")
 
 
 -if edge.created_at.strftime("%D") != @previous_edge.created_at.strftime("%D") then #If this edge is in a different day:
 
-	.big_date=edge.created_at.strftime("%d %b %Y") 
+	.big_date
+		%div=edge.created_at.strftime("%d %b %Y") 
 	
 
-.edge{:depth => edge.depth, :id => edge.id, :parent => edge.parent} 
-	.title=if edge.title.blank? then edge.node.url else edge.title  end
-	.children
-		-if edge.children.count > 0 then
-			= "#{edge.children.count} children"
-		-else
-			Childless
-					
-	.date=edge.created_at.strftime("%d %b %Y")
+%div{:depth => edge.depth, :id => edge.id, :class => "edge hour_#{edge.created_at.hour}"} 
+	.title
+		-if edge.title.blank? then 
+			=edge.node.url 
+		-else 
+			=link_to truncate(edge.title, {:length=> 85}), edge.node.url 
 	.time=edge.created_at.strftime("%I:%M %p")
-	= link_to 'Destroy', edge, :confirm => 'Are you sure?', :method => :delete 
+	.hover
+		.date=#edge.created_at.strftime("%d %b %Y")
+		.children
+			-if edge.children.count > 0 then
+				= "#{edge.children.count} children"
+			-else
+				Childless
+	
+		.destroy= link_to 'D', edge, :confirm => 'If you delete this node, any existing children nodes will be removed too (aka cutting a branch). Are you sure?', :method => :delete 
 - @previous_edge = edge
