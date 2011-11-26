@@ -13,9 +13,9 @@
 %div{:depth => edge.depth, :id => edge.id, :class => "edge hour_#{edge.created_at.hour}"} 
 	.title
 		-if edge.title.blank? then 
-			=edge.node.url 
+			.blank=#image_tag "page.png"
 		-else 
-			=link_to truncate(edge.title, {:length=> 85}), edge.node.url 
+			=link_to truncate(edge.title, {:length=> 85}), edge.node.url, :target => "_blank" 
 	.time=edge.created_at.strftime("%I:%M %p")
 	.hover
 		.date=#edge.created_at.strftime("%d %b %Y")
@@ -25,5 +25,5 @@
 			-else
 				Childless
 	
-		.destroy= link_to 'D', edge, :confirm => 'If you delete this node, any existing children nodes will be removed too (aka cutting a branch). Are you sure?', :method => :delete 
+		.destroy= link_to "#{image_tag "delete.png", :alt => "Delete node & children"}", edge, :confirm => 'If you delete this node, any existing children nodes will be removed too (aka cutting a branch). Are you sure?', :method => :delete 
 - @previous_edge = edge

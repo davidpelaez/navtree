@@ -74,11 +74,13 @@ html{
 	width: 70px;
 	text-align: center;
 	font-size: smaller;
+	padding-top: 5px;
 	height: 25px;
 	position:absolute;
 	background: RGB(193,39,45);
-	right: 0;
-	top: 0;
+	right: 35px;
+	border-radius: 4px;
+	top: -5px;
 }
 
 #logo{ /*Not centered logo used in the dashboard*/
@@ -88,11 +90,11 @@ html{
 
 #node_count{
 	text-align: center;
-	height: 70px;
+	height: 50px;
 	width: 150px;
 	margin-right: 35px;
 	line-height: 1.7em;
-	margin-top: 93px;
+	margin-top: 65px;
 	float: right;
 	font-weight: bold;
 }
@@ -119,15 +121,19 @@ html{
 	float: left;
 }
 
+.blank{
+	opacity: 0.3;
+}
+
 #secret{
-	background: transparent url('/images/lock.png') left 9px no-repeat;
+	background: transparent url('/images/lock.png') left 14px no-repeat;
 	font-size: 120%;
-	width: 430px;
+	width: 875px;
 	min-height: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	font-weight: bold;
 	border-top: dotted thin white;
-	padding: 5px 25px;
+	padding: 10px 25px 0 25px;
 }
 
 .big_date div{
