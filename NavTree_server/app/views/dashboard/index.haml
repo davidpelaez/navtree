@@ -1,24 +1,18 @@
-%h1         Dashboard     
+#logo=image_tag "logo.png"
 
-%p
+.dbox
 	Secret:
 	= @secret.private_key
-%p
-	Edges:
+.dbox
+	Recorder nodes:
 	=@secret.edges.count    
-%p
-	Nodes:
-	=@secret.nodes.count
-	
-	
-%h1 Recorded edges (newest first)
 
-
-#edges
+#edges.clear
 
 	- @previous_edge = nil
 	= render :partial => "edge", :collection => @edges
-.clear= will_paginate @edges	
+	.clear
+#pagination= will_paginate @edges	
 
 :javascript
 	$(function(){

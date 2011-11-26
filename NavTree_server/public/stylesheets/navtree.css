@@ -8,7 +8,47 @@
 	width: 960px;
 	margin: 0 auto;  
 	position: relative;
-}  
+} 
+
+#pagination{
+	clear: both;
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+
+}
+
+#pagination .disabled{
+	display: none;
+} 
+
+#pagination a,#pagination a:visited {
+	font-size: 110%;
+	color: white;	
+}
+
+#pagination .current{
+	color: RGB(57,181,74);	
+}
+
+.prev_page{
+	margin-right: 15px;
+}
+
+.next_page{
+	margin-left: 15px;
+}
+
+.next_page, .prev_page{
+	background-color: RGB(57,181,74);
+	border-radius: 8px;	
+	padding: 3px 8px;
+	text-align: center;
+	font-size: 85% !important;	
+	text-decoration: none;
+	
+}
+
 #header{  
 	margin-left: 60px;      
 	padding-top: 40px;
@@ -21,6 +61,7 @@ html{
 	background: transparent top left url('/images/bg.png') repeat;
 	color: white;
 	font-family: Helvetica, Arial, Sans-serif;
+	padding-bottom: 10px;
 }   
 
 #session_button a, #session_button a:visited{
@@ -40,12 +81,19 @@ html{
 	top: 0;
 }
 
+#logo{
+	width: 500px;
+	margin: 20px auto;
+	text-align: center;
+}
 
   
 
 .big_date{
 	font-size: 215%;
 	font-weight: bold;
+	text-align: right;
+	line-height: 0.92em;
 }
 
 .big_date div{
