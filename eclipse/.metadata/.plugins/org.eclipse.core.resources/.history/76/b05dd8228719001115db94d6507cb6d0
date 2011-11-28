@@ -89,7 +89,7 @@ public class Node implements Comparable {
 
 	public void evalExtra(){
 		if(extra%BLANK == 0) isBlank = true ;
-		if(extra%BG == 0) inBG = true ;
+		if(extra%ACTIVE != 0) inBG = true ;
 		if(extra%NEW_WINDOW == 0){
 			isWindow= true;
 		}

@@ -33,7 +33,7 @@ public class Edge {
 	public void draw() {
 		if (draw) {
 			if(to.inBG){
-				navtree.applet.stroke(255,0,0);
+				
 			}else{
 				navtree.applet.stroke(200);
 			}

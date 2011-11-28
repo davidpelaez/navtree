@@ -21,7 +21,7 @@ public class Node implements Comparable {
 	
 	public int level;
 	//Start as if everything was false. Then evalExtra() will change to true the correct ones
-	public boolean isRoot=false, isWindow=false, isBlank=false, isSecond=false, isThird=false, inBG = false;
+	public boolean isRoot=false, isWindow=false, isBlank=false, isSecond=false, isThird=false;
 	
 	public static final int ROOT_LEVEL = 1, SECOND_LEVEL = 2, THIRD_LEVEL = 3;
 	public static final int NULL_PARENT = -1;
@@ -84,12 +84,12 @@ public class Node implements Comparable {
 			level = THIRD_LEVEL;
 			break;
 		}
-		evalExtra(); //This will be called 
+		evalExtra();
 	}// Constructor ends
 
 	public void evalExtra(){
 		if(extra%BLANK == 0) isBlank = true ;
-		if(extra%BG == 0) inBG = true ;
+		if(extra%ACTIVE != 0) inBG = true ;
 		if(extra%NEW_WINDOW == 0){
 			isWindow= true;
 		}
@@ -191,12 +191,6 @@ public class Node implements Comparable {
 	public void evalDraw(){
 		//Always think it'll be drawn, then, if found a reason not to be, make it false AND return
 		draw = true;
-		if(!isRoot){ //Dont't draw if the parent isnt drawn
-			if(!parent.draw){
-				draw = false;
-				return;
-			}
-		}
 		if(isRoot && !applet.showRoots ){ //This is a root and those arent shown
 			draw = false;
 			return;

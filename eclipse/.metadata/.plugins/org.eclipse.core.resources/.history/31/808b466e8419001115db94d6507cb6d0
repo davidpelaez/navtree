@@ -32,11 +32,6 @@ public class Edge {
 
 	public void draw() {
 		if (draw) {
-			if(to.inBG){
-				navtree.applet.stroke(255,0,0);
-			}else{
-				navtree.applet.stroke(200);
-			}
 			navtree.applet.stroke(200);
 			navtree.applet.strokeWeight((float) 0.35);
 			if(to.draw && from.draw) navtree.applet.line(from.x, from.y, to.x, to.y);
