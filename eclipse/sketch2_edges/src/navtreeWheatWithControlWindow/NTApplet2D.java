@@ -1,4 +1,4 @@
-package navtreeWheat;
+package navtreeWheatWithControlWindow;
 
 import controlP5.*;
 import processing.core.*;
@@ -10,6 +10,7 @@ public class NTApplet2D extends PApplet {
 	MyCam cam;
 	float zoom = 1, tx = 0, ty = 0;
 	ControlP5 controlP5;
+	ControlWindow controlWindow;
 	CheckBox checkbox;
 	
 	/*
@@ -24,7 +25,6 @@ public class NTApplet2D extends PApplet {
 	public boolean showRoots=true,showSecond=true,showThird=true,showTabs=true,showWindows=true,showBlank=false;
 
 	public void setup() {
-		
 		size(1250, 550);
 		frameRate(12);
 		navtree = new Navtree(this);
@@ -41,35 +41,37 @@ public class NTApplet2D extends PApplet {
 	}
 
 	public void draw() {
-		background(40);
+		background(51, 51, 51);
 		pushMatrix();
 		cam.feed();
 		scale(zoom);
 		translate(tx, ty);
 		navtree.draw();
 		popMatrix();
-		fill(100,100);
-		noStroke();
-		rect(10,10,190,200);
 		controlP5.draw();
 	}
 
 	public void setupGui() {
 		controlP5 = new ControlP5(this);
 		controlP5.setAutoDraw(false);
+		controlWindow = controlP5.addControlWindow("controlP5window", 100, 100, 250, 500);
+		controlWindow.hideCoordinates();
 		createControllers();
 	}
 
 	public void createControllers() {
-		controlP5.addButton("pause", 0, 20, 150, 80, 19);
+		controlP5.addButton("pause", 0, 20, 150, 80, 19).moveTo(controlWindow);
 		controlP5.controller("pause").setLabel("Pause Animation");
-		controlP5.addButton("colorByTime", 0, 20, 180, 80, 19);
+		controlP5.addButton("colorByTime", 0, 20, 180, 80, 19).moveTo(controlWindow);
 		controlP5.controller("colorByTime").setLabel("Color by Time");
-		controlP5.addButton("colorByDepth", 1, 110, 180, 80, 19);
+		controlP5.addButton("colorByDepth", 1, 110, 180, 80, 19).moveTo(controlWindow);
 		controlP5.controller("colorByDepth").setLabel("Color by Depth");
+
+		controlWindow.setTitle("controls");
 		// Create checkboxes
 		checkbox = controlP5.addCheckBox("checkbox", 20, 20);
 		checkbox.setId(999);
+		checkbox.moveTo(controlWindow);
 		;
 		// make adjustments to the layout of a checkbox.
 		/*

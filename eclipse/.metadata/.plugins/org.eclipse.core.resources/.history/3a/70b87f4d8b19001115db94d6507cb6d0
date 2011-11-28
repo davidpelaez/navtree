@@ -24,7 +24,6 @@ public class NTApplet2D extends PApplet {
 	public boolean showRoots=true,showSecond=true,showThird=true,showTabs=true,showWindows=true,showBlank=false;
 
 	public void setup() {
-		
 		size(1250, 550);
 		frameRate(12);
 		navtree = new Navtree(this);
