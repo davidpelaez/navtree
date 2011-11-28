@@ -280,7 +280,7 @@ public class Node implements Comparable {
 	}
 	
 	public void colorByTime(){
-		applet.fill(255,0,0);
+		fill(255,0,0);
 	}
 
 	// Lock the Y position of the node

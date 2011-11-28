@@ -248,14 +248,6 @@ public class Node implements Comparable {
 	}
 
 	public void setFill() {
-		switch(applet.colorBy){
-		case NTApplet2D.DEPTH:
-			colorByDepth();
-			break;
-		case NTApplet2D.TIME:
-			colorByTime();
-			break;
-		}
 		
 	}
 	
@@ -280,7 +272,7 @@ public class Node implements Comparable {
 	}
 	
 	public void colorByTime(){
-		applet.fill(255,0,0);
+		
 	}
 
 	// Lock the Y position of the node

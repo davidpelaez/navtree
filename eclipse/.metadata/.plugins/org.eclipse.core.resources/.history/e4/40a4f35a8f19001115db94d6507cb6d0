@@ -1,9 +1,6 @@
 package navtreeWheat;
 
 import java.util.Date;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
 
 import org.json.JSONObject;
 import processing.core.PApplet;
@@ -22,7 +19,7 @@ public class Node implements Comparable {
 	 * 
 	 */
 	
-	public int level, hour;
+	public int level;
 	//Start as if everything was false. Then evalExtra() will change to true the correct ones
 	public boolean isRoot=false, isWindow=false, isBlank=false, isSecond=false, isThird=false, inBG = false;
 	
@@ -87,7 +84,6 @@ public class Node implements Comparable {
 			level = THIRD_LEVEL;
 			break;
 		}
-		hour = getHour();
 		evalExtra(); //This will be called 
 	}// Constructor ends
 
@@ -127,12 +123,6 @@ public class Node implements Comparable {
 		Date time = new Date();
 		time.setTime((long) unixDate * 1000);
 		return time;
-	}
-	
-	public int getHour(){
-		Calendar calendar =  GregorianCalendar.getInstance(); // creates a new calendar instance
-		calendar.setTime(getDate());   // assigns calendar to given date 
-		return calendar.get(Calendar.HOUR_OF_DAY); // gets hour in 24h format
 	}
 
 	/*
@@ -192,14 +182,7 @@ public class Node implements Comparable {
 		setFill();
 		//applet.stroke(180);
 		//applet.strokeWeight((float) 0.5);
-		//TODO: CHECK THIS
-		if(isRoot && hasChildren){
-			applet.stroke(255);
-		}else{
-			applet.noStroke();	
-		}
-		applet.noStroke(); //Override
-		
+		applet.noStroke();
 		if (draw == true) {
 			applet.ellipse(x, y, 4, 4);
 		}
@@ -239,27 +222,9 @@ public class Node implements Comparable {
 			draw = false;
 			return;
 		}
-		//Don't draw orphans
-				/*if (isRoot) {
-					if (!hasChildren) {
-						draw = false; // Root withotu children, dont' draw it
-					}
-				}*/
 	}
 
 	public void setFill() {
-		switch(applet.colorBy){
-		case NTApplet2D.DEPTH:
-			colorByDepth();
-			break;
-		case NTApplet2D.TIME:
-			colorByTime();
-			break;
-		}
-		
-	}
-	
-	public void colorByDepth(){
 		switch (depth) {
 		case 0:
 			applet.fill(0,174,239);
@@ -268,19 +233,20 @@ public class Node implements Comparable {
 			applet.fill(255,242,0);
 			break;
 		case 2: //THIRD
-			applet.fill(239,20,10);
+			applet.fill(239,65,54);
 			break;
 		case 3:
-			applet.fill(20,198,20);
+			applet.fill(100,198,20);
 			break;
 		default:
 			applet.fill(236,0,140);
 			break;
 		}
-	}
-	
-	public void colorByTime(){
-		applet.fill(255,0,0);
+		if (isRoot) {
+			if (!hasChildren) {
+				draw = false; // Root withotu children, dont' draw it
+			}
+		}
 	}
 
 	// Lock the Y position of the node

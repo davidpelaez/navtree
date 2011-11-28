@@ -2,7 +2,6 @@ package navtreeWheat;
 
 import java.util.Date;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 
 import org.json.JSONObject;
@@ -87,7 +86,6 @@ public class Node implements Comparable {
 			level = THIRD_LEVEL;
 			break;
 		}
-		hour = getHour();
 		evalExtra(); //This will be called 
 	}// Constructor ends
 
@@ -132,7 +130,7 @@ public class Node implements Comparable {
 	public int getHour(){
 		Calendar calendar =  GregorianCalendar.getInstance(); // creates a new calendar instance
 		calendar.setTime(getDate());   // assigns calendar to given date 
-		return calendar.get(Calendar.HOUR_OF_DAY); // gets hour in 24h format
+		calendar.get(Calendar.HOUR_OF_DAY); // gets hour in 24h format
 	}
 
 	/*
@@ -239,27 +237,9 @@ public class Node implements Comparable {
 			draw = false;
 			return;
 		}
-		//Don't draw orphans
-				/*if (isRoot) {
-					if (!hasChildren) {
-						draw = false; // Root withotu children, dont' draw it
-					}
-				}*/
 	}
 
 	public void setFill() {
-		switch(applet.colorBy){
-		case NTApplet2D.DEPTH:
-			colorByDepth();
-			break;
-		case NTApplet2D.TIME:
-			colorByTime();
-			break;
-		}
-		
-	}
-	
-	public void colorByDepth(){
 		switch (depth) {
 		case 0:
 			applet.fill(0,174,239);
@@ -277,10 +257,11 @@ public class Node implements Comparable {
 			applet.fill(236,0,140);
 			break;
 		}
-	}
-	
-	public void colorByTime(){
-		applet.fill(255,0,0);
+		if (isRoot) {
+			if (!hasChildren) {
+				draw = false; // Root withotu children, dont' draw it
+			}
+		}
 	}
 
 	// Lock the Y position of the node

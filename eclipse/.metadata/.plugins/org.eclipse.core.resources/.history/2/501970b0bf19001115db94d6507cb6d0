@@ -239,24 +239,15 @@ public class Node implements Comparable {
 			draw = false;
 			return;
 		}
-		//Don't draw orphans
-				/*if (isRoot) {
-					if (!hasChildren) {
-						draw = false; // Root withotu children, dont' draw it
-					}
-				}*/
 	}
 
 	public void setFill() {
-		switch(applet.colorBy){
-		case NTApplet2D.DEPTH:
-			colorByDepth();
-			break;
-		case NTApplet2D.TIME:
-			colorByTime();
-			break;
-		}
 		
+		/*if (isRoot) {
+			if (!hasChildren) {
+				draw = false; // Root withotu children, dont' draw it
+			}
+		}*/
 	}
 	
 	public void colorByDepth(){
@@ -280,7 +271,7 @@ public class Node implements Comparable {
 	}
 	
 	public void colorByTime(){
-		applet.fill(255,0,0);
+		
 	}
 
 	// Lock the Y position of the node

@@ -22,7 +22,7 @@ public class NTApplet2D extends PApplet {
 	 */
 	
 	public boolean showRoots=true,showSecond=true,showThird=true,showTabs=true,showWindows=true,showBlank=false;
-	public static final int DEPTH=0, TIME=1;
+	public static final int DEPTH =0, TIME=1;
 	public int colorBy;
 	public void setup() {
 		
