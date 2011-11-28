@@ -48,11 +48,9 @@ public class NTApplet2D extends PApplet {
 		translate(tx, ty);
 		navtree.draw();
 		popMatrix();
-		fill(35);
+		fill(100,100);
 		noStroke();
-		rect(0,0,210,height);
-		stroke(80);
-		line(210,0, 210,height);
+		rect(10,10,190,200);
 		controlP5.draw();
 	}
 

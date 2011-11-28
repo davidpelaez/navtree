@@ -25,7 +25,7 @@ public class Navtree {
 	Navtree(NTApplet2D _applet) {
 		applet = _applet;
 		nodeTable = new java.util.HashMap<Integer, Node>();
-		String[] myJsonStrings = loadFile("navtree10days.json");
+		String[] myJsonStrings = loadFile("data/navtree10days.json");
 		System.out.println("JSon lines loaded = " + myJsonStrings.length);
 		String jsonLine;
 		JSONObject jsonData;
