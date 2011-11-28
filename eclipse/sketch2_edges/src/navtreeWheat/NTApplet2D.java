@@ -40,6 +40,13 @@ public class NTApplet2D extends PApplet {
 		}
 		System.out.println("Drawing begins");
 	}
+	
+	public void keyPressed(){
+		if(key==TAB){
+			System.out.println("Saving Frame");
+			saveFrame("line-####.png"); 
+		}
+	}
 
 	public void draw() {
 		background(40);

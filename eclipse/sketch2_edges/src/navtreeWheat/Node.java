@@ -25,7 +25,7 @@ public class Node implements Comparable {
 	public int level, hour;
 	//Start as if everything was false. Then evalExtra() will change to true the correct ones
 	public boolean isRoot=false, isWindow=false, isBlank=false, isSecond=false, isThird=false, inBG = false;
-	
+	public NodeController controller;
 	public static final int ROOT_LEVEL = 1, SECOND_LEVEL = 2, THIRD_LEVEL = 3;
 	public static final int NULL_PARENT = -1;
 	public int id, parentId, extra, depth;
@@ -52,6 +52,7 @@ public class Node implements Comparable {
 
 	public void build(int _id, String _url, int _parentId, boolean _isRoot, int _extra, int _unixDate, boolean _hasChildren, String _childrenIds, int _depth) {
 		id = _id;
+		url = _url;
 		depth = _depth;
 		parentId = _parentId;
 		isRoot = _isRoot;
@@ -89,6 +90,8 @@ public class Node implements Comparable {
 		}
 		hour = getHour();
 		evalExtra(); //This will be called 
+		//Create the controller
+		controller = new NodeController(this,navtree);
 	}// Constructor ends
 
 	public void evalExtra(){
@@ -280,7 +283,68 @@ public class Node implements Comparable {
 	}
 	
 	public void colorByTime(){
-		applet.fill(255,0,0);
+		switch(hour){
+		case 0:			
+		case 3:
+			applet.fill(65,64,66);
+			break;
+		case 1:
+		case 2:
+			applet.fill(35,31,32);
+			break;
+		case 4:
+		case 22:
+		case 23:
+			applet.fill(88,89,91);
+			break;
+		case 5:
+			applet.fill(207,192,182);
+			break;
+		case 6:
+			applet.fill(245,225,230);
+			break;
+		case 7:
+			applet.fill(251,245,174);
+			break;
+		case 8:
+			applet.fill(250,241,130);
+			break;
+		case 9:
+			applet.fill(247,236,50);
+			break;
+		case 10:
+			applet.fill(249,237,50);
+			break;
+		case 11:
+		case 12:
+			applet.fill(255,222,23);
+			break;
+		case 13:
+
+		case 14:
+			applet.fill(249,237,50);
+			break;
+		case 15:
+			
+			
+		case 16:
+			applet.fill(251,176,64);
+			break;
+		case 17:
+			applet.fill(241,90,41);
+			break;
+		case 18:
+			applet.fill(183,66,54);
+			break;
+		case 19:
+			
+		case 20:
+			
+		case 21:
+			applet.fill(109,110,113);
+			break;
+			
+		}//SWTICH ENDs
 	}
 
 	// Lock the Y position of the node

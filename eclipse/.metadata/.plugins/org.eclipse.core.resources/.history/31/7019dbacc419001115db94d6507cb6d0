@@ -1,0 +1,53 @@
+package navtreeWheat;
+import controlP5.*;
+import processing.core.*;
+
+public class NodeController extends Controller {
+
+	Navtree navtree;
+	NodeController(Node _parent, Navtree nt) {
+		navtree=nt;
+		parent = _parent;
+		// the super class Controller needs to be initialized with the below parameters
+		super(theControlP5, (Tab)(theControlP5.getTab("default")), theName, theX, theY, theWidth, theWidth);
+		// the Controller class provides a field to store values in an 
+		// float array format. for this controller, 2 floats are required.
+		_myValue = -1;
+	}
+
+	// overwrite the updateInternalEvents method to handle mouse and key inputs.
+	public void updateInternalEvents(PApplet theApplet) {
+		if (getIsInside()) {
+			//	      println("The mouse is hovering");
+			if (isMousePressed) {
+				System.out.println("Clicked");
+				setValue(0);
+			}
+		}
+	}
+
+	// overwrite the draw method for the controller's visual representation.
+	public void draw(PApplet theApplet) {
+		// use pushMatrix and popMatrix when drawing
+		// the controller.
+		theApplet.pushMatrix();
+		theApplet.translate(position().x(), position().y());
+		// draw the background of the controller.
+		if (getIsInside()) {
+			theApplet.fill(255,0,0);
+		} 
+		else {
+			theApplet.fill(100);
+		}
+		theApplet.ellipse(0, 0, width, height);
+		theApplet.popMatrix();
+	} 
+
+	public void setValue(float theValue) {
+		broadcast(FLOAT);
+	}
+
+	// needs to be implemented since it is an abstract method in controlP5.Controller
+	public void addToXMLElement(ControlP5XMLElement theElement) {
+	}
+}

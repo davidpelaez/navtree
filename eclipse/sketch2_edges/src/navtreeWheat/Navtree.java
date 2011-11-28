@@ -3,9 +3,19 @@ package navtreeWheat;
 import java.io.*;
 import processing.core.*;
 import org.json.*;
+
+import controlP5.ControlP5;
+
 import java.util.Arrays;
 
 public class Navtree {
+
+	ControlP5 ntControlP5;
+	
+	//This is the node that is hovered
+	public Node featuredNode;
+	public int featuredNodeId=-1;
+
 	
 	public int maxRootY=100, minRootY=50, maxSecondY=250, minSecondY=150, maxThirdY=450, minThirdY=300;
 
@@ -23,9 +33,11 @@ public class Navtree {
 															// graphed
 
 	Navtree(NTApplet2D _applet) {
+		ntControlP5 = new ControlP5(_applet);
+		ntControlP5.setAutoDraw(false);
 		applet = _applet;
 		nodeTable = new java.util.HashMap<Integer, Node>();
-		String[] myJsonStrings = loadFile("data/navtree10days.json");
+		String[] myJsonStrings = loadFile("navtree10days.json");
 		System.out.println("JSon lines loaded = " + myJsonStrings.length);
 		String jsonLine;
 		JSONObject jsonData;
@@ -75,6 +87,16 @@ public class Navtree {
 	
 	public void generateCoords(){
 		
+	}
+	
+	public void featureNode(Node n){
+		featuredNodeId = n.id;
+		featuredNode = n;
+	}
+	
+	public void unfeatureNode(){
+		featuredNodeId = -1; //No node
+		featuredNode = null;
 	}
 
 	protected void shrinkArrays() {
@@ -188,8 +210,18 @@ public class Navtree {
 			n.evalDraw(); 
 		for (Edge e : edges)
 			e.draw();
-		for (Node n : nodes)
-			n.draw();
+		if(applet.cam.zoom != 1){
+			for (Node n : nodes)
+				n.draw();
+		}else{		
+			ntControlP5.draw();
+		}
+		//Display information for the featured node
+		if(featuredNodeId != -1){
+			System.out.println("-------");
+			System.out.println(featuredNode.id);
+			System.out.println(featuredNode.url);	
+		}
 	}
 
 	public void removeNode(Node n) {
