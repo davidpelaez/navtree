@@ -13,7 +13,7 @@ public class Navtree {
 	public Node[] nodes = new Node[100], roots = new Node[100], singles = new Node[100];
 	public Edge[] edges = new Edge[500];
 	public int nodeCount = 0, edgeCount = 0, rootCount = 0, singleCount = 0;
-	public PApplet applet;
+	public NTApplet2D applet;
 	public boolean update = true;// Define if continue updating the tree or only
 									// drawing it.
 
@@ -22,7 +22,7 @@ public class Navtree {
 															// time's being
 															// graphed
 
-	Navtree(PApplet _applet) {
+	Navtree(NTApplet2D _applet) {
 		applet = _applet;
 		nodeTable = new java.util.HashMap<Integer, Node>();
 		String[] myJsonStrings = loadFile("navtree10days.json");
@@ -182,6 +182,10 @@ public class Navtree {
 		if (update) {
 			update();
 		}// Update block ends
+		//Putting this here, allows the edges to not draw themselves if draw == false.
+		//This means that the evalDraw && Draw are called even when paused
+		for (Node n : nodes)
+			n.evalDraw(); 
 		for (Edge e : edges)
 			e.draw();
 		for (Node n : nodes)

@@ -6,19 +6,34 @@ import org.json.JSONObject;
 import processing.core.PApplet;
 
 public class Node implements Comparable {
+	
+	public static final int NEW_WINDOW = 2;
+	public static final int BLANK = 5; 
+	//The following two are still not used
+	public static final int ACTIVE = 11; //This one is only used in new windows/tabs
+	public static final int BG = 13;
 
+	/*
+	 * Properties related to the extra constants & layers
+	 * 
+	 */
+	
+	public int level;
+	//Start as if everything was false. Then evalExtra() will change to true the correct ones
+	public boolean isRoot=false, isWindow=false, isBlank=false, isSecond=false, isThird=false;
+	
 	public static final int ROOT_LEVEL = 1, SECOND_LEVEL = 2, THIRD_LEVEL = 3;
 	public static final int NULL_PARENT = -1;
-	public int id, parentId, extra, depth, level;
+	public int id, parentId, extra, depth;
 	public int unixDate, index;
 	public String url;
 	public int[] children = null; // Array with the ids of the children
-	public boolean isRoot, hasChildren, draw = true;
+	public boolean hasChildren, draw = true;
 	public Navtree navtree;
 	public Node parent;
 	public float x, y;
 	public float dx, dy; // Offset added is nodes are too close
-	public PApplet applet;
+	public NTApplet2D applet;
 	public boolean fixedX = false, fixedY = false;
 
 	public static int MAX_DELTA = 20, MAX_TREE_WIDTH = 3000;
@@ -56,15 +71,28 @@ public class Node implements Comparable {
 			level = ROOT_LEVEL;
 			break;
 		case 1:
+			isSecond = true;
+			level = SECOND_LEVEL;
+			break;
 		case 2:
+			isThird = true;
 			level = SECOND_LEVEL;
 			break;
 		default:
+			isThird = true;
 			level = THIRD_LEVEL;
 			break;
 		}
+		evalExtra();
 	}// Constructor ends
 
+	public void evalExtra(){
+		if(extra%BLANK == 0) isBlank = true ;
+		if(extra%NEW_WINDOW == 0){
+			isWindow= true;
+		}
+	}
+	
 	public void pointToParent() {
 		if (!isRoot) {
 			try {
@@ -149,14 +177,43 @@ public class Node implements Comparable {
 	}// Update ends
 
 	void draw() {
-
 		setFill();
 		applet.stroke(180);
 		applet.strokeWeight((float) 0.5);
-		if (draw = true) {
+		if (draw == true) {
 			applet.ellipse(x, y, 3, 3);
 		}
 	}// Draw ends
+	
+	//Decide if the state of the Applet requires this node to be drawn
+	public void evalDraw(){
+		//Always think it'll be drawn, then, if found a reason not to be, make it false AND return
+		draw = true;
+		if(isRoot && !applet.showRoots ){ //This is a root and those arent shown
+			draw = false;
+			return;
+		}
+		if(!isWindow && !applet.showTabs ){ //This is a TAB and those arent shown
+			draw = false;
+			return;
+		}
+		if(isWindow && !applet.showWindows ){ //This is a window and those arent shown
+			draw = false;
+			return;
+		}
+		if(isBlank && !applet.showBlank ){ //This is a blank node and those arent shown
+			draw = false;
+			return;
+		}
+		if(isSecond && !applet.showSecond ){ //This is a 2nd level node and those arent shown
+			draw = false;
+			return;
+		}
+		if(isThird && !applet.showThird ){ //This is a 3rd level node and those arent shown
+			draw = false;
+			return;
+		}
+	}
 
 	public void setFill() {
 		switch (depth) {

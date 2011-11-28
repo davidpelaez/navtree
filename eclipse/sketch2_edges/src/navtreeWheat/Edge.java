@@ -34,7 +34,7 @@ public class Edge {
 		if (draw) {
 			navtree.applet.stroke(200);
 			navtree.applet.strokeWeight((float) 0.35);
-			navtree.applet.line(from.x, from.y, to.x, to.y);
+			if(to.draw && from.draw) navtree.applet.line(from.x, from.y, to.x, to.y);
 		}
 	}
 
