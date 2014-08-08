@@ -1,6 +1,6 @@
 :app_id: 228632620521384
-:secret: 819e0784baf56c08da01d1be397069ab
-:api_key: 228632620521384
+:secret: ---
+:api_key: ---
 :base_url: http://growanavtree.com
 :after_login_path: /dashboard/
 :after_register_path: /dashboard/
